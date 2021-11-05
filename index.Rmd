@@ -37,11 +37,11 @@ output:
 
 ## Aufgaben
 
-### Teil 1
+
 
 [Aufgaben Kapitel 1, Teil a](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil1-Übungsaufgaben1.html)
 
-### Teil 2
+
 
 [Aufgaben Kapitel 1, Teil b](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil2-Übungsaufgaben1.html)
 
@@ -123,11 +123,11 @@ output:
 
 ## PDF-Skript
 
-[PDF-Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.pdf)
+[PDF-Skript Kapitel 3](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.pdf)
 
-## Quellcode zum Skript 3
+## Quellcode
 
-[Quellcode zum Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.Rmd)
+[Quellcode zum Skript 3](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.Rmd)
 
 ## Aufgaben
 
@@ -136,7 +136,7 @@ output:
 
 ## Lösungen
 
-[Lösungen Kapitel 2])(http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Loesungen.html)
+[Lösungen Kapitel 3](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Loesungen.html)
 
 ## Videos
 
@@ -169,7 +169,7 @@ output:
 
 ## HTML-Skript
 
-[HTML-Skript Kapitel 3](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema4-Gaussmodelle.html#1)
+[HTML-Skript Kapitel 4](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema4-Gaussmodelle.html#1)
 
 ## PDF-Skript
 
@@ -205,7 +205,7 @@ output:
 
 ## Lernziele
 
-[Lernziele Kapitel 4](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-5)
+[Lernziele Kapitel 5](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-5)
 
 ## Lektüre
 
@@ -218,7 +218,7 @@ output:
 
 ## PDF-Skript
 
-[PDF-Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.pdf)
+[PDF-Skript Kapitel 5](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.pdf)
 
 ## Quellcode zum Skript
 
@@ -246,13 +246,13 @@ output:
 
 
 
-# Kapitel 5
+# Kapitel 6
 
 **Deskriptive Forschungsfragen**
 
 ## Lernziele
 
-[Lernziele Kapitel 4](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-6)
+[Lernziele Kapitel 6](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-6)
 
 ## Lektüre
 
@@ -261,15 +261,15 @@ output:
 
 ## HTML-Skript
 
-[HTML-Skript Kapitel 5](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.html#1)
+[HTML-Skript Kapitel 6](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.html#1)
 
 ## PDF-Skript
 
-[PDF-Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.pdf)
+[PDF-Skript Kapitel 6](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.pdf)
 
 ## Quellcode zum Skript
 
-[Quellcode zum Skript 4](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.Rmd)
+[Quellcode zum Skript 6](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.Rmd)
 
 ## Aufgaben
 
