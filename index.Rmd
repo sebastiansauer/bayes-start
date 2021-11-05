@@ -156,41 +156,132 @@ output:
 
 # Kapitel 4
 
-**Die Posteriori-Verteilung**
+**Gauss-Modelle**
 
 ## Lernziele
 
-[Lernziele Kapitel 3](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-3)
+[Lernziele Kapitel 4](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-4)
 
 ## Lektüre
 
-*Statistical Rethinking*, Kap. 3
+*Statistical Rethinking*, Kap. 4.1-4.3
 
 
 ## HTML-Skript
 
-[HTML-Skript Kapitel 3](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.html#1)
+[HTML-Skript Kapitel 3](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema4-Gaussmodelle.html#1)
 
 ## PDF-Skript
 
-[PDF-Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.pdf)
+[PDF-Skript Kapitel 4](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema4-Gaussmodelle.pdf)
 
-## Quellcode zum Skript 3
+## Quellcode zum Skript
 
-[Quellcode zum Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.Rmd)
+[Quellcode zum Skript 4](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema4-Gaussmodelle.Rmd)
 
 ## Aufgaben
 
-[Aufgaben Kapitel 3](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Übungsaufgaben1.html)
+[Aufgaben Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema4-Übungsaufgaben1.html)
 
 
 ## Lösungen
 
-[Lösungen Kapitel 2])(http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Loesungen.html)
+[Lösungen Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Loesungen.html)
 
 ## Videos
 
-[Videos Kapitel 3](https://youtube.com/playlist?list=PLRR4REmBgpIE5-LMlRzSCkXVc2_4pZD2u)
+[Videos Kapitel 4](https://youtube.com/playlist?list=PLRR4REmBgpIFhjaRCvDtM91QdZiqOCThX)
 
 ---
 
+
+
+
+
+
+# Kapitel 5
+
+**Lineare Regression**
+
+## Lernziele
+
+[Lernziele Kapitel 4](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-5)
+
+## Lektüre
+
+*Statistical Rethinking*, Kap. 4.4, *ROS*, Kap. 9.2
+
+
+## HTML-Skript
+
+[HTML-Skript Kapitel 5](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.html#1)
+
+## PDF-Skript
+
+[PDF-Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.pdf)
+
+## Quellcode zum Skript
+
+[Quellcode zum Skript 4](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.Rmd)
+
+## Aufgaben
+
+
+
+
+## Lösungen
+
+
+
+## Videos
+
+
+
+---
+
+
+
+
+
+
+
+
+# Kapitel 5
+
+**Deskriptive Forschungsfragen**
+
+## Lernziele
+
+[Lernziele Kapitel 4](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-6)
+
+## Lektüre
+
+*ROS*, 10.1-10.4, 11.1-11.4, 11.6
+
+
+## HTML-Skript
+
+[HTML-Skript Kapitel 5](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.html#1)
+
+## PDF-Skript
+
+[PDF-Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.pdf)
+
+## Quellcode zum Skript
+
+[Quellcode zum Skript 4](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.Rmd)
+
+## Aufgaben
+
+
+
+
+## Lösungen
+
+
+
+## Videos
+
+
+
+---
