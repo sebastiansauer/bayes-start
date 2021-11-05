@@ -1,0 +1,38 @@
+---
+title: "Lernziele"
+author: "ses"
+date: "11/5/2021"
+output: html_document
+---
+
+
+# Lerniele
+
+
+## Kapitel 1
+
+Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
+
+Sie können ...
+
+- die Definition von Inferenzstatistik sowie Beispiele für inferenzstatistische Fragestellungen nennen
+- zentrale Begriffe nennen und in Grundzügen erklären
+- den Nutzen von Inferenzstatistik nennen
+- erläutern, in welchem Zusammenhang Ungewissheit zur Inferenzstatistik steht
+- auch anhand von Beispielen erklären, was ein statistisches Modell ist
+- die Grundkonzepte der Regression angeben
+- Unterschiede zwischen klassischer und Bayes-Inferenz benennen
+- Vor- und Nachteile der klassischen vs. Bayes-Inferenz diskutieren
+- Die grundlegende Herangehensweise zur Berechnung des p-Werts informell erklären können
+- Wahrscheinlichkeit definieren und relevante Begriffe anführen und in Grundzügen erklären
+- einfache Fragen aus der Wahrscheinlichkeitstheorie berechnen
+
+
+## Kapitel 2
+
+
+- die Unterschiede zwischen einem Modell und der Realität erkären und anhand eines Beispiels verdeutlichen
+- das rechnerische Prinzip des "Wissen updaten" an einem konkreten Beispiel erläutern und nachrechnen
+- Die Posteriori-Wahrscheinlichkeit eines einfaches Bayes-Modells berechnen, in R programmieren und die wesentlichen Schritte erläutern
+
+
