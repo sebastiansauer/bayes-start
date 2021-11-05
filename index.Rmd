@@ -2,11 +2,15 @@
 title: "Bayes Start"
 subtitle: "Eine Einführung in die Bayes-Statistik"
 author: "Sebastian Sauer"
-output: 
-  html_document:
+output:
+  rmdformats::downcute:
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: false
+    highlight: tango
     number_sections: TRUE
-    toc: true
-    toc_depth: 1
+   
 ---
 
 
