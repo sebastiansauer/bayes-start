@@ -20,7 +20,7 @@ output:
 
 ## Lernziele
 
-[Lernziele Thema 1]()
+[Lernziele Thema 1](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-1)
 
 ## Lektüre
 
@@ -32,18 +32,18 @@ output:
 
 ## Aufgaben
 
-[Aufgaben Thema 1]()
+[Aufgaben Thema 2](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil1-Übungsaufgaben1.html)
 
 
 ## Lösungen
 
-[Lösungen Thema 1]
+[Lösungen Thema 2])(http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil1-Übungsaufgaben1-Loesungen.html)
 
 ## Videos
 
-[Videos Thema 1]
+[Videos Thema 1, Teil a](https://youtube.com/playlist?list=PLRR4REmBgpIGK0OsNOmSArj8kNgtMVYj9)
 
-
+[Videos Thema 1, Teil b]( https://youtube.com/playlist?list=PLRR4REmBgpIFCZd_CWmpRhzX2QoYDEx8K)
 
 ---
 
@@ -53,7 +53,7 @@ output:
 
 ## Lernziele
 
-[Lernziele Thema 2]()
+[Lernziele Thema 2](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-2)
 
 ## Lektüre
 
@@ -68,14 +68,14 @@ output:
 
 ## Aufgaben
 
-[Aufgaben Thema 2]()
+[Aufgaben Thema 2](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil1-Übungsaufgaben1.html)
 
 
 ## Lösungen
 
-[Lösungen Thema 2]()
+[Lösungen Thema 2])(http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil1-Übungsaufgaben1-Loesungen.html)
 
 ## Videos
 
-[Videos Thema 2]()
+[Videos Thema 2](https://youtube.com/playlist?list=PLRR4REmBgpIFVdesZy-AkPdbO0fhnpJO-)
 

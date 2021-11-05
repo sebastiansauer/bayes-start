@@ -69,3 +69,10 @@ Sie können ...
 
 # Kapitel 6
 
+- Typische, deskriptive Forschungsfragen spezifizieren als Regression
+- Forschungsfragen in Regressionsterme übersetzen
+- typische Forschungsfragen auswerten
+
+
+
+
