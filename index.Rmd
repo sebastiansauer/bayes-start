@@ -186,7 +186,7 @@ output:
 
 ## Lösungen
 
-[Lösungen Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Loesungen.html)
+[Lösungen Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema4-Übungsaufgaben-Loesungen1.html)
 
 ## Videos
 
@@ -222,18 +222,19 @@ output:
 
 ## Quellcode zum Skript
 
-[Quellcode zum Skript 4](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.Rmd)
+[Quellcode zum Skript 5](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.Rmd)
 
 
-[Aufgaben Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema5-Aufgaben1.html)
+[Aufgaben Kapitel 5](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema5-Aufgaben1.html)
 
 
 ## Lösungen
 
-[Lösungen Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema5-Loesungen.html)
+[Lösungen Kapitel 5](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema5-Loesungen1.html)
 
 ## Videos
 
+[Videos Kapitel 5](https://youtube.com/playlist?list=PLRR4REmBgpIFbtKyjfJGd8Nr2htQo0mP1)
 
 
 ---
