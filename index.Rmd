@@ -13,6 +13,69 @@ output:
    
 ---
 
+```{r global-knitr-options, include=FALSE}
+  knitr::opts_chunk$set(
+  fig.pos = 'H',
+  fig.asp = 0.618,
+  fig.align='center',
+  fig.width = 5,
+  out.width = "100%",
+  fig.cap = "", 
+  fig.path = "chunk-img/",
+  dpi = 300,
+  # tidy = TRUE,
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  cache = FALSE,
+  fig.show = "hold")
+```
+
+
+
+```{r bib, cache=FALSE}
+library(RefManageR)
+BibOptions(check.entries = FALSE, 
+           bib.style = "authoryear", 
+           style = "markdown",
+           max.names = 5,
+           dashed = TRUE,
+           no.print.fields = 
+             c("url", "page","isbn", "location", "urldate", "note", "urldate", "issn")
+           )
+bib_file <- "bib.bib"
+bib <- ReadBib(bib_file)
+```
+
+
+**WORK IN PROGRESS**
+
+
+*Bayes-Start* ist ein frei verfügbarer Einführungskurs in die Bayes-Statistik.
+Ziel ist, die grundlegende Logik von Bayes-Inferenz zu vermitteln und zu zeigen, 
+wie man mit linearen Modellen viele typische Forschungsfragen beantworten kann.
+Ein wichtiger Baustein betrifft kausale Überlegungen,
+also die Frage, wie man kausale Forschungsfragen statistisch umsetzt und beurteilt.
+Als Software wird R verwendet `r RefManageR::Citep(bib, "RCoreTeam2015")`
+; für Bayes wird `rstan_arm` verwendet `r RefManageR::Citep(bib, "goodrich_rstanarm_2020")`.
+Inhaltlich wird zum Teil auf Richard McElreath's hervorragenden Lehrbuch,
+*Statistical Rethinking* aufgebaut `r RefManageR::Citep(bib, "mcelreath_statistical_2020")`.
+Außerdem stellt Gelman's et al. neuem,
+ebenfalls sehr gutem Lehrbuch *Regression and other Stories* `r RefManageR::Citep(bib, "gelman_regression_2021")`
+eine Grundlage für die Inhalte dieses Kurses dar.
+Beide Bücher sind als Lektüre zu empfehlen.
+
+
+
+
+
+
+```{r}
+citation("rstanarm")
+print(citation("rstanarm"), bibtex=TRUE)
+```
+
+
 
 
 # Hinweise
@@ -25,30 +88,34 @@ output:
 - [Übergreifende Lernziele](https://sebastiansauer.github.io/bayes-start/Lernziele.html#übergreifende-lernziele))
 
 
+- Mitarbeit oder Verbesserungsvorschläge: am besten als [Github Issue](https://github.com/sebastiansauer/bayes-start/issues) einstellen.
 
 
-# Kapitel 1
+
+# Kapitel
+
+## Kapitel 1
 
 **Was ist Inferenz?**
 
-## Lernziele
+### Lernziele
 
 [Lernziele Kapitel 1](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-1)
 
-## Lektüre
+### Lektüre
 
 *Regression and other stories*, Kap. 1
 
-## PDF-Skript
+### PDF-Skript
 
 [PDF-Skript Kapitel 1](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema1-WasistInferenz.pdf)
 
 
-## Quellcode zum Skript
+### Quellcode zum Skript
 
 [Quellcode zum Skript Kapitel 1](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema1-WasistInferenz.Rmd)
 
-## Aufgaben
+### Aufgaben
 
 
 
@@ -58,13 +125,13 @@ output:
 
 [Aufgaben Kapitel 1, Teil b](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil2-Übungsaufgaben1.html)
 
-## Lösungen
+### Lösungen
 
 [Lösungen Kapitel 1, Teil a](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil1-Übungsaufgaben1-Loesungen.html)
 
 [Lösungen Kapitel 1, Teil b](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil2-Übungsaufgaben1-Loesungen.htm)
 
-## Videos
+### Videos
 
 [Videos Kapitel 1, Teil a](https://youtube.com/playlist?list=PLRR4REmBgpIGK0OsNOmSArj8kNgtMVYj9)
 
@@ -72,39 +139,39 @@ output:
 
 ---
 
-# Kapitel 2
+## Kapitel 2
 
 **Wissen updaten**
 
-## Lernziele
+### Lernziele
 
 [Lernziele Kapitel 2](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-2)
 
-## Lektüre
+### Lektüre
 
 *Statistical Rethinking*, Kap. 2
 
 
 
 
-## PDF-Skript
+### PDF-Skript
 
 [PDF-Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema1-kleineModelle.pdf)
 
 
-## Quellcode zum Skript
+### Quellcode zum Skript
 
 [Quellcode zum Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema1-kleineModelle.pdf)
 
-## Aufgaben
+### Aufgaben
 
 [Aufgaben Kapitel 2](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema2-Übungsaufgaben1.html)
 
-## Lösungen 
+### Lösungen 
 
 [Lösungen Kapitel 2](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema2-Übungsaufgaben1.html)
 
-## Videos
+### Videos
 
 [Videos Kapitel 2](https://youtube.com/playlist?list=PLRR4REmBgpIFVdesZy-AkPdbO0fhnpJO-)
 
@@ -117,41 +184,41 @@ output:
 
 ---
 
-# Kapitel 3
+## Kapitel 3
 
 **Die Posteriori-Verteilung**
 
-## Lernziele
+### Lernziele
 
 [Lernziele Kapitel 3](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-3)
 
-## Lektüre
+### Lektüre
 
 *Statistical Rethinking*, Kap. 3
 
 
-## HTML-Skript
+### HTML-Skript
 
 [HTML-Skript Kapitel 3](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.html#1)
 
-## PDF-Skript
+### PDF-Skript
 
 [PDF-Skript Kapitel 3](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.pdf)
 
-## Quellcode
+### Quellcode
 
 [Quellcode zum Skript 3](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.Rmd)
 
-## Aufgaben
+### Aufgaben
 
 [Aufgaben Kapitel 3](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Übungsaufgaben1.html)
 
 
-## Lösungen
+### Lösungen
 
 [Lösungen Kapitel 3](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Loesungen.html)
 
-## Videos
+### Videos
 
 [Videos Kapitel 3](https://youtube.com/playlist?list=PLRR4REmBgpIE5-LMlRzSCkXVc2_4pZD2u)
 
@@ -163,45 +230,41 @@ output:
 
 
 
-
-
----
-
-# Kapitel 4
+## Kapitel 4
 
 **Gauss-Modelle**
 
-## Lernziele
+### Lernziele
 
 [Lernziele Kapitel 4](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-4)
 
-## Lektüre
+### Lektüre
 
 *Statistical Rethinking*, Kap. 4.1-4.3
 
 
-## HTML-Skript
+### HTML-Skript
 
 [HTML-Skript Kapitel 4](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema4-Gaussmodelle.html#1)
 
-## PDF-Skript
+### PDF-Skript
 
 [PDF-Skript Kapitel 4](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema4-Gaussmodelle.pdf)
 
-## Quellcode zum Skript
+### Quellcode zum Skript
 
 [Quellcode zum Skript 4](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema4-Gaussmodelle.Rmd)
 
-## Aufgaben
+### Aufgaben
 
 [Aufgaben Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema4-Übungsaufgaben1.html)
 
 
-## Lösungen
+### Lösungen
 
 [Lösungen Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema4-Übungsaufgaben-Loesungen1.html)
 
-## Videos
+### Videos
 
 [Videos Kapitel 4](https://youtube.com/playlist?list=PLRR4REmBgpIFhjaRCvDtM91QdZiqOCThX)
 
@@ -212,50 +275,50 @@ output:
 
 
 
-# Kapitel 5
+## Kapitel 5
 
 **Lineare Regression**
 
-## Lernziele
+### Lernziele
 
 [Lernziele Kapitel 5](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-5)
 
-## Lektüre
+### Lektüre
 
 *Statistical Rethinking*, Kap. 4.4, *ROS*, Kap. 9.2
 
 
-## HTML-Skript
+### HTML-Skript
 
 [HTML-Skript Kapitel 5](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.html#1)
 
-## PDF-Skript
+### PDF-Skript
 
 [PDF-Skript Kapitel 5](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.pdf)
 
-## Quellcode zum Skript
+### Quellcode zum Skript
 
 [Quellcode zum Skript 5](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.Rmd)
 
 
-## Aufgaben
+### Aufgaben
 
 [Aufgaben Kapitel 5](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema5-Aufgaben1.html)
 
 
-## Lösungen
+### Lösungen
 
 [Lösungen Kapitel 5](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema5-Loesungen1.html)
 
 
-## Lösungen (PDF)
+### Lösungen (PDF)
 
 [Lösungen Kapitel 5](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema5-Loesungen1.pdf)
 
 
-## Videos
+### Videos
 
-[Videos Kapitel 5](https://youtube.com/playlist?list=PLRR4REmBgpIFbtKyjfJGd8Nr2htQo0mP1)
+[Videos Kapitel 5](https://youtube.com/playlist?list=PLRR4REmBgpIFbtKyjfJG8Nr2htQo0mP1)
 
 
 ---
@@ -267,43 +330,43 @@ output:
 
 
 
-# Kapitel 6
+## Kapitel 6
 
 **Deskriptive Forschungsfragen**
 
-## Lernziele
+### Lernziele
 
 [Lernziele Kapitel 6](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-6)
 
-## Lektüre
+### Lektüre
 
 *ROS*, 10.1-10.4, 11.1-11.4, 11.6, 11.7
 
 
-## HTML-Skript
+### HTML-Skript
 
 [HTML-Skript Kapitel 6](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.html#1)
 
-## PDF-Skript
+### PDF-Skript
 
 [PDF-Skript Kapitel 6](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.pdf)
 
-## Quellcode zum Skript
+### Quellcode zum Skript
 
 [Quellcode zum Skript 6](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.Rmd)
 
 
-## Aufgaben
+### Aufgaben
 
 [Aufgaben Kapitel 6](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema6-Aufgaben1.html)
 
 
-## Lösungen
+### Lösungen
 
 [Lösungen Kapitel 6](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema6-Loesungen1.html)
 
 
-## Videos
+### Videos
 
 [Videos zu Kapitel 6](https://youtube.com/playlist?list=PLRR4REmBgpIFctMPlE1jqV9MaGaLGoVG3)
 
@@ -311,26 +374,26 @@ output:
 ---
 
 
-# Kapitel 7
+## Kapitel 7
 
 
 
 **Fallstudien zur grundlegenden Bayes-Modellierung und ihrer Grenzen**
 
-## Lernziele
+### Lernziele
 
 [Lernziele Kapitel 7](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-7)
 
-## Lektüre
+### Lektüre
 
 - kein wesentlicher neuer Stoff -
 
 
-## Fallstudie 1
+### Fallstudie 1
 
 [Fallstudie Filmbewertungen](https://sebastiansauer.github.io/QM2-Folien/Themen/Fallstudien/Thema5-Fallstudie.html)
 
-## Fallstudie 2
+### Fallstudie 2
 
 [Fallstudie Coronazahlen des RKI](https://data-se.netlify.app/2021/11/27/analyse-der-rki-coronadaten/)
 
@@ -338,10 +401,6 @@ output:
 
 
 
-
-
-
-## Videos
 
 
 
