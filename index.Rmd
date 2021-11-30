@@ -69,15 +69,6 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
-
-```{r}
-citation("rstanarm")
-print(citation("rstanarm"), bibtex=TRUE)
-```
-
-
-
-
 # Hinweise
 
 - Dieser Kurs ist lizensiert unter der [MIT Lizenz](https://github.com/sebastiansauer/bayes-start/blob/main/LICENSE). Das ist eine permissive Lizenz, die erlaubt, dass Sie diesen Kurs frei verwenden können. Sie haben (nur) die Verpflichtung, zu zitieren und auf die Lizenzart hinzuweisen.
@@ -403,6 +394,6 @@ print(citation("rstanarm"), bibtex=TRUE)
 
 
 
+# Literatur
 
 
----
