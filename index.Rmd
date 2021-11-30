@@ -14,6 +14,16 @@ output:
 ---
 
 
+
+# Hinweise
+
+- Dieser Kurs ist lizensiert unter der [MIT Lizenz](https://github.com/sebastiansauer/bayes-start/blob/main/LICENSE). Das ist eine permissive Lizenz, die erlaubt, dass Sie diesen Kurs frei verwenden können. Sie haben (nur) die Verpflichtung, zu zitieren und auf die Lizenzart hinzuweisen.
+
+- [Installation von R und seinen Freunden ](https://data-se.netlify.app/2021/11/30/installation-von-r-und-seiner-freunde/)
+
+- [Übergreifende Lernziele]()
+
+
 # Kapitel 1
 
 **Was ist Inferenz?**
@@ -234,6 +244,12 @@ output:
 
 [Lösungen Kapitel 5](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema5-Loesungen1.html)
 
+
+## Lösungen (PDF)
+
+[Lösungen Kapitel 5](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema5-Loesungen1.pdf)
+
+
 ## Videos
 
 [Videos Kapitel 5](https://youtube.com/playlist?list=PLRR4REmBgpIFbtKyjfJGd8Nr2htQo0mP1)
@@ -258,7 +274,7 @@ output:
 
 ## Lektüre
 
-*ROS*, 10.1-10.4, 11.1-11.4, 11.6
+*ROS*, 10.1-10.4, 11.1-11.4, 11.6, 11.7
 
 
 ## HTML-Skript
@@ -287,6 +303,44 @@ output:
 ## Videos
 
 [Videos zu Kapitel 6](https://youtube.com/playlist?list=PLRR4REmBgpIFctMPlE1jqV9MaGaLGoVG3)
+
+
+---
+
+
+# Kapitel 7
+
+
+
+**Fallstudien zur grundlegenden Bayes-Modellierung und ihrer Grenzen**
+
+## Lernziele
+
+[Lernziele Kapitel 7](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-7)
+
+## Lektüre
+
+- kein wesentlicher neuer Stoff -
+
+
+## Fallstudie 1
+
+[Fallstudie Filmbewertungen](https://sebastiansauer.github.io/QM2-Folien/Themen/Fallstudien/Thema5-Fallstudie.html)
+
+## Fallstudie 2
+
+[Fallstudie Coronazahlen des RKI](https://data-se.netlify.app/2021/11/27/analyse-der-rki-coronadaten/)
+
+
+
+
+
+
+
+
+## Videos
+
+
 
 
 ---

@@ -13,6 +13,18 @@ output:
 
 
 
+# Übergreifende Lernziele
+
+
+Nach Absolvieren dieses Kurses sollten Lernis folgende Lernziele erreicht haben.
+
+
+- Die theoretischen Grundlagen - inklusive dem Rechtfertigungszusammenhang und die Grenzen des Verfahrens - erklären können
+- Bayes-Modellierung im Rahmen von Regressionsmodellen anwenden können für typische, angewandte Forschungsfragen
+- Kausalfragen in statistische Designs umsetzen und auswerten können
+
+
+
 # Kapitel 1
 
 Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
@@ -72,6 +84,15 @@ Sie können ...
 - Typische, deskriptive Forschungsfragen spezifizieren als Regression
 - Forschungsfragen in Regressionsterme übersetzen
 - typische Forschungsfragen auswerten
+
+
+# Kapitel 7
+
+- Bayes-Modellierung in einen angewandten Kontext anwenden können und die Grenzen aufzeigen können
+- Aktuelle Themen - am Beispiel hier der Corona-Pandemie - aufgreifen können und zentrale Statistiken nachprüfen können
+
+
+
 
 
 
