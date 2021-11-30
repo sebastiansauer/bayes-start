@@ -1,5 +1,5 @@
 ---
-title: "Bayes Start"
+title: "Bayes:Start"
 subtitle: "Eine Einführung in die Bayes-Statistik"
 author: "Sebastian Sauer"
 output:
@@ -65,8 +65,8 @@ Als Software wird R verwendet `r RefManageR::Citep(bib, "RCoreTeam2015")`
 ; für Bayes wird `rstan_arm` verwendet `r RefManageR::Citep(bib, "goodrich_rstanarm_2020")`.
 Inhaltlich wird zum Teil auf Richard McElreath's hervorragenden Lehrbuch,
 *Statistical Rethinking* aufgebaut `r RefManageR::Citep(bib, "mcelreath_statistical_2020")`.
-Außerdem stellt Gelman's et al. neuem,
-ebenfalls sehr gutem Lehrbuch *Regression and other Stories* `r RefManageR::Citep(bib, "gelman_regression_2021")`
+Außerdem stellt Gelman's et al. neues,
+ebenfalls sehr gutes Lehrbuch *Regression and other Stories* `r RefManageR::Citep(bib, "gelman_regression_2021")`
 eine Grundlage für die Inhalte dieses Kurses dar.
 Beide Bücher sind als Lektüre zu empfehlen.
 
@@ -382,7 +382,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 ### Lektüre
 
-- kein wesentlicher neuer Stoff -
+- kein wesentlicher neuer Stoff
 
 
 ### Fallstudie 1
@@ -400,5 +400,11 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 # Literatur
+
+```{r Hinweise-1, results='asis', echo=FALSE, cache=FALSE}
+RefManageR::PrintBibliography(bib)
+```
+
+
 
 
