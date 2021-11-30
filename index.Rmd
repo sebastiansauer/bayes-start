@@ -21,7 +21,10 @@ output:
 
 - [Installation von R und seinen Freunden ](https://data-se.netlify.app/2021/11/30/installation-von-r-und-seiner-freunde/)
 
+
 - [Übergreifende Lernziele](https://sebastiansauer.github.io/bayes-start/Lernziele.html#übergreifende-lernziele))
+
+
 
 
 # Kapitel 1
