@@ -47,8 +47,13 @@ bib_file <- "bib.bib"
 bib <- ReadBib(bib_file)
 ```
 
+---
 
 **WORK IN PROGRESS**
+
+---
+
+# tl;dr
 
 
 *Bayes-Start* ist ein frei verfügbarer Einführungskurs in die Bayes-Statistik.
