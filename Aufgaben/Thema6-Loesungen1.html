@@ -854,9 +854,8 @@ Die Frage ist mit den gegebenen Daten nicht zu beantworten.
 <p>Im Folgenden sollen Sie folgende Forschungsfrage untersuchen:</p>
 <p><em>Ist der Zusammenhang von Stress (<code>PSS10_avg</code>, AV) und Neurotizismus (<code>neu</code>, UV) vernachlässigbar klein?</em></p>
 <p>Den Datensatz können Sie so herunterladen (Achtung, groß):</p>
-<pre><code>## Warning: One or more parsing
-## issues, see `problems()` for
-## details</code></pre>
+<pre><code>## Warning: One or more parsing issues,
+## see `problems()` for details</code></pre>
 <p>Hinweise:</p>
 <ul>
 <li>Sie benötigen einen Computer, um diese Aufgabe zu lösen.</li>
@@ -926,11 +925,11 @@ Falsch
 <h4>Aufgabe</h4>
 <p>Einer der (bisher) größten Studien der Untersuchung psychologischer Konsequenzen (oder Korrelate) der Covid-Zeit ist die Studie <a href="https://www.nature.com/articles/s41597-020-00784-9">COVIDiStress</a>.</p>
 <p>Im Folgenden sollen Sie folgende Forschungsfrage untersuchen:</p>
-<p><em>Ist der Unterschied zwischen Männern und Frauen (<code>Dem_gender</code>) im Hinblick zum Zusammenhang von Stress (<code>PSS10_avg</code>, AV) und Neurotizismus (<code>neu</code>, UV) vernachlässigbar klein?</em></p>
+<p><em>Forschungsfrage</em>:</p>
+<p>Ist der Unterschied zwischen Männern und Frauen (<code>Dem_gender</code>) im Hinblick zum Zusammenhang von Stress (<code>PSS10_avg</code>, AV) und Neurotizismus (<code>neu</code>, UV) vernachlässigbar klein?</p>
 <p>Den Datensatz können Sie so herunterladen (Achtung, groß):</p>
-<pre><code>## Warning: One or more parsing
-## issues, see `problems()` for
-## details</code></pre>
+<pre><code>## Warning: One or more parsing issues,
+## see `problems()` for details</code></pre>
 <p>Hinweise:</p>
 <ul>
 <li>Sie benötigen einen Computer, um diese Aufgabe zu lösen.</li>
@@ -958,19 +957,25 @@ Auf Basis der bereitgestellten Informationen ist keine Entscheidung möglich.
 <h4>Lösung</h4>
 <p>Pakete laden:</p>
 <p>Relevante Spalten auswählen:</p>
+<p>Das sind die Variablen:</p>
+<ul>
+<li>Stress</li>
+<li>Neurotizismus</li>
+<li>Geschlecht</li>
+</ul>
 <p>Deskriptive Statistiken zum Datensatz:</p>
 <pre><code>## # A tibble: 2 × 4
-##   variable      n median   iqr
-##   &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
-## 1 neu      108367   3.33  1.33
-## 2 PSS10_a… 116097   2.6   1</code></pre>
+##   variable       n median   iqr
+##   &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+## 1 neu       108367   3.33  1.33
+## 2 PSS10_avg 116097   2.6   1</code></pre>
 <pre><code>## # A tibble: 4 × 2
-##   Dem_gender                 n
-##   &lt;chr&gt;                  &lt;int&gt;
-## 1 Female                 90400
-## 2 Male                   33126
-## 3 Other/would rather no…  1474
-## 4 &lt;NA&gt;                     306</code></pre>
+##   Dem_gender                     n
+##   &lt;chr&gt;                      &lt;int&gt;
+## 1 Female                     90400
+## 2 Male                       33126
+## 3 Other/would rather not say  1474
+## 4 &lt;NA&gt;                         306</code></pre>
 <p>Datensatz aufbereiten:</p>
 <p>Check:</p>
 <pre><code>## # A tibble: 2 × 2
@@ -978,16 +983,23 @@ Auf Basis der bereitgestellten Informationen ist keine Entscheidung möglich.
 ##    &lt;dbl&gt; &lt;int&gt;
 ## 1      0 28371
 ## 2      1 78472</code></pre>
+<p>Check:</p>
+<pre><code>## # A tibble: 3 × 13
+##   variable       n   min   max median
+##   &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Female    106843     0     1   1   
+## 2 neu       106843     1     6   3.33
+## 3 PSS10_avg 106843     1     5   2.6 
+## # … with 8 more variables: q1 &lt;dbl&gt;,
+## #   q3 &lt;dbl&gt;, iqr &lt;dbl&gt;, mad &lt;dbl&gt;,
+## #   mean &lt;dbl&gt;, sd &lt;dbl&gt;, se &lt;dbl&gt;,
+## #   ci &lt;dbl&gt;</code></pre>
 <p>Modell berechnen:</p>
 <p>Modellkoeffizienten auslesen:</p>
-<pre><code>##      (Intercept) 
-##             2.12 
-##              neu 
-##             0.11 
-##           Female 
-##            -2.29 
-## PSS10_avg:Female 
-##             0.92</code></pre>
+<pre><code>##      (Intercept)              neu 
+##             2.12             0.11 
+##           Female PSS10_avg:Female 
+##            -2.29             0.92</code></pre>
 <p>Posteriori-Verteilung auslesen:</p>
 <pre><code>##                   5.5% 94.5%
 ## (Intercept)       2.11  2.13
