@@ -87,7 +87,6 @@ Beide Bücher sind als Lektüre zu empfehlen.
 - Mitarbeit oder Verbesserungsvorschläge: am besten als [Github Issue](https://github.com/sebastiansauer/bayes-start/issues) einstellen.
 
 
-
 # Kapitel
 
 ## Kapitel 1
@@ -405,6 +404,40 @@ Beide Bücher sind als Lektüre zu empfehlen.
 [HTML-Skript Kapitel 8](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema8-Kausalanalyse.html#1)
 
 
+### PDF-Skript
+
+[PDF-Skript Kapitel 8](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema8-Kausalanalyse.pdf)
+
+
+### Aufgaben
+
+[Aufgaben Kapitel 8](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema8-Aufgaben1.html)
+
+
+### Lösungen
+
+[Lösungen Kapitel 8](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema8-Loesungen1.html)
+
+
+
+
+### Lösungen im PDF-Forrmat
+
+[Lösungen Kapitel 8](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema8-Loesungen1.html)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Literatur
 
@@ -414,4 +447,15 @@ RefManageR::PrintBibliography(bib)
 
 
 
+
+# Kudos
+
+Beim Schreiben dieses Kurses habe ich auf der Vorarbeit vieler Menschen aufgebaut.
+Viele Menschen haben mich unterstützt, großzügig und auf verschiedene Weise.
+
+Einige möchte ich herausgreifen, um Danke zu sagen:
+
+- Dem Team des ifes der FOM Hochschule unter Leitung von Bianca Krol und de Masterbrain Karsten Lübke.
+- Richard McElreath für sein inspierendes Lehrbuch.
+- Alle Open-Source-Entwickler, die solche Arbeit überhaupt erst möglichen machen. 💌
 
