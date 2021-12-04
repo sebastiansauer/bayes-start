@@ -86,6 +86,9 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 - Mitarbeit oder Verbesserungsvorschläge: am besten als [Github Issue](https://github.com/sebastiansauer/bayes-start/issues) einstellen.
 
+- Der Quellcode zu den Folien findet sich [hier](https://github.com/sebastiansauer/QM2-Folien).
+
+
 
 # Kapitel
 
