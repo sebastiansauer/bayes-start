@@ -46,6 +46,10 @@ Sie können ...
 
 # Kapitel 2
 
+Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
+
+Sie können ...
+
 
 - die Unterschiede zwischen einem Modell und der Realität erkären und anhand eines Beispiels verdeutlichen
 - das rechnerische Prinzip des "Wissen updaten" an einem konkreten Beispiel erläutern und nachrechnen
@@ -54,6 +58,10 @@ Sie können ...
 
 
 # Kapitel 3
+
+Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
+
+Sie können ...
 
 
 - erläutern und mit R berechnen, wie man eine Posteriori-Verteilung erstellt
@@ -66,6 +74,10 @@ Sie können ...
 
 # Kapitel 4
 
+Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
+
+Sie können ...
+
 - erklären, was eine Verteilung ist und welche Varianten es gibt
 - wissen um den ontologischen Bedingungszusammenhang einer Normalverteilung; sie können erklären, wie eine Normalverteilung entsteht
 - ein Gaussmodell spezifizieren und R berechnen
@@ -74,6 +86,10 @@ Sie können ...
 
 # Kapitel 5
 
+Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
+
+Sie können ...
+
 - die Post-Verteilung für einfache lineare Modelle in R berechnen
 - zentrale Informationen zu Modellparametern - wie Lage- oder Streuungsmaße und auch Schätzintervalle - aus der Post-Verteilung herauslesen
 - künftige, laut Modell zu erwartende Beobachtungen mit der PPV simulieren
@@ -81,15 +97,36 @@ Sie können ...
 
 # Kapitel 6
 
-- Typische, deskriptive Forschungsfragen spezifizieren als Regression
+Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
+
+Sie können ...
+
+- typische, deskriptive Forschungsfragen spezifizieren als Regression
 - Forschungsfragen in Regressionsterme übersetzen
 - typische Forschungsfragen auswerten
 
 
 # Kapitel 7
 
+Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
+
+Sie können ...
+
 - Bayes-Modellierung in einen angewandten Kontext anwenden können und die Grenzen aufzeigen können
-- Aktuelle Themen - am Beispiel hier der Corona-Pandemie - aufgreifen können und zentrale Statistiken nachprüfen können
+- aktuelle Themen - am Beispiel hier der Corona-Pandemie - aufgreifen können und zentrale Statistiken nachprüfen können
+
+
+# Kapitel 8
+
+Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
+
+Sie können ...
+
+
+- erklären, wann eine Kausalaussage gegeben eines DAGs berechtigt ist
+- die "Atome" der Kausalität eines DAGs benennen
+- "kausale Hintertüren" schließen
+
 
 
 
