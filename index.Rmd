@@ -402,6 +402,13 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 **Kausalanalyse**
 
+### Lernziele
+
+[Lernziele Kapitel 7](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-8)
+
+
+
+
 ### HTML-Skript
 
 [HTML-Skript Kapitel 8](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema8-Kausalanalyse.html#1)
