@@ -404,7 +404,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 ### Lernziele
 
-[Lernziele Kapitel 7](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-8)
+[Lernziele Kapitel 8](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-8)
 
 
 
