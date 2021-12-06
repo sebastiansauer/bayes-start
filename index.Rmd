@@ -440,7 +440,12 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
+# Probeklausur
 
+
+[Probeklausur hmtl](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema_Probeklausur-Loesungen1.html)
+
+[Probeklausur Moodle-XML](http://sebastiansauer.github.io/bayes-start/Aufgaben/QM2-Probeklausur_v6.xml)
 
 
 
