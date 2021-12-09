@@ -391,6 +391,8 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 [Fallstudie Filmbewertungen](https://sebastiansauer.github.io/QM2-Folien/Themen/Fallstudien/Thema5-Fallstudie.html)
 
+[Video(s)](https://youtube.com/playlist?list=PLRR4REmBgpIFR226XcTUpot2yC6U0gycd)
+
 ### Fallstudie 2
 
 [Fallstudie Coronazahlen des RKI](https://data-se.netlify.app/2021/11/27/analyse-der-rki-coronadaten/)
