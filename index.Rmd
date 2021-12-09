@@ -113,21 +113,32 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 [Quellcode zum Skript Kapitel 1](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema1-WasistInferenz.Rmd)
 
+
+
 ### Aufgaben
 
+[Aufgaben Kapitel 1a](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1a-Aufgaben1.html)
+
+[Aufgaben Kapitel 1b](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1b-Aufgaben1.html)
 
 
-[Aufgaben Kapitel 1, Teil a](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil1-Übungsaufgaben1.html)
 
-
-
-[Aufgaben Kapitel 1, Teil b](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil2-Übungsaufgaben1.html)
 
 ### Lösungen
 
-[Lösungen Kapitel 1, Teil a](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil1-Übungsaufgaben1-Loesungen.html)
+[Lösungen Kapitel 1a](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1a-Loesungen1.html)
 
-[Lösungen Kapitel 1, Teil b](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1-Teil2-Übungsaufgaben1-Loesungen.htm)
+[Lösungen Kapitel 1b](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1a-Loesungen1.html)
+
+
+
+### Lösungen (PDF)
+
+[Lösungen Kapitel 1a](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1a-Loesungen1.html)
+
+[Lösungen Kapitel 1b](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema1a-Loesungenb.html)
+
+
 
 ### Videos
 
@@ -161,13 +172,27 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 [Quellcode zum Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema1-kleineModelle.pdf)
 
+
+
+
 ### Aufgaben
 
-[Aufgaben Kapitel 2](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema2-Übungsaufgaben1.html)
+[Aufgaben Kapitel 2](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema2-Aufgaben1.html)
 
-### Lösungen 
 
-[Lösungen Kapitel 2](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema2-Übungsaufgaben1.html)
+### Lösungen
+
+[Lösungen Kapitel 2](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema2-Loesungen1.html)
+
+
+### Lösungen (PDF)
+
+[Lösungen Kapitel 2](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema2-Loesungen1.pdf)
+
+
+
+
+
 
 ### Videos
 
@@ -433,7 +458,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
-### Lösungen im PDF-Forrmat
+### Lösungen (PDF)
 
 [Lösungen Kapitel 8](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema8-Loesungen1.html)
 

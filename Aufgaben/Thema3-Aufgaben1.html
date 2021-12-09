@@ -1,0 +1,121 @@
+
+<html>
+
+<head>
+<title>Aufgaben</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+
+<meta charset="UTF-8">
+
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Aufgaben</h2>
+
+<ol>
+<li>
+<h4>Aufgabe</h4>
+<p>Erstellen Sie die Posteriori-Verteilung für den Globusversuch. Nutzen Sie dafür diese Syntax:</p>
+<pre class="text"><code>p_grid &lt;- seq( from=0 , to=1 , length.out=1000 )  # Gitterwerte
+
+prior &lt;- rep( 1 , 1000 )  # Priori-Gewichte
+
+likelihood &lt;- dbinom( 6 , size=9 , prob=p_grid ) 
+
+unstandardisierte_posterior &lt;- likelihood * prior 
+
+posterior &lt;- unstandardisierte_posterior / sum(unstandardisierte_posterior)
+
+# um die Zufallszahlen festzulegen, damit alle die gleichen Zufallswerte bekommen: 
+set.seed(100) 
+
+# Stichproben ziehen aus der Posteriori-Verteilung
+samples &lt;- 
+  tibble(
+    p = sample( p_grid , prob=posterior, size=1e4, replace=TRUE)) %&gt;% 
+  mutate(
+    id = row_number())</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li><p>Wie viel Wahrscheinlichkeitsmasse liegt unter <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.2</mn></mrow><annotation encoding="application/x-tex">p=0.2</annotation></semantics></math>?</p></li>
+<li><p>Wie viel Wahrscheinlichkeitsmasse liegt über <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.8</mn></mrow><annotation encoding="application/x-tex">p=0.8</annotation></semantics></math>?</p></li>
+<li><p>Welcher Anteil der Posteriori-Verteilung liegt zwischen <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.2</mn></mrow><annotation encoding="application/x-tex">p=0.2</annotation></semantics></math> und <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.8</mn></mrow><annotation encoding="application/x-tex">p=0.8</annotation></semantics></math>?</p></li>
+<li><p>Unter welchem Wasseranteil <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> liegen 10% der Posteriori-Verteilung?</p></li>
+<li><p>Über welchem Wasseranteil <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> liegen 10% der Posteriori-Verteilung?</p></li>
+<li><p>Welches <em>schmälstes</em> Intervall von <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> enhält 66% der Posteriori-Wahrscheinlichkeit?</p></li>
+<li><p>Welcher Wertebereich (synonym: Welches Intervall) von <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> enthält 66% der Posteriori-Wahrscheinlichkeit (hier wird <em>Posteriori-Wahrscheinlichkeit</em> syonyom gebraucht zu <em>Posteriori-Verteilung</em>)? Wie nennt man diese Arten von Intervall?</p></li>
+</ol>
+<br/>
+</li>
+<li>
+<h4>Aufgabe</h4>
+<p>Nehmen wir an, wir haben 8 (Wasser-)“Treffer” (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">W=8</annotation></semantics></math>) bei 15 Würfen (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">N=15</annotation></semantics></math>) erhalten (wieder im Globusversuch). Gehen Sie wieder von einer “flachen”, also gleichverteilten, Priori-Verteilung aus.</p>
+<p>Berechnen Sie die Posterori-Verteilung und visualisieren Sie sie. Nutzen Sie die Gittermethode.</p>
+<br/>
+</li>
+<li>
+<h4>Aufgabe</h4>
+<p>Nehmen wir an, wir haben 8 (Wasser-)“Treffer” (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">W=8</annotation></semantics></math>) bei 15 Würfen (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">N=15</annotation></semantics></math>) erhalten (wieder im Globusversuch).</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Führen Sie einen Posteriori-Prädiktiv-Check durch: Erstellen Sie also eine Posteriori-Prädiktiv-Verteilung (PPV). Mit anderen Worten: Erstellen Sie die Stichprobenverteilung, gemittelt über die Posteriori-Wahrscheinlichkeiten des Wasseranteils <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>!</p></li>
+<li><p>Visualisieren Sie die PPV!</p></li>
+<li><p>Was ist die Wahrscheinlichkeit laut PPV 8 von 15 Treffer zu erzielen (also 8 Wasser in 15 Würfen)?</p></li>
+</ol>
+<br/>
+</li>
+<li>
+<h4>Aufgabe</h4>
+<p>Nehmen wir an, wir haben 8 (Wasser-)“Treffer” (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">W=8</annotation></semantics></math>) bei 15 Würfen (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">N=15</annotation></semantics></math>) erhalten (wieder im Globusversuch).</p>
+<p>Berechnen Sie auf Basis der aktuellen Posteriori-Verteilung die Wahrscheinlichkeit für 6 Wasser bei 9 Würfen (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mn>6</mn><mo>,</mo><mi>N</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">W=6, N=9</annotation></semantics></math>).</p>
+<br/>
+</li>
+<li>
+<h4>Aufgabe</h4>
+<p>Nehmen wir an, wir haben 8 (Wasser-)“Treffer” (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">W=8</annotation></semantics></math>) bei 15 Würfen (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">N=15</annotation></semantics></math>) erhalten (wieder im Globusversuch).</p>
+<p>Nehmen Sie dieses Mal <em>keine</em> gleichverteilte Priori-Verteilung an. Stattdessen verwenden Sie einen Priori-Wert von Null solange <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&lt;</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">p &lt; 0.5</annotation></semantics></math> und einen konstanten Wert für <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≥</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">p \ge 0.5</annotation></semantics></math>. Diese Priori-Verteilung kodiert die Information, dass mindestens die Hälfte der Erdoberfläche mit Sicherheit aus Wasser besteht.</p>
+<p>Für alle folgenden Berechnungen, vergleichen Sie Ihre Ergebnisse zu der analogen Analyse mit einem konstanten (gleichverteilten) Priori-Wert!</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Berechnen Sie die Posteriori-Verteilung und visualisieren Sie sie. Nutzen Sie die Gittermethode.</p></li>
+<li><p>Ziehen Sie <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mn>4</mn></msup><annotation encoding="application/x-tex">10^4</annotation></semantics></math> Stichproben aus der Posteriori-Verteilung, die Sie mit der Gittermethode erhalten haben. Berechnen Sie auf dieser Grundlage das 90%-HDPI.</p></li>
+<li><p>Berechnen Sie die PPV für dieses Modell. Was ist die Wahrscheinlichkeit 8 von 15 Treffer zu erzielen laut dieser PPV?</p></li>
+<li><p>Auf Basis der aktuellen Posteriori-Wahrscheinlichkeit: Was ist die Wahrscheinlichkeit für 6 Wasser bei 9 Würfen?</p></li>
+</ol>
+<br/>
+</li>
+<li>
+<h4>Aufgabe</h4>
+<p>Nach einem langen Unitag machen Sie sich auf den Weg nach Hause; ihr Weg führt Sie durch eine dunkle Ecke. Just dort regt sich auf einmal eine Gestalt in den Schatten. Die Person spricht Sie an: „Na, Lust auf ein Spielchen?“. Sie willigen sofort ein. Die Person stellt sich als ein Statistiker vor, dessen Namen nichts zur Sache tue; das Gesicht kommt Ihnen vage bekannt vor. „Pass auf“, erklärt der Statistiker, „wir werfen eine Münze, ich setze auf Zahl“. Dass er auf Zahl setzt, überrascht Sie nicht. „Wenn ich gewinne“, fährt der Statistiker fort, „bekomme ich 10 Euro von Dir, wenn Du gewinnst, bekommst Du 11 Euro von mir. Gutes Spiel, oder?“. Sie einigen sich auf 10 Durchgänge, in denen der Statistiker jedes Mal eine Münze wirft, fängt und dann die oben liegende Seite prüft. Erster Wurf: Zahl! Der Statistiker gewinnt. Pech für Sie. Zweiter Wurf: Zahl! Schon wieder 10 Euro für den Statistiker. Hm. Dritter Wurf: . . . Zahl! Schon wieder. Aber kann ja passieren, bei einer fairen Münze, oder? Vierter Wurf: Zahl! Langsam regen sich Zweifel bei Ihnen. Kann das noch mit rechten Dingen zugehen? Ist die Münze fair? Insgesamt gewinnt der zwielichte Statistiker 8 von 10 Durchgängen.</p>
+<p>Unter leisem Gelächter des Statistikers (und mit leeren Taschen) machen Sie sich von dannen. Hat er falsch gespielt? Wie plausibel ist es, bei 10 Würfen 8 Treffer zu erhalten, wenn die Münze fair ist? Ist das ein häufiges, ein typisches Ereignis oder ein seltenes, untypisches Ereignis bei einer fairen Münze? Wenn es ein einigermaßen häufiges Ereignis sein sollte, dann spricht das für die Fairness der Münze. Zumindest spricht ein Ereignis, welches von einer Hypothese als häufig vorausgesagt wird und schließlich eintritt, nicht gegen eine Hypothese. Zuhause angekommen, denken Sie sich, jetzt müssen Sie erstmal in Ruhe die Posteriori-Verteilung und die PPV ausrechnen!</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Berechnen Sie die Posteriori-Verteilung mit der Gittermethode! Gehen Sie von einer gleichverteilten Priori-Wahrscheinlichkeit aus. Visualisieren Sie sie. Alle folgenden Teil-Fragen bauen auf der Post-Verteilung auf.</p></li>
+<li><p>Wie groß ist die Wahrscheinlichkeit, auf Basis der Post-Verteilung, dass die Münze zugunsten des Dozenten gezinkt ist?</p></li>
+<li><p>Geben Sie das 50%-PI und 50%-HDPI zum Parameterwert (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> der Münze) an!</p></li>
+<li><p>Mit welcher Wahrscheinlichkeit liegt die Trefferchance der Münze zwischen <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>.45</mn></mrow><annotation encoding="application/x-tex">p=.45</annotation></semantics></math> und <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>.55</mn></mrow><annotation encoding="application/x-tex">p=.55</annotation></semantics></math>, ist also nicht “nennenswert” gezinkt?</p></li>
+<li><p>Was ist der wahrscheinlichste Parameterwert (Trefferchance der Münze)?</p></li>
+<li><p>Geben Sie das 90%-PI und 90%-HDPI zu Parameterwert (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> der Münze) an!</p></li>
+<li><p>Berechnen Sie die PPV! Visualisieren Sie sie. Interpretieren Sie die PPV.</p></li>
+<li><p>Diskutieren Sie die Annahme einer Gleichverteilung des Priori-Wertes von <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>!</p></li>
+</ol>
+<br/>
+</li>
+<li>
+<h4>Aufgabe</h4>
+<p>Sie sind kürzlich in ein Startup-Unternehmen eingestiegen. Das Unternehmen versucht, einen Online-Weinhandel aufzubauen. Kern des Unternehmens ist eine künstliche Intelligenz, die versucht, den Kundis den best möglich passenden Wein anzudreh… zu verkaufen.</p>
+<p>Sie haben sich bei Ihrem Bewerbungsgespräch persönlich von der Qualität der Produkte eingehend überzeugt und sind daher hoch motiviert, sich zum Wohle des Unternehmens einzusetzen.</p>
+<p>Kürzlich hat eine Beratungsfirma, die Ihre Kunden im Rahmen einer qualitativen Studie untersucht hat, herausgefunden, dass doch ein beachtlicher Teil von einem Menschen, nicht von einem Roboter (bzw. der KI) beim Wein aussuchen beraten werden möchte. Diesen Anteil von Kunden (die nicht von der KI beraten werden möchten) möchten Sie jetzt genauer bestimmen.</p>
+<p>Dazu haben Sie <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>42</mn></mrow><annotation encoding="application/x-tex">N=42</annotation></semantics></math> Kundis befragt. Gut die Hälfte (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">n=23</annotation></semantics></math>) hat sich zugunsten der KI ausgesprochen; der Rest der Kundis möchte lieber von einem Menschen beraten werden.</p>
+<p>Gehen Sie im Folgenden davon aus, dass die Studie bzw. die erhaltenen Daten von guter Qualität ist (man also keine Probleme wie mangelnde Repräsentativität erwarten muss).</p>
+<p>Verwenden Sie die Gittermethode und gleichverteilte Priori-Werte.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Wie groß ist die Wahrscheinlichkeit, dass die KI-freundlichen Kundis bei Ihnen überwiegen?</p></li>
+<li><p>Wie groß ist die Wahrscheinlichkeit (laut Modell), dass künftig eine Mehrheit an KI-freundlichen Kundis zu <em>beobachten</em> sein wird?</p></li>
+<li><p>Wenn Sie nur eine Zahl angeben dürften: Was ist Ihr Schätzwert zum Anteil der KI-Freunde (in dieser Studie)?</p></li>
+</ol>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>
