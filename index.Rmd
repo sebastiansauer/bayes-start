@@ -3,6 +3,7 @@ title: "Bayes:Start"
 subtitle: "Eine Einführung in die Bayes-Statistik"
 author: "Sebastian Sauer"
 output:
+   
   rmdformats::downcute:
     self_contained: true
     thumbnails: true
@@ -10,7 +11,8 @@ output:
     gallery: false
     highlight: tango
     number_sections: TRUE
-   
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r global-knitr-options, include=FALSE}
@@ -232,14 +234,25 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 [Quellcode zum Skript 3](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.Rmd)
 
+
+
 ### Aufgaben
 
-[Aufgaben Kapitel 3](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Übungsaufgaben1.html)
+[Aufgaben Kapitel 3](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Aufgaben1.html)
 
 
 ### Lösungen
 
-[Lösungen Kapitel 3](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Loesungen.html)
+[Lösungen Kapitel 3](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Loesungen1.html)
+
+
+### Lösungen (PDF)
+
+[Lösungen Kapitel 3](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema3-Loesungen1.pdf)
+
+
+
+
 
 ### Videos
 
@@ -278,14 +291,25 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 [Quellcode zum Skript 4](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema4-Gaussmodelle.Rmd)
 
+
+
 ### Aufgaben
 
-[Aufgaben Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema4-Übungsaufgaben1.html)
+[Aufgaben Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema4-Aufgaben1.html)
 
 
 ### Lösungen
 
-[Lösungen Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema4-Übungsaufgaben-Loesungen1.html)
+[Lösungen Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema4-Loesungen1.html)
+
+
+### Lösungen (PDF)
+
+[Lösungen Kapitel 4](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema4-Loesungen1.pdf)
+
+
+
+
 
 ### Videos
 
