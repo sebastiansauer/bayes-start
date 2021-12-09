@@ -436,16 +436,31 @@ Beide Bücher sind als Lektüre zu empfehlen.
 - kein wesentlicher neuer Stoff
 
 
-### Fallstudie 1
+### Skript
+
 
 [Fallstudie Filmbewertungen](https://sebastiansauer.github.io/QM2-Folien/Themen/Fallstudien/Thema5-Fallstudie.html)
 
-[Video(s)](https://youtube.com/playlist?list=PLRR4REmBgpIFR226XcTUpot2yC6U0gycd)
 
-### Fallstudie 2
+
+
+
 
 [Fallstudie Coronazahlen des RKI](https://data-se.netlify.app/2021/11/27/analyse-der-rki-coronadaten/)
 
+
+### Quellcode
+
+[Quellcode zur Fallstudie 1](https://github.com/sebastiansauer/QM2-Folien/blob/main/Themen/Fallstudien/Thema5-Fallstudie.Rmd)
+
+[Quellcode zur Fallstudie 2](https://github.com/sebastiansauer/sesa-blog/blob/main/content/post/2021-11-27-analyse-der-rki-coronadaten/index.Rmd)
+
+
+
+### Videos
+
+
+[Video(s) zur Fallstudie 1](https://youtube.com/playlist?list=PLRR4REmBgpIFR226XcTUpot2yC6U0gycd)
 
 
 
