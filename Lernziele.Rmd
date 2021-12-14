@@ -129,6 +129,16 @@ Sie können ...
 
 
 
+# Kapitel 9
+
+
+Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
+
+Sie können ...
+
+- Regressionsmodelle für binäre AV berechnen
+- einen Logit in Wahrscheinlichkeit umrechnen
+- logistische Regressionsmodelle interpretieren und kritisieren
 
 
 

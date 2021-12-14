@@ -505,6 +505,33 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
+## Thema 9
+
+**Binäre AV**
+
+### Lernziele
+
+[Lernziele Kapitel 9](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-9)
+
+
+
+
+### HTML-Skript
+
+[HTML-Skript Kapitel 9](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema-Binaere-AV.html#1)
+
+
+### PDF-Skript
+
+[PDF-Skript Kapitel 8](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema9-Binaere-AV.pdf)
+
+
+
+
+
+
+
+
 
 # Probeklausur
 
