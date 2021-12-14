@@ -23,9 +23,10 @@ Nach Absolvieren dieses Kurses sollten Lernis folgende Lernziele erreicht haben.
 - Bayes-Modellierung im Rahmen von Regressionsmodellen anwenden können für typische, angewandte Forschungsfragen
 - Kausalfragen in statistische Designs umsetzen und auswerten können
 
+# Lernziele pro Kapitel
 
 
-# Kapitel 1
+## Kapitel 1
 
 Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
 
@@ -44,7 +45,7 @@ Sie können ...
 - einfache Fragen aus der Wahrscheinlichkeitstheorie berechnen
 
 
-# Kapitel 2
+## Kapitel 2
 
 Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
 
@@ -57,7 +58,7 @@ Sie können ...
 
 
 
-# Kapitel 3
+## Kapitel 3
 
 Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
 
@@ -72,7 +73,7 @@ Sie können ...
 
 
 
-# Kapitel 4
+## Kapitel 4
 
 Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
 
@@ -84,7 +85,7 @@ Sie können ...
 - an Beispielen verdeutlichen, wie sich eine vage bzw. eine informationsreiche Priori-Verteilung auf die Posteriori-Verteilung auswirkt
 
 
-# Kapitel 5
+## Kapitel 5
 
 Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
 
@@ -95,7 +96,7 @@ Sie können ...
 - künftige, laut Modell zu erwartende Beobachtungen mit der PPV simulieren
 
 
-# Kapitel 6
+## Kapitel 6
 
 Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
 
@@ -106,7 +107,7 @@ Sie können ...
 - typische Forschungsfragen auswerten
 
 
-# Kapitel 7
+## Kapitel 7
 
 Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
 
@@ -116,7 +117,7 @@ Sie können ...
 - aktuelle Themen - am Beispiel hier der Corona-Pandemie - aufgreifen können und zentrale Statistiken nachprüfen können
 
 
-# Kapitel 8
+## Kapitel 8
 
 Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
 
@@ -129,7 +130,7 @@ Sie können ...
 
 
 
-# Kapitel 9
+## Kapitel 9
 
 
 Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
