@@ -518,7 +518,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 ### HTML-Skript
 
-[HTML-Skript Kapitel 9](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema-Binaere-AV.html#1)
+[HTML-Skript Kapitel 9](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema9-Binaere-AV.html#1)
 
 
 ### PDF-Skript
