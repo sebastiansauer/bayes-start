@@ -2,6 +2,7 @@
 title: "Bayes:Start"
 subtitle: "Eine Einführung in die Bayes-Statistik"
 author: "Sebastian Sauer"
+date: "Letzte Aktualisierung: `r Sys.time()´"
 output:
    
   rmdformats::downcute:
