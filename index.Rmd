@@ -360,7 +360,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 ### Lösungen (PDF)
 
-[Lösungen Kapitel 5](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema5-Loesungen1.pdf)
+[Lösungen Kapitel 5 als PDF](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema5-Loesungen1.pdf)
 
 
 ### Videos
@@ -411,6 +411,12 @@ Beide Bücher sind als Lektüre zu empfehlen.
 ### Lösungen
 
 [Lösungen Kapitel 6](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema6-Loesungen1.html)
+
+
+
+### Lösungen (PDF)
+
+[Lösungen Kapitel 6 als PDF](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema6-Loesungen1.pdf)
 
 
 ### Videos
@@ -499,7 +505,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 ### Lösungen (PDF)
 
-[Lösungen Kapitel 8](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema8-Loesungen1.html)
+[Lösungen Kapitel 8](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema8-Loesungen1.pdf)
 
 
 
