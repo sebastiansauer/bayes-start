@@ -530,7 +530,26 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 ### PDF-Skript
 
-[PDF-Skript Kapitel 8](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema9-Binaere-AV.pdf)
+[PDF-Skript Kapitel 9](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema9-Binaere-AV.pdf)
+
+
+
+### Aufgaben
+
+[Aufgaben Kapitel 9](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema9-Aufgaben1.html)
+
+
+### Lösungen
+
+[Lösungen Kapitel 9](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema9-Loesungen1.html)
+
+
+
+
+### Lösungen (PDF)
+
+[Lösungen Kapitel 9](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema9-Loesungen1.pdf)
+
 
 
 
