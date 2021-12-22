@@ -2,7 +2,7 @@
 title: "Bayes:Start"
 subtitle: "Eine Einführung in die Bayes-Statistik"
 author: "Sebastian Sauer"
-date: "Letzte Aktualisierung: `r Sys.time()´"
+date: "Letzte Aktualisierung: `r Sys.time()`"
 output:
    
   rmdformats::downcute:
@@ -95,7 +95,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 # Kapitel
 
-## Kapitel 1
+## Kapitel 1: Was ist Inferenz?
 
 **Was ist Inferenz?**
 
@@ -151,7 +151,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 ---
 
-## Kapitel 2
+## Kapitel 2: Wissen updaten
 
 **Wissen updaten**
 
@@ -210,7 +210,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 ---
 
-## Kapitel 3
+## Kapitel 3: Die Post-Verteilung
 
 **Die Posteriori-Verteilung**
 
@@ -267,7 +267,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
-## Kapitel 4
+## Kapitel 4: Gauss-Modelle
 
 **Gauss-Modelle**
 
@@ -323,7 +323,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
-## Kapitel 5
+## Kapitel 5: Lineare Modelle
 
 **Lineare Regression**
 
@@ -378,7 +378,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
-## Kapitel 6
+## Kapitel 6: Metrische AV
 
 **Deskriptive Forschungsfragen**
 
@@ -428,7 +428,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 ---
 
 
-## Kapitel 7
+## Kapitel 7: Fallstudien
 
 
 
@@ -471,7 +471,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
-## Thema 8
+## Thema 8: Kausalanalyse
 
 **Kausalanalyse**
 
@@ -512,7 +512,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
-## Thema 9
+## Thema 9: Binäre AV
 
 **Binäre AV**
 
