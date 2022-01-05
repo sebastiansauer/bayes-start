@@ -555,6 +555,40 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
+## Thema 10: Abschluss
+
+**Binäre AV**
+
+### Lernziele
+
+[Lernziele Kapitel 10](https://sebastiansauer.github.io/bayes-start/Lernziele.html#kapitel-10)
+
+
+
+
+### HTML-Skript
+
+[HTML-Skript Kapitel 10](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema10-Abschluss.html#1)
+
+
+### PDF-Skript
+
+[PDF-Skript Kapitel 10](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema10-Abschluss.pdf)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -589,7 +623,7 @@ Viele Menschen haben mich unterstützt, großzügig und auf verschiedene Weise.
 
 Einige möchte ich herausgreifen, um Danke zu sagen:
 
-- Dem Team des ifes der FOM Hochschule unter Leitung von Bianca Krol und de Masterbrain Karsten Lübke.
-- Richard McElreath für sein inspierendes Lehrbuch.
-- Alle Open-Source-Entwickler, die solche Arbeit überhaupt erst möglichen machen. 💌
+- Kollegis wie Karsten Lübke, von dem ich viel gelernt habe.
+- Richard McElreath für sein inspirierendes Lehrbuch.
+- Alle Open-Source-Entwickler, die Projekte wie dieses überhaupt erst möglichen machen. 💌
 

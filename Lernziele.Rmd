@@ -143,5 +143,18 @@ Sie können ...
 
 
 
+## Kapitel 10
+
+Nach Absolvieren des jeweiligen Kapitel sollen folgende Lernziele erreicht sein.
+
+Sie können ...
+
+- erläutern, wie Sie eine typische, sozialwissenschaftliche Forschungsfrage (quantitativ) untersuchen
+- typische "Lieblingsfehler" benennen und Wege aufzeigen, um die Fehler zu umgehen
+- zwischen den Grundkonzepten der Frequentististischen Statistik und der Bayes-Statistik übersetzen
+- die Grundideen der Bayes-Statistik in eine Gesamtzusammenhang einordnen
+
+
+
 
 
