@@ -168,12 +168,12 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 ### PDF-Skript
 
-[PDF-Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema1-kleineModelle.pdf)
+[PDF-Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema2-kleineModelle.pdf)
 
 
 ### Quellcode zum Skript
 
-[Quellcode zum Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema1-kleineModelle.pdf)
+[Quellcode zum Skript Kapitel 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema2-kleineModelle.pdf)
 
 
 
