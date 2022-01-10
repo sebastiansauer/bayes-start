@@ -509,7 +509,9 @@ Beide Bücher sind als Lektüre zu empfehlen.
 [Lösungen Kapitel 8](http://sebastiansauer.github.io/bayes-start/Aufgaben/Thema8-Loesungen1.pdf)
 
 
+### Videos 
 
+[Videos Thema 8](https://youtube.com/playlist?list=PLRR4REmBgpIHF5z7Z6IZO0mRi2Xjemz-T)
 
 
 ## Thema 9: Binäre AV
@@ -552,6 +554,9 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
+### Videos
+
+[Videos Thema 9](https://youtube.com/playlist?list=PLRR4REmBgpIEMCWnglgO5DAwsHhccjQZe)
 
 
 
@@ -576,6 +581,10 @@ Beide Bücher sind als Lektüre zu empfehlen.
 [PDF-Skript Kapitel 10](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema10-Abschluss.pdf)
 
 
+
+### Videos
+
+[Videos Thema 10 (Abschluss)](https://youtube.com/playlist?list=PLRR4REmBgpIGuVrNJzF17PLlaLYQo-Nx-)
 
 
 
