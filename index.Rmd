@@ -65,7 +65,7 @@ wie man mit linearen Modellen viele typische Forschungsfragen beantworten kann.
 Ein wichtiger Baustein betrifft kausale Überlegungen,
 also die Frage, wie man kausale Forschungsfragen statistisch umsetzt und beurteilt.
 Als Software wird R verwendet `r RefManageR::Citep(bib, "RCoreTeam2015")`
-; für Bayes wird `rstan_arm` verwendet `r RefManageR::Citep(bib, "goodrich_rstanarm_2020")`.
+; für Bayes-Modellierung wird das R-Paket `rstanarm` verwendet `r RefManageR::Citep(bib, "goodrich_rstanarm_2020")`.
 Inhaltlich wird zum Teil auf Richard McElreath's hervorragenden Lehrbuch,
 *Statistical Rethinking* aufgebaut `r RefManageR::Citep(bib, "mcelreath_statistical_2020")`.
 Außerdem stellt Gelman's et al. neues,
