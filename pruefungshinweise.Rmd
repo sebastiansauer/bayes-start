@@ -70,7 +70,7 @@ Nichtbeachten von Prüfungshinweisen kann zu Punkteabzug oder Nichtbestehen füh
 - Denken Sie daran, sich rechtzeitig für Prüfungsleistungen anzumelden; beachten Sie die Fristen.
 - Die Termine für die Wiederholungsprüfungen werden stets zusammen/zeitgleich mit denen der regulären Prüfungen in Primuss bekannt gegeben. 
 - Wird ein Modul im laufenden Semester nicht angeboten, gibt es eine Wiederholungsprüfung nur für Studentis, die durchgefallen sind. Abweichend davon kann ei Dozenti die Prüfung für alle Studentis anbieten. Die Entscheidung, ob eine Wiederholungsprüfung in diesem Fall angeboten wird, obliegt der Dozentin bzw. dem Dozenten des Moduls. 
-- Relevanter Stoff und formale Bedingungen (wie Prüfungsformform) sind grundsätzlich identisch zur letzten abgehaltenen Prüfung des Moduls (d.h. sofern nicht anders angegeben). Daher sind Wiederholungsprüfungen vom Anspruch vergleichbar wie die reguläre Klausur. Die Prüfungen sollen möglichst gleich vom Anspruch sein, um Fairness zu gewährleisten.
+- Relevanter Stoff und formale Bedingungen (wie Prüfungsform) sind grundsätzlich identisch zur letzten abgehaltenen Prüfung des Moduls (d.h. sofern nicht anders angegeben). Daher sind Wiederholungsprüfungen vom Anspruch vergleichbar wie die reguläre Klausur. Die Prüfungen sollen möglichst gleich vom Anspruch sein, um Fairness zu gewährleisten.
 - Beachten Sie immer die Hinweise, die für die Wiederholungsprüfung angegeben sind. Im Einzelfall keine eine Wiederholungsprüfung von der vorherigen Prüfung stärker abweichen. Es gelten immer die Regeln, die dis Dozenti bei der jeweiligen Wiederholungsprüfung veröffentlicht hat.
 - Wird ein Modul im laufenden Semester angeboten, so gibt es keine Wiederholungsprüfung. Stattdessen können Sie ggf. an der regulären Klausur des Moduls teilnehmen. Es gilt der aktuelle Stoff bzw. die aktuellen formalen Bedingungen. Es ist möglich, dass der Stoff sich dann substanziell ändert; meist halten sich die Änderungen (im Stoff) aber in Rahmen.
 - Sprechen Sie die Moduldozentis an für Details zur Prüfung (bzw. lesen Sie vorab auf jeweiligen Modulseite in Moodle nach).
@@ -127,7 +127,7 @@ Nichtbeachten von Prüfungshinweisen kann zu Punkteabzug oder Nichtbestehen füh
 - Eine Teilnahme an der Prüfung ist nur möglich, wenn Sie den Teilnahmebedingungen der Prüfung zustimmen.
 - Die Aufgabenstellung der Prüfung wird nur während des Prüfungszeitraumes angezeigt.
 - Beachten Sie eine etwaige Gruppenteilung (zu welcher Gruppe Sie zugeteilt sind). 
-- Beachten Sie die exakte Prüfungszeit (Beginn, Ende). 
+- Beachten Sie die exakte Prüfungsuhrzeit (Beginn, Ende). 
 - Prüfungszeitraum, Aufgabenstellung und sonstige Materialien können variieren zwischen den Prüflingen etwa aufgrund von Gruppeneinteilungen oder Nachteilsausgleich.
 - Die zusätzliche Bearbeitungszeit bei Studentis mit Nachteilsausgleich ist in der Aufgabenstellung bzw. der Prüfung in Moodle hinterlegt. Die Zeit wird automatisch um den jeweiligen Faktor erhöht.
 
