@@ -84,7 +84,7 @@ Beide Bücher sind als Lektüre zu empfehlen.
 - [Installation von R und seinen Freunden ](https://data-se.netlify.app/2021/11/30/installation-von-r-und-seiner-freunde/)
 
 
-- [Übergreifende Lernziele](https://sebastiansauer.github.io/bayes-start/Lernziele.html#übergreifende-lernziele))
+- [Übergreifende Lernziele](https://sebastiansauer.github.io/bayes-start/Lernziele.html#übergreifende-lernziele)
 
 
 - Mitarbeit oder Verbesserungsvorschläge: am besten als [Github Issue](https://github.com/sebastiansauer/bayes-start/issues) einstellen.
@@ -611,6 +611,20 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
+
+# Weiterführendes Material
+
+## Video zu Bayes
+
+[YouTube-Playlist](https://youtube.com/playlist?list=PLRR4REmBgpIFRDF5WvsNM9Bqj_bhYJLHG)
+
+Bei [3blue1brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) finden sich einige sehr gut gemachte Videos zu den Grundlagen von Bayes' Theorem (nicht zum Modellieren).
+
+
+
+# Prüfungshinweise
+
+Bitte lesen Sie [hier](https://sebastiansauer.github.io/bayes-start/pruefungshinweise.html) die Prüfungshinweise.
 
 
 

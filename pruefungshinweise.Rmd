@@ -20,7 +20,7 @@ editor_options:
   knitr::opts_chunk$set(
   fig.pos = 'H',
   fig.asp = 0.618,
-  fig.align='center',
+  fig.align ='center',
   fig.width = 5,
   out.width = "100%",
   fig.cap = "", 
@@ -63,31 +63,23 @@ d.h. soweit nicht anders in der jeweiligen Prüfung bzw. der jeweiligen Aufgabe 
 Nichtbeachten von Prüfungshinweisen kann zu Punkteabzug oder Nichtbestehen führen.
 
 
+
 ## Wiederholungsprüfungen
 
 - Wenn Sie bei einer Prüfung durchgefallen sein sollten, so haben Sie grundsätzlich die Möglichkeit, die Prüfung zu wiederholen.
-
 - Denken Sie daran, sich rechtzeitig für Prüfungsleistungen anzumelden; beachten Sie die Fristen.
-
 - Die Termine für die Wiederholungsprüfungen werden stets zusammen/zeitgleich mit denen der regulären Prüfungen in Primuss bekannt gegeben. 
-
 - Wird ein Modul im laufenden Semester nicht angeboten, gibt es eine Wiederholungsprüfung nur für Studentis, die durchgefallen sind. Abweichend davon kann ei Dozenti die Prüfung für alle Studentis anbieten. Die Entscheidung, ob eine Wiederholungsprüfung in diesem Fall angeboten wird, obliegt der Dozentin bzw. dem Dozenten des Moduls. 
-
-- Relevanter Stoff und formale Bedingungen (wie Klausurform) sind grundsätzlich identisch zur letzten abgehaltenen Prüfung des Moduls (d.h. sofern nicht anders angegeben). Daher sind Wiederholungsprüfungen vom Anspruch vergleichbar wie die reguläre Klausur. Die Prüfungen sollen möglichst gleich vom Anspruch sein, um Fairness zu gewährleisten.
-
+- Relevanter Stoff und formale Bedingungen (wie Prüfungsformform) sind grundsätzlich identisch zur letzten abgehaltenen Prüfung des Moduls (d.h. sofern nicht anders angegeben). Daher sind Wiederholungsprüfungen vom Anspruch vergleichbar wie die reguläre Klausur. Die Prüfungen sollen möglichst gleich vom Anspruch sein, um Fairness zu gewährleisten.
 - Beachten Sie immer die Hinweise, die für die Wiederholungsprüfung angegeben sind. Im Einzelfall keine eine Wiederholungsprüfung von der vorherigen Prüfung stärker abweichen. Es gelten immer die Regeln, die dis Dozenti bei der jeweiligen Wiederholungsprüfung veröffentlicht hat.
-
 - Wird ein Modul im laufenden Semester angeboten, so gibt es keine Wiederholungsprüfung. Stattdessen können Sie ggf. an der regulären Klausur des Moduls teilnehmen. Es gilt der aktuelle Stoff bzw. die aktuellen formalen Bedingungen. Es ist möglich, dass der Stoff sich dann substanziell ändert; meist halten sich die Änderungen (im Stoff) aber in Rahmen.
-
 - Sprechen Sie die Moduldozentis an für Details zur Prüfung (bzw. lesen Sie vorab auf jeweiligen Modulseite in Moodle nach).
-
 - Manchmal fragen Studentis nach einer Empfehlung, ob es besser ist, eine Prüfung zu verschieben, wenn man sich nicht ausreichend vorbereiten konnte. Es ist schwer, eine Empfehlung pauschal abzugeben, es kommt auf den Einzelfall an. Grundsätzlich rate ich aber dazu, Prüfungen nicht zu verschieben: Schließlich könnte in einem folgenden Semester wieder ein unvorhergesehenes Problem auftreten.
-
 - Bei Fragen zum Prüfungsrecht sprechen Sie bitte die Studienberatung an.
 
 
-## Bearbeitungshinweise
 
+## Bearbeitungshinweise
 
 - Verwenden Sie Standardwerte (defaults) der R-Funktionen.
 - Runden Sie auf eine Dezimalstelle.
@@ -110,7 +102,6 @@ Nichtbeachten von Prüfungshinweisen kann zu Punkteabzug oder Nichtbestehen füh
 
 
 # Teilnahmebedingungen
-
 
 - Die Prüfung ist selbständig, also alleine nur durch Sie, ohne Hilfe Dritter, zu absolvieren.
 - Die Bearbeitungszeiten der Prüfung sind einzuhalten.
@@ -141,9 +132,8 @@ Nichtbeachten von Prüfungshinweisen kann zu Punkteabzug oder Nichtbestehen füh
 - Die zusätzliche Bearbeitungszeit bei Studentis mit Nachteilsausgleich ist in der Aufgabenstellung bzw. der Prüfung in Moodle hinterlegt. Die Zeit wird automatisch um den jeweiligen Faktor erhöht.
 
 
+
 # Open-Book-Prüfungen 
-
-
 
 Einige Prüfungen werden als “Take-home-Prüfung” im “Open-Book-Format” geschrieben. Was bedeutet dies?
 
@@ -158,9 +148,11 @@ Ihre Prüferin/Ihr Prüfer informiert Sie, über das Format Ihrer Prüfung.
 Wir wissen, dass diese Prüfungsart für Sie neu und unvertraut ist. Trotzdem bietet Sie viele Vorteile für Sie: Sie können Ihre Prüfungsleistung digital, ortsunabhängig erbringen und müssen sich nicht vor Ort an der HAW Ansbach einfinden (keine langen Einlasszeiten, kein Infektionsrisiko). Darüber hinaus sind Aufgaben, die die (Anwendungs-)Kompetenz abprüfen im Gegensatz zur reinen Wissensprüfung besser machbar.
 
 
+
 ## Zeitrahmen der Prüfung
 
 Die Prüfung beginnt und endet zu einem festen Zeitpunkt. Sie sind selber verantwortlich, die Prüfung zur korrekten Zeit zu beginnen und zu beenden (einzureichen). Verspätete Abgaben werden u.U. als nicht bestanden gewertet. Die Dauer der Prüfung wird Ihnen von Ihrer Prüferin bzw. Ihrem Prüfer bekannt gegeben. 
+
 
 
 ## Technische und organisatorische Anforderungen einer Take-Home-Prüfung
@@ -171,6 +163,7 @@ Um an einer Take-Home-Prüfung teilzunehmen, benötigen Sie IT-Ausstattung sowie
 ## Technische Probleme während der Prüfung
 
 Im Falle eines technischen Problems auf Seiten der Prüfungsinfrastruktur ist sofort der Prüfer zu informieren. Ein Beispiel für so ein Problem wäre etwa der Ausfall von Moodle. Der technische Fehler ist zu dokumentieren (z.B. Screenshot) und die Dokumentation ist einzureichen. Bitte beachten Sie, dass der Prüfer bzw. die Hochschule keine Gewähr übernimmt für Probleme mit Ihrer eigenen Ausstattung.
+
 
 
 ## Prüfungsrecht
