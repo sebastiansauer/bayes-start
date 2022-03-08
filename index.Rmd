@@ -1,6 +1,6 @@
 ---
 title: "Bayes:Start"
-subtitle: "Eine Einführung in die Bayes-Statistik"
+subtitle: "Eine Einführung in die Bayes-Statistik (work in progress)"
 author: "Sebastian Sauer"
 date: "Letzte Aktualisierung: `r Sys.time()`"
 output:
@@ -52,9 +52,20 @@ bib <- ReadBib(bib_file)
 
 ---
 
-**WORK IN PROGRESS**
+```{r fig.align='center', out.width="30%"}
+knitr::include_graphics("img/Golem_hex.png")
+```
+
+
+ 
+<p style="font-size:9pt; text-align:center">
+    Bildquelle: Klara Schaumann, Lizenz: CC-BY
+</p>
 
 ---
+
+
+
 
 # tl;dr
 
