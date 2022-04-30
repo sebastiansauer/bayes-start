@@ -623,6 +623,24 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 
 
+
+# Skript, schnell
+
+- [Thema 1](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema1-WasistInferenz.pdf)
+- [Thema 2](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema2-kleineModelle.pdf)
+- [Thema 3](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.html#1)
+- [Thema 4](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema4-Gaussmodelle.html#1)
+- [Thema 5](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.html#1)
+- [Thema 6](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.html#1)
+- [Thema 7, kein Skript, nur Fallstudien](https://sebastiansauer.github.io/bayes-start/#kapitel-7-fallstudien)
+- [Thema 8](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema8-Kausalanalyse.html#1)
+- [Thema 9](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema9-Binaere-AV.html#1)
+- [Thema 10](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema10-Abschluss.html#1)
+
+
+
+
+
 # Weiterführendes Material
 
 ## Video zu Bayes
