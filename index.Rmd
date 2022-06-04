@@ -94,6 +94,8 @@ Beide Bücher sind als Lektüre zu empfehlen.
 
 - [Installation von R und seinen Freunden ](https://data-se.netlify.app/2021/11/30/installation-von-r-und-seiner-freunde/)
 
+- [Installation der Software für Bayes-Analysen](https://data-se.netlify.app/2022/01/28/bayes-software-installieren-f%C3%BCr-r/)
+
 
 - [Übergreifende Lernziele](https://sebastiansauer.github.io/bayes-start/Lernziele.html#übergreifende-lernziele)
 
