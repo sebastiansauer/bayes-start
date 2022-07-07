@@ -1,0 +1,33 @@
+# Kausalanalyse
+
+
+
+## Lernsteuerung
+
+```{r chapter-start-sections, echo = FALSE, results = "asis"}
+source("funs/chapter-start-sections.R")
+chapter_start_sections(title = "Kausalanalyse 1")
+```
+
+
+
+<!-- # Folien, Videos -->
+  
+  
+```{r render-outline-Folien, results = "asis", eval = TRUE, echo = FALSE, message = FALSE}
+source("funs/define-constants.R")
+render_section(course_dates_file,
+               content_file,
+               i = NULL,
+               title = "Kausalanalyse 1",
+               name = "Skript",
+               header_level = header_level)
+
+render_section(course_dates_file,
+               content_file,
+               i = NULL,
+               title = "Kausalanalyse 1",
+               name = "Videos",
+               header_level = header_level)
+
+```

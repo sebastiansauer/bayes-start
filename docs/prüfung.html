@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Kapitel 2 Prüfung | Bayes:Start</title>
+<meta name="author" content="Sebastian Sauer">
+<meta name="description" content="2.1 Prüfungleistung Die Prüfungsleistung besteht aus einer Klausur.  2.2 Grundsätzlichkeit Die folgenden Hinweise gelten grundsätzlich, d.h. soweit nicht anders in der jeweiligen Prüfung bzw. der...">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="Kapitel 2 Prüfung | Bayes:Start">
+<meta property="og:type" content="book">
+<meta property="og:description" content="2.1 Prüfungleistung Die Prüfungsleistung besteht aus einer Klausur.  2.2 Grundsätzlichkeit Die folgenden Hinweise gelten grundsätzlich, d.h. soweit nicht anders in der jeweiligen Prüfung bzw. der...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kapitel 2 Prüfung | Bayes:Start">
+<meta name="twitter:description" content="2.1 Prüfungleistung Die Prüfungsleistung besteht aus einer Klausur.  2.2 Grundsätzlichkeit Die folgenden Hinweise gelten grundsätzlich, d.h. soweit nicht anders in der jeweiligen Prüfung bzw. der...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style-bs4.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Eine Einführung in die Bayes-Statistik">Bayes:Start</a>:
+        <small class="text-muted">Eine Einführung in die Bayes-Statistik</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Zu diesem Buch</a></li>
+<li><a class="" href="hinweise-1.html"><span class="header-section-number">1</span> Hinweise</a></li>
+<li><a class="active" href="pr%C3%BCfung.html"><span class="header-section-number">2</span> Prüfung</a></li>
+<li><a class="" href="inferenz.html"><span class="header-section-number">3</span> Inferenz</a></li>
+<li><a class="" href="ungewissheit-quantifizieren.html"><span class="header-section-number">4</span> Ungewissheit quantifizieren</a></li>
+<li><a class="" href="bayes.html"><span class="header-section-number">5</span> Bayes</a></li>
+<li><a class="" href="die-post-verteilung.html"><span class="header-section-number">6</span> Die Post-Verteilung</a></li>
+<li><a class="" href="gauss-modelle.html"><span class="header-section-number">7</span> Gauss-Modelle</a></li>
+<li><a class="" href="lineare-modelle.html"><span class="header-section-number">8</span> Lineare Modelle</a></li>
+<li><a class="" href="metrische-av.html"><span class="header-section-number">9</span> Metrische AV</a></li>
+<li><a class="" href="fallstudien.html"><span class="header-section-number">10</span> Fallstudien</a></li>
+<li><a class="" href="kausalanalyse.html"><span class="header-section-number">11</span> Kausalanalyse</a></li>
+<li><a class="" href="bin%C3%A4re-av.html"><span class="header-section-number">12</span> Binäre AV</a></li>
+<li><a class="" href="abschluss.html"><span class="header-section-number">13</span> Abschluss</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/sebastiansauer/bayes-start">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="prüfung" class="section level1" number="2">
+<h1>
+<span class="header-section-number">Kapitel 2</span> Prüfung<a class="anchor" aria-label="anchor" href="#pr%C3%BCfung"><i class="fas fa-link"></i></a>
+</h1>
+<div id="prüfungleistung" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Prüfungleistung<a class="anchor" aria-label="anchor" href="#pr%C3%BCfungleistung"><i class="fas fa-link"></i></a>
+</h2>
+<p>Die Prüfungsleistung besteht aus einer <em>Klausur</em>.</p>
+</div>
+<div id="grundsätzlichkeit" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Grundsätzlichkeit<a class="anchor" aria-label="anchor" href="#grunds%C3%A4tzlichkeit"><i class="fas fa-link"></i></a>
+</h2>
+<p>Die folgenden Hinweise gelten <em>grundsätzlich</em>,
+d.h. soweit nicht anders in der jeweiligen Prüfung bzw. der jeweiligen Aufgabe angegeben.</p>
+<p>Nichtbeachten von Prüfungshinweisen kann zu Punkteabzug oder Nichtbestehen führen.</p>
+</div>
+<div id="wiederholungsprüfungen" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Wiederholungsprüfungen<a class="anchor" aria-label="anchor" href="#wiederholungspr%C3%BCfungen"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Wenn Sie bei einer Prüfung durchgefallen sein sollten, so haben Sie grundsätzlich die Möglichkeit, die Prüfung zu wiederholen.</li>
+<li>Denken Sie daran, sich rechtzeitig für Prüfungsleistungen anzumelden; beachten Sie die Fristen.</li>
+<li>Die Termine für die Wiederholungsprüfungen werden stets zusammen/zeitgleich mit denen der regulären Prüfungen in Primuss bekannt gegeben.</li>
+<li>Wird ein Modul im laufenden Semester nicht angeboten, gibt es eine Wiederholungsprüfung nur für Studentis, die durchgefallen sind. Abweichend davon kann ei Dozenti die Prüfung für alle Studentis anbieten. Die Entscheidung, ob eine Wiederholungsprüfung in diesem Fall angeboten wird, obliegt der Dozentin bzw. dem Dozenten des Moduls.</li>
+<li>Relevanter Stoff und formale Bedingungen (wie Prüfungsform) sind grundsätzlich identisch zur letzten abgehaltenen Prüfung des Moduls (d.h. sofern nicht anders angegeben). Daher sind Wiederholungsprüfungen vom Anspruch vergleichbar wie die reguläre Klausur. Die Prüfungen sollen möglichst gleich vom Anspruch sein, um Fairness zu gewährleisten.</li>
+<li>Beachten Sie immer die Hinweise, die für die Wiederholungsprüfung angegeben sind. Im Einzelfall keine eine Wiederholungsprüfung von der vorherigen Prüfung stärker abweichen. Es gelten immer die Regeln, die dis Dozenti bei der jeweiligen Wiederholungsprüfung veröffentlicht hat.</li>
+<li>Wird ein Modul im laufenden Semester angeboten, so gibt es keine Wiederholungsprüfung. Stattdessen können Sie ggf. an der regulären Klausur des Moduls teilnehmen. Es gilt der aktuelle Stoff bzw. die aktuellen formalen Bedingungen. Es ist möglich, dass der Stoff sich dann substanziell ändert; meist halten sich die Änderungen (im Stoff) aber in Rahmen.</li>
+<li>Sprechen Sie die Moduldozentis an für Details zur Prüfung (bzw. lesen Sie vorab auf jeweiligen Modulseite in Moodle nach).</li>
+<li>Manchmal fragen Studentis nach einer Empfehlung, ob es besser ist, eine Prüfung zu verschieben, wenn man sich nicht ausreichend vorbereiten konnte. Es ist schwer, eine Empfehlung pauschal abzugeben, es kommt auf den Einzelfall an. Grundsätzlich rate ich aber dazu, Prüfungen nicht zu verschieben: Schließlich könnte in einem folgenden Semester wieder ein unvorhergesehenes Problem auftreten.</li>
+<li>Bei Fragen zum Prüfungsrecht sprechen Sie bitte die Studienberatung an.</li>
+</ul>
+</div>
+<div id="bearbeitungshinweise" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Bearbeitungshinweise<a class="anchor" aria-label="anchor" href="#bearbeitungshinweise"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Verwenden Sie Standardwerte (defaults) der R-Funktionen.</li>
+<li>Runden Sie auf eine Dezimalstelle.</li>
+<li>Verwenden Sie Methoden der Bayes-Statistik für inferenzstatistische Analysen.</li>
+<li>Geben Sie keine Prozentzahlen an, sondern Anteile (also nicht “50%”, sondern “0.5” etc.).</li>
+<li>Findet sich in einer Auswahlliste möglicher Antworten nicht die exakte Lösung, wählen Sie die am besten passende.</li>
+<li>Treffen Sie Annahmen, wo nötig.</li>
+<li>Die Prüfung besteht zu einem großen Teil aus Multiple-Choice (MC-)-Aufgaben mit mehreren Antwortoptionen.</li>
+<li>Bei Multiple-Choice-Aufgaben (MC-Aufgaben) ist zumeist genau eine Antwortoption auszuwählen aus vier oder fünf Antwortoptionen.</li>
+<li>Im Zweifel ist eine Aussage auf den Stoff, so wie im Unterricht behandelt, zu beziehen.</li>
+<li>Bei Fragen zu R-Syntax spielen Aspekte wie Enter-Taste o.Ä. bei der Beantwortung der Frage keine Rolle; diese Aspekte dürfen zu ignorieren.</li>
+<li>Jede Aussage einer MC-Aufgabe ist entweder richtig oder falsch (aber nicht beides oder keines).</li>
+<li>Die MC-Aufgaben sind nur mit Kreuzen zu beantworten; Text wird bei der Korrektur nicht berücksichtigt.</li>
+<li>Jede Aussage gilt ceteris paribus (unter sonst gleichen Umständen). Aussagen der Art „A ist B“ (z.B. “Menschen sind sterblich”) sind <em>nur</em> dann als richtig auszuwählen, wenn die Aussage <em>immer</em> richtig ist.</li>
+<li>Bei Aufgaben, die eine Zahl als Antwort verlangen, ist nur eine Zahl anzugeben (nicht etwa Buchstaben).</li>
+<li>Falls Sie bei einer Aufgabe mehrere Antworten finden, aber nur nach einer gefragt ist, geben Sie nur eine an.</li>
+<li>Falls mehrere (widersprüchliche) Antworten gegeben wurden, wird im Zweifel die erst genannte gewertet.</li>
+<li>Die Aufgabenstellung in einer Moodle-Prüfung wird erst sichtbar, wenn Sie den Prüfungsbedingungen zugestimmt haben und die Prüfungszeit begonnen hat.</li>
+</ul>
+</div>
+<div id="teilnahmebedingungen" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> Teilnahmebedingungen<a class="anchor" aria-label="anchor" href="#teilnahmebedingungen"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Die Prüfung ist selbständig, also alleine nur durch Sie, ohne Hilfe Dritter, zu absolvieren.</li>
+<li>Die Bearbeitungszeiten der Prüfung sind einzuhalten.</li>
+<li>Es dürfen nur die explizit als zulässig gekennzeichneten Hilfsmittel verwendet werden.</li>
+<li>Die zulässigen Hilfsmittel sind: Notizpapier, Stifte, Taschenrechner, Vorlesungsfolien, Skripte, eigene Notizen, Bücher sowie Quellen aus dem Internet.</li>
+<li>Die Übernahme von Inhalten Dritter muss also solche gekennzeichnet (zitiert) werden.</li>
+<li>Eine wörtliche Übernahme (“copy-paste”) von Inhalten Dritter (etwa aus einer Quelle aus dem Internet) ist unzulässig.</li>
+<li>Bei technischen Problemen ist sofort der Prüfer bzw. die Prüferin zu verständigen und das technische Problem zu dokumentieren. Aus der Dokumentation muss der Fehler erkenntlich sein.</li>
+<li>Es ist untersagt, die Prüfung bzw. Teile daraus (z.B. Prüfungsfragen) zu speichern oder weiterzugeben.</li>
+<li>Im Übrigen gelten die allgemeinen Prüfungsregeln.</li>
+<li>Das Nichtbeachten der Regeln kann zu Notenabzug oder Nichtbestehen führen.</li>
+</ul>
+</div>
+<div id="organisatorische-hinweise" class="section level2" number="2.6">
+<h2>
+<span class="header-section-number">2.6</span> Organisatorische Hinweise<a class="anchor" aria-label="anchor" href="#organisatorische-hinweise"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Etwaige weitere Stoffeingrenzungen werden schriftlich bekannt gemacht (auf der Modulseite). Besondere Schwerpunkte gibt es nicht.</li>
+<li>Soweit bestimmte Inhalte nicht explizit ausgeschlossen sind, sind alle Inhalte, die im Rahmen des Moduls bearbeitet wurden, prüfungsrelevant.</li>
+<li>Im Übrigen gelten die Hinweise der SPO, auf dem Modulsteckbrief und der APO. Bitte kontaktieren Sie die Studienberatung für formale oder rechtliche Fragen.</li>
+<li>Während der Klausur werden nur Fragen beantwortet, die für die Bearbeitung zwingend nötig sind (etwa bei technischen Problemen).</li>
+<li>Es werden keine Fragen der Art “Ist diese Aufgabe klar formuliert?” beantwortet während der Prüfung. Sollten Sie der Meinung sein, eine Frage ist unklar formuliert oder fehlerhaft, so notieren Sie dies bitte im Kommentarfeld der Prüfung. Der Prüfer untersucht im Nachgang die Angelegenheit. Stellt sich eine Frage als fehlerhaft oder unklar formuliert heraus, so wird sie von der Beurteilung herausgenommen.</li>
+<li>Eine Teilnahme an der Prüfung ist nur möglich, wenn Sie den Teilnahmebedingungen der Prüfung zustimmen.</li>
+<li>Die Aufgabenstellung der Prüfung wird nur während des Prüfungszeitraumes angezeigt.</li>
+<li>Beachten Sie eine etwaige Gruppenteilung (zu welcher Gruppe Sie zugeteilt sind).</li>
+<li>Beachten Sie die exakte Prüfungsuhrzeit (Beginn, Ende).</li>
+<li>Prüfungszeitraum, Aufgabenstellung und sonstige Materialien können variieren zwischen den Prüflingen etwa aufgrund von Gruppeneinteilungen oder Nachteilsausgleich.</li>
+<li>Die zusätzliche Bearbeitungszeit bei Studentis mit Nachteilsausgleich ist in der Aufgabenstellung bzw. der Prüfung in Moodle hinterlegt. Die Zeit wird automatisch um den jeweiligen Faktor erhöht.</li>
+</ul>
+</div>
+<div id="open-book-prüfungen" class="section level2" number="2.7">
+<h2>
+<span class="header-section-number">2.7</span> Open-Book-Prüfungen<a class="anchor" aria-label="anchor" href="#open-book-pr%C3%BCfungen"><i class="fas fa-link"></i></a>
+</h2>
+<p>Einige Prüfungen werden als “Take-home-Prüfung” im “Open-Book-Format” geschrieben. Was bedeutet dies?</p>
+<p>“Take-home-Prüfung”: Sie bearbeiten die Prüfung in Ihrem privaten Umgebung in Moodle oder in Räumlichkeiten der Hochschule. Eine Überwachung per Kamera findet nicht statt.</p>
+<p>“Open-Book-Prüfung”: Sie dürfen Hilfsmittel wie Bücher und Folien während der Prüfung nutzen.</p>
+<p>Ihre Prüferin/Ihr Prüfer informiert Sie über das Format Ihrer Prüfung.</p>
+</div>
+<div id="zeitrahmen-der-prüfung" class="section level2" number="2.8">
+<h2>
+<span class="header-section-number">2.8</span> Zeitrahmen der Prüfung<a class="anchor" aria-label="anchor" href="#zeitrahmen-der-pr%C3%BCfung"><i class="fas fa-link"></i></a>
+</h2>
+<p>Die Prüfung beginnt und endet zu einem festen Zeitpunkt. Sie sind selber verantwortlich, die Prüfung zur korrekten Zeit zu beginnen und zu beenden (einzureichen). Verspätete Abgaben werden u.U. als nicht bestanden gewertet. Die Dauer der Prüfung wird Ihnen von Ihrer Prüferin bzw. Ihrem Prüfer bekannt gegeben.</p>
+</div>
+<div id="technische-und-organisatorische-anforderungen-einer-open-book-prüfung" class="section level2" number="2.9">
+<h2>
+<span class="header-section-number">2.9</span> Technische und organisatorische Anforderungen einer Open-Book-Prüfung<a class="anchor" aria-label="anchor" href="#technische-und-organisatorische-anforderungen-einer-open-book-pr%C3%BCfung"><i class="fas fa-link"></i></a>
+</h2>
+<p>Um an einer Open-Book-Prüfung teilzunehmen, benötigen Sie IT-Ausstattung sowie Räumlichkeiten. An IT-Ausstattung benötigen Sie einen Computer mit Internetanschluss; ein Smartphone reicht nicht aus. Nutzen Sie Ihr eigenes Gerät (Computer) für die Prüfung; die Hochschule stellt Ihnen keinen Computer zur Verfügung. Sie benötigen keine Webcam und kein Mikrofon. Ein Tablett oder Smartphone reicht nicht für die Prüfung. An Software benötigen Sie Zugang zu Ihrem Moodle-Konto, was einen aktuellen Internet-Browser voraussetzt. Zu den organisatorischen Anforderungen gehören ein Raum, in dem Sie die Prüfung ungestört bearbeiten können sowie ein Internetanschluss zum Bearbeiten der Klausur in Moodle. Bitte benutzen Sie während der Prüfung nicht den Zurück-Button in Ihrem Browser, wenn Sie zu einer vorherigen Frage zurückgehen wollen. Nutzen Sie die in der Prüfung zur Verfügung gestellten Funktionen/Buttons dafür.</p>
+</div>
+<div id="technische-probleme-während-der-prüfung" class="section level2" number="2.10">
+<h2>
+<span class="header-section-number">2.10</span> Technische Probleme während der Prüfung<a class="anchor" aria-label="anchor" href="#technische-probleme-w%C3%A4hrend-der-pr%C3%BCfung"><i class="fas fa-link"></i></a>
+</h2>
+<p>Im Falle eines technischen Problems auf Seiten der <em>Prüfungsinfrastruktur</em> ist sofort der Prüfer zu informieren. Ein Beispiel für so ein Problem wäre etwa der Ausfall von Moodle. Der technische Fehler ist zu dokumentieren (z.B. Screenshot) und die Dokumentation ist einzureichen. Bitte beachten Sie, dass der Prüfer bzw. die Hochschule keine Gewähr übernimmt für Probleme mit Ihrer eigenen Ausstattung.</p>
+</div>
+<div id="prüfungsrecht" class="section level2" number="2.11">
+<h2>
+<span class="header-section-number">2.11</span> Prüfungsrecht<a class="anchor" aria-label="anchor" href="#pr%C3%BCfungsrecht"><i class="fas fa-link"></i></a>
+</h2>
+<p>Für die Open-Book-Prüfungg gilt die aktuelle Prüfungsordnung; die Open-Book-Prüfung fällt nicht unter die BayFEV.</p>
+</div>
+<div id="datenschutz" class="section level2" number="2.12">
+<h2>
+<span class="header-section-number">2.12</span> Datenschutz<a class="anchor" aria-label="anchor" href="#datenschutz"><i class="fas fa-link"></i></a>
+</h2>
+<p>Persönliche Daten werden an eine Stellen übermittelt: Moodle (über bzw. in Ihre Konto). Es findet keine Überwachung statt, weder kamaragestützt, akustisch oder softwaregestützt.</p>
+</div>
+<div id="plagiatskontrolle" class="section level2" number="2.13">
+<h2>
+<span class="header-section-number">2.13</span> Plagiatskontrolle<a class="anchor" aria-label="anchor" href="#plagiatskontrolle"><i class="fas fa-link"></i></a>
+</h2>
+<p>Ihre Prüfungsarbeiten können auf Plagiate hin untersucht werden. Dabei kommen auch automatisierte Verfahren zum Einsatz. Ihre Arbeiten werden dabei nicht online gestellt und auch nicht Dritten zugänglich gemacht. Alle Prüfungen finden auf Rechnern statt, zu denen nur die Prüfer/innen Zugang habe. Es werden keine persönlichen Daten (von Ihnen) weitergegeben.</p>
+<p>Bitte beachten: Angenommen in den Projektarbeiten von Studenti A und B werden (substanzielle) Überlappungen gefunden. In dem Fall ist davon auszugehen, dass beide Studentis getäuscht haben: eine/r hat abgeschrieben, der/die andere hat die eigene Arbeit dafür bereitgestellt. Daher wird in diesem Fall u.U. bei beiden Studentis der Plagiatsfall festgestellt und geahndet (z.B. mit “nicht bestanden” bewertet). Die genauen Konsequenzen legt die Prüfungskommission im Einzelfall fest.</p>
+<p>Lassen Sie es auf keinen Fall soweit kommen: Schreiben Sie nicht ab und lassen Sie niemanden von Ihrer Arbeit abschreiben.</p>
+<p>Eine faire Prüfung heißt: Gleiche Chancen für alle, und gute Leistung soll belohnt werden, Täuschung nicht.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="hinweise-1.html"><span class="header-section-number">1</span> Hinweise</a></div>
+<div class="next"><a href="inferenz.html"><span class="header-section-number">3</span> Inferenz</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pr%C3%BCfung"><span class="header-section-number">2</span> Prüfung</a></li>
+<li><a class="nav-link" href="#pr%C3%BCfungleistung"><span class="header-section-number">2.1</span> Prüfungleistung</a></li>
+<li><a class="nav-link" href="#grunds%C3%A4tzlichkeit"><span class="header-section-number">2.2</span> Grundsätzlichkeit</a></li>
+<li><a class="nav-link" href="#wiederholungspr%C3%BCfungen"><span class="header-section-number">2.3</span> Wiederholungsprüfungen</a></li>
+<li><a class="nav-link" href="#bearbeitungshinweise"><span class="header-section-number">2.4</span> Bearbeitungshinweise</a></li>
+<li><a class="nav-link" href="#teilnahmebedingungen"><span class="header-section-number">2.5</span> Teilnahmebedingungen</a></li>
+<li><a class="nav-link" href="#organisatorische-hinweise"><span class="header-section-number">2.6</span> Organisatorische Hinweise</a></li>
+<li><a class="nav-link" href="#open-book-pr%C3%BCfungen"><span class="header-section-number">2.7</span> Open-Book-Prüfungen</a></li>
+<li><a class="nav-link" href="#zeitrahmen-der-pr%C3%BCfung"><span class="header-section-number">2.8</span> Zeitrahmen der Prüfung</a></li>
+<li><a class="nav-link" href="#technische-und-organisatorische-anforderungen-einer-open-book-pr%C3%BCfung"><span class="header-section-number">2.9</span> Technische und organisatorische Anforderungen einer Open-Book-Prüfung</a></li>
+<li><a class="nav-link" href="#technische-probleme-w%C3%A4hrend-der-pr%C3%BCfung"><span class="header-section-number">2.10</span> Technische Probleme während der Prüfung</a></li>
+<li><a class="nav-link" href="#pr%C3%BCfungsrecht"><span class="header-section-number">2.11</span> Prüfungsrecht</a></li>
+<li><a class="nav-link" href="#datenschutz"><span class="header-section-number">2.12</span> Datenschutz</a></li>
+<li><a class="nav-link" href="#plagiatskontrolle"><span class="header-section-number">2.13</span> Plagiatskontrolle</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/sebastiansauer/bayes-start/blob/master/015-Pruefung.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/sebastiansauer/bayes-start/edit/master/015-Pruefung.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Bayes:Start</strong>: Eine Einführung in die Bayes-Statistik" was written by Sebastian Sauer. It was last built on Letzte Aktualisierung: 2022-07-07 22:26:06.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

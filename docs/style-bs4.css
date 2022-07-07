@@ -1,0 +1,29 @@
+p.caption {
+  color: #1273DE;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+  font-size: 75%;
+}
+pre code {
+  white-space: inherit;
+}
+
+div.infobox {
+  padding: 1em 1em 1em 1em;
+  margin-bottom: 10px;
+  border: 2px solid #1273DE;
+  b
+  }
+
+img {
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}

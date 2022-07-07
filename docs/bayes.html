@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Kapitel 5 Bayes | Bayes:Start</title>
+<meta name="author" content="Sebastian Sauer">
+<meta name="description" content="5.1 Lernsteuerung  5.1.1 Lernziele Wahrscheinlichkeit definieren und relevante Begriffe anführen und in Grundzügen erklären einfache Fragen aus der Wahrscheinlichkeitstheorie berechnen  5.1.2...">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="Kapitel 5 Bayes | Bayes:Start">
+<meta property="og:type" content="book">
+<meta property="og:description" content="5.1 Lernsteuerung  5.1.1 Lernziele Wahrscheinlichkeit definieren und relevante Begriffe anführen und in Grundzügen erklären einfache Fragen aus der Wahrscheinlichkeitstheorie berechnen  5.1.2...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kapitel 5 Bayes | Bayes:Start">
+<meta name="twitter:description" content="5.1 Lernsteuerung  5.1.1 Lernziele Wahrscheinlichkeit definieren und relevante Begriffe anführen und in Grundzügen erklären einfache Fragen aus der Wahrscheinlichkeitstheorie berechnen  5.1.2...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style-bs4.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Eine Einführung in die Bayes-Statistik">Bayes:Start</a>:
+        <small class="text-muted">Eine Einführung in die Bayes-Statistik</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Zu diesem Buch</a></li>
+<li><a class="" href="hinweise-1.html"><span class="header-section-number">1</span> Hinweise</a></li>
+<li><a class="" href="pr%C3%BCfung.html"><span class="header-section-number">2</span> Prüfung</a></li>
+<li><a class="" href="inferenz.html"><span class="header-section-number">3</span> Inferenz</a></li>
+<li><a class="" href="ungewissheit-quantifizieren.html"><span class="header-section-number">4</span> Ungewissheit quantifizieren</a></li>
+<li><a class="active" href="bayes.html"><span class="header-section-number">5</span> Bayes</a></li>
+<li><a class="" href="die-post-verteilung.html"><span class="header-section-number">6</span> Die Post-Verteilung</a></li>
+<li><a class="" href="gauss-modelle.html"><span class="header-section-number">7</span> Gauss-Modelle</a></li>
+<li><a class="" href="lineare-modelle.html"><span class="header-section-number">8</span> Lineare Modelle</a></li>
+<li><a class="" href="metrische-av.html"><span class="header-section-number">9</span> Metrische AV</a></li>
+<li><a class="" href="fallstudien.html"><span class="header-section-number">10</span> Fallstudien</a></li>
+<li><a class="" href="kausalanalyse.html"><span class="header-section-number">11</span> Kausalanalyse</a></li>
+<li><a class="" href="bin%C3%A4re-av.html"><span class="header-section-number">12</span> Binäre AV</a></li>
+<li><a class="" href="abschluss.html"><span class="header-section-number">13</span> Abschluss</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/sebastiansauer/bayes-start">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="bayes" class="section level1" number="5">
+<h1>
+<span class="header-section-number">Kapitel 5</span> Bayes<a class="anchor" aria-label="anchor" href="#bayes"><i class="fas fa-link"></i></a>
+</h1>
+<div id="lernsteuerung-2" class="section level2" number="5.1">
+<h2>
+<span class="header-section-number">5.1</span> Lernsteuerung<a class="anchor" aria-label="anchor" href="#lernsteuerung-2"><i class="fas fa-link"></i></a>
+</h2>
+<div id="lernziele-3" class="section level3" number="5.1.1">
+<h3>
+<span class="header-section-number">5.1.1</span> Lernziele<a class="anchor" aria-label="anchor" href="#lernziele-3"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Wahrscheinlichkeit definieren und relevante Begriffe anführen und in Grundzügen erklären</li>
+<li>einfache Fragen aus der Wahrscheinlichkeitstheorie berechnen</li>
+</ul>
+</div>
+<div id="literatur-4" class="section level3" number="5.1.2">
+<h3>
+<span class="header-section-number">5.1.2</span> Literatur<a class="anchor" aria-label="anchor" href="#literatur-4"><i class="fas fa-link"></i></a>
+</h3>
+<p>NA</p>
+</div>
+</div>
+<div id="kleine-welt-große-welt" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> Kleine Welt, große Welt<a class="anchor" aria-label="anchor" href="#kleine-welt-gro%C3%9Fe-welt"><i class="fas fa-link"></i></a>
+</h2>
+<div id="behaims-globus-kolumbus-glücklicher-fehler" class="section level3" number="5.2.1">
+<h3>
+<span class="header-section-number">5.2.1</span> Behaims Globus, Kolumbus glücklicher Fehler<a class="anchor" aria-label="anchor" href="#behaims-globus-kolumbus-gl%C3%BCcklicher-fehler"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="img/Behaim.jpg" width="100%" style="display: block; margin: auto;"></div>
+<p><a href="https://de.wikipedia.org/wiki/Martin_Behaims_Erdapfel#/media/Datei:RavensteinBehaim.jpg">Quelle</a></p>
+</div>
+<div id="kleine-welt-vs.-große-welt" class="section level3" number="5.2.2">
+<h3>
+<span class="header-section-number">5.2.2</span> Kleine Welt vs. große Welt<a class="anchor" aria-label="anchor" href="#kleine-welt-vs.-gro%C3%9Fe-welt"><i class="fas fa-link"></i></a>
+</h3>
+<div id="kleine-welt" class="section level4" number="5.2.2.1">
+<h4>
+<span class="header-section-number">5.2.2.1</span> Kleine Welt<a class="anchor" aria-label="anchor" href="#kleine-welt"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>Die Welt, wie sie der Golem sieht</li>
+<li>entspricht dem Modell (zwangläufig)</li>
+</ul>
+</div>
+<div id="große-welt" class="section level4" number="5.2.2.2">
+<h4>
+<span class="header-section-number">5.2.2.2</span> Große Welt<a class="anchor" aria-label="anchor" href="#gro%C3%9Fe-welt"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>Die Welt, wie sie in Wirklichkeit ist</li>
+<li>entspricht nicht (zwangsläufig) dem Modell</li>
+</ul>
+<div class="infobox quote">
+<p>Behaims Globus ist nicht gleich der Erde. Die kleine Welt ist nicht die große Welt.</p>
+</div>
+<p>Was in der kleinen Welt funktioniert, muss nicht in der großen Welt funktionieren.
+Modelle zeigen immer nur die kleine Welt: Vorsicht vor schnellen Schlüssen und vermeintlicher Gewissheit.</p>
+<p>🏋 Nennen Sie ein Beispiel, in dem ein Modell nicht (exakt) der Wirklichkeit entspricht!</p>
+</div>
+</div>
+<div id="so-denkt-unser-bayes-golem" class="section level3" number="5.2.3">
+<h3>
+<span class="header-section-number">5.2.3</span> So denkt unser Bayes-Golem<a class="anchor" aria-label="anchor" href="#so-denkt-unser-bayes-golem"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="img/bayesupdate2.png" width="100%" style="display: block; margin: auto;"></div>
+<p>🏋 Bayes-Inferenz ähnelt dem Lernen von Menschen. Geben Sie ein Beispiel von Lernen bei Menschen, das oben dargestelltem Prozess ähnelt!</p>
+</div>
+</div>
+<div id="bayes-statistik-als-zählen" class="section level2" number="5.3">
+<h2>
+<span class="header-section-number">5.3</span> Bayes-Statistik als Zählen<a class="anchor" aria-label="anchor" href="#bayes-statistik-als-z%C3%A4hlen"><i class="fas fa-link"></i></a>
+</h2>
+<div id="murmeln-im-säckchen" class="section level3" number="5.3.1">
+<h3>
+<span class="header-section-number">5.3.1</span> Murmeln im Säckchen<a class="anchor" aria-label="anchor" href="#murmeln-im-s%C3%A4ckchen"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Sie haben ein Säckchen mit vier Murmeln darin.</p></li>
+<li><p>Sie wissen nicht, welche Farben die Murmeln haben.</p></li>
+<li><p>Murmeln gibt’s in zwei Farben: weiß (W) oder blau (B).</p></li>
+<li><p>Es gibt daher fünf <em>Hypothesen</em> zur Farbe der Murmeln im Säckchen: [WWWW], [BWWW], [BBWW], [BBBW], [BBBB.]</p></li>
+<li><p>Unser Ziel ist, die Wahrscheinlichkeiten der Hypothesen nach Ziehen von Murmeln zu bestimmen.</p></li>
+</ul>
+<div class="inline-figure"><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-6-1.png" width="50%" style="display: block; margin: auto;"></div>
+</div>
+<div id="unsere-daten" class="section level3" number="5.3.2">
+<h3>
+<span class="header-section-number">5.3.2</span> Unsere Daten<a class="anchor" aria-label="anchor" href="#unsere-daten"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Wir ziehen eine Murmel, merken uns die Farbe und legen sie zurück. Das wiederholen wir noch zwei Mal (Ziehen mit Zurücklegen).</p></li>
+<li><p>Wir erhalten: <strong>BWB</strong>. Voilà: unsere Daten.</p></li>
+</ul>
+<div class="inline-figure"><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-7-1.png" width="70%" style="display: block; margin: auto;"></div>
+<p><span class="citation">(<a href="abschluss.html#ref-kurz_statistical_2021" role="doc-biblioref">Kurz 2021</a>)</span></p>
+<p>🏋 Wie groß ist die Stichprobe (<span class="math inline">\(N\)</span>)? Ist die Wahrscheinlichkeit für <em>B</em> in jedem Zug gleich?</p>
+</div>
+<div id="zugmöglichkeiten-laut-hypothese-bwww-1.-zug" class="section level3" number="5.3.3">
+<h3>
+<span class="header-section-number">5.3.3</span> Zugmöglichkeiten laut Hypothese [BWWW], 1. Zug<a class="anchor" aria-label="anchor" href="#zugm%C3%B6glichkeiten-laut-hypothese-bwww-1.-zug"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wenn Hypothese [BWWW] der Fall sein sollte, dann können wir im <em>ersten</em> Zug entweder die eine blaue Murmel erwischen oder eine der drei weißen.</p>
+<div class="inline-figure"><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-8-1.png" width="70%" style="display: block; margin: auto;"></div>
+<p>Nachdem wir die Murmel gezogen haben (und die Farbe gemerkt haben), legen wir sie wieder ins Säckchen: Ziehen mit Zurücklegen.</p>
+<p>🏋 Wie viele Elementarereignisse hat dieses Zufallsexperiment? Sind alle gleich wahrscheinlich?</p>
+</div>
+<div id="zugmöglichkeiten-laut-hypothese-bwww-1.-und-2.-zug" class="section level3" number="5.3.4">
+<h3>
+<span class="header-section-number">5.3.4</span> Zugmöglichkeiten laut Hypothese [BWWW], 1. und 2. Zug<a class="anchor" aria-label="anchor" href="#zugm%C3%B6glichkeiten-laut-hypothese-bwww-1.-und-2.-zug"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wenn Hypothese [BWWW] der Fall sein sollte, dann haben wir im <em>zweiten</em> Zug natürlich die gleichen Möglichkeiten wie im ersten.</p>
+<p>Zug 1 und Zug 2 zusammen genommen gibt es <span class="math inline">\(16=4\cdot4=4^2\)</span> Kombinationen an gezogenen Murmeln:</p>
+<div class="inline-figure"><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-9-1.png" width="50%" style="display: block; margin: auto;"></div>
+<p>🏋 Ist jedes Elementarereignis (z.B. BB, BW,…) gleich wahrscheinlich?</p>
+</div>
+<div id="zugmöglichkeiten-laut-hypothese-bwww-1.-3.-zug" class="section level3" number="5.3.5">
+<h3>
+<span class="header-section-number">5.3.5</span> Zugmöglichkeiten laut Hypothese [BWWW], 1.-3. Zug<a class="anchor" aria-label="anchor" href="#zugm%C3%B6glichkeiten-laut-hypothese-bwww-1.-3.-zug"><i class="fas fa-link"></i></a>
+</h3>
+<p>Zug 1, Zug 2 und Zug 3 zusammen genommen, gibt es dann <span class="math inline">\(4\cdot4\cdot4=4^3=64\)</span> Kombinationen, drei Murmeln zu ziehen.</p>
+<div class="inline-figure"><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-10-1.png" width="50%" style="display: block; margin: auto;"></div>
+<p>🏋 Wie wahrscheinlich ist ein bestimmtes dieser 64 Ereignisse (unter der Annahme gleicher Wahrscheinlichkeit)?</p>
+</div>
+<div id="welche-züge-sind-logisch-möglich" class="section level3" number="5.3.6">
+<h3>
+<span class="header-section-number">5.3.6</span> Welche Züge sind logisch möglich?<a class="anchor" aria-label="anchor" href="#welche-z%C3%BCge-sind-logisch-m%C3%B6glich"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Einige Kombinationen (“Pfade”) der Hypothese [BWWW] lassen sich nicht mit unseren Daten (BWB) vereinbaren.</li>
+<li>Z.B. alle Kombinationen die mit W beginnen, sind nicht mit unseren Daten zu vereinbaren.</li>
+</ul>
+<p><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-11-1.png" width="33%" style="display: block; margin: auto;"><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-11-2.png" width="33%" style="display: block; margin: auto;"></p>
+<p>Nur 3 der 64 “Pfade” (Kombinationen), die Hypothese [BWWW] vorgibt, sind mit unseren Daten logisch zu vereinbaren.</p>
+</div>
+<div id="kombinationen-für-hypothesen" class="section level3" number="5.3.7">
+<h3>
+<span class="header-section-number">5.3.7</span> Kombinationen für Hypothesen<a class="anchor" aria-label="anchor" href="#kombinationen-f%C3%BCr-hypothesen"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+Hypothese
+</th>
+<th style="text-align:left;">
+Häufigkeit BWB
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+[W W W W]
+</td>
+<td style="text-align:left;">
+0 * 4 * 0 = 0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B W W W]
+</td>
+<td style="text-align:left;">
+1 * 3 * 1 = 3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B B W W]
+</td>
+<td style="text-align:left;">
+2 * 2 * 2 = 8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B B B W]
+</td>
+<td style="text-align:left;">
+3 * 1 * 3 = 9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B B B B]
+</td>
+<td style="text-align:left;">
+4 * 0 * 4 = 0
+</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><p>Die Häufigkeiten der Kombinationen (Pfade) ist proportional zur Plausibilität einer Hypothese: Je mehr Pfade laut Hypothese, desto wahrscheinlicher die Hypothese (unter sonst gleichen Bedingungen).</p></li>
+<li><p>Zusätzlich müssten wir noch beachten, ob bestimmte Hypothesen <em>per se</em> bzw. <em>a priori</em> wahrscheinlicher sind. So könnten blaue Murmeln selten sein. Gehen wir der Einfachheit halber zunächst davon aus, dass alle Hypothesen apriori gleich wahrscheinlich sind.</p></li>
+</ul>
+</div>
+<div id="pfadbaum-für-die-hypothesen-bwww-bbww-bbbw" class="section level3" number="5.3.8">
+<h3>
+<span class="header-section-number">5.3.8</span> Pfadbaum für die Hypothesen [BWWW], [BBWW], [BBBW]<a class="anchor" aria-label="anchor" href="#pfadbaum-f%C3%BCr-die-hypothesen-bwww-bbww-bbbw"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="img/img2118.png" width="70%" style="display: block; margin: auto;"></div>
+</div>
+<div id="wir-ziehen-einer-vierte-murmel-b" class="section level3" number="5.3.9">
+<h3>
+<span class="header-section-number">5.3.9</span> Wir ziehen einer vierte Murmel: B<a class="anchor" aria-label="anchor" href="#wir-ziehen-einer-vierte-murmel-b"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Gehen wir zunächst davon aus, dass alle Hypothesen apriori gleich wahrscheinlich sind.</li>
+<li>Wir ziehen wieder eine Murmel. Sie ist blau (B)!</li>
+<li>Jetzt könnten wir den Pfadbaum für vier (statt drei) Züge aufmalen.</li>
+<li>Oder wir machen ein <em>Update</em>: Wir aktualisieren die bisherigen Kombinationshäufigkeiten um die neuen Daten. Die <em>alten</em> Daten dienen dabei als <em>Priori-Informationen</em> für die <em>neuen</em> Daten.</li>
+</ul>
+</div>
+<div id="priori-information-nutzen" class="section level3" number="5.3.10">
+<h3>
+<span class="header-section-number">5.3.10</span> Priori-Information nutzen<a class="anchor" aria-label="anchor" href="#priori-information-nutzen"><i class="fas fa-link"></i></a>
+</h3>
+<p>Mit den Daten BWBB ist die Hypothese [BBBW] am wahrscheinlichsten:</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+Hyp
+</th>
+<th style="text-align:right;">
+PB
+</th>
+<th style="text-align:right;">
+HA
+</th>
+<th style="text-align:left;">
+HN
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+[W W W W]
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+0 * 0 = 0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B W W W]
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+1 * 3 = 3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B B W W]
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+2 * 8 = 16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B B B W]
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+3 * 9 = 27
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B B B B]
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+4 * 0 = 0
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Hyp: Hypothese</p>
+<p>PB: Anzahl von Pfaden für B</p>
+<p>HA: alte (bisherige) Häufigkeiten</p>
+<p>HN: neue (geupdatete) Häufigkeiten</p>
+</div>
+<div id="murmelfabrik-streikt-blaue-murmeln-jetzt-sehr-selten" class="section level3" number="5.3.11">
+<h3>
+<span class="header-section-number">5.3.11</span> Murmelfabrik streikt: Blaue Murmeln jetzt sehr selten!<a class="anchor" aria-label="anchor" href="#murmelfabrik-streikt-blaue-murmeln-jetzt-sehr-selten"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Berücksichtigen wir jetzt die Information, dass apriori (bevor wir die Daten gesehen haben), einige Hypothesen wahrscheinlicher (plausibler) sind als andere.</p></li>
+<li><p>Hier ist die Hypothese [BBWW] am wahrscheinlichsten:</p></li>
+</ul>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+Hyp
+</th>
+<th style="text-align:right;">
+HA
+</th>
+<th style="text-align:right;">
+HF
+</th>
+<th style="text-align:left;">
+HN
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+[W W W W]
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+0 * 0 = 0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B W W W]
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+3 * 3 = 9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B B W W]
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+16 * 2 = 32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B B B W]
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+27 * 1 = 27
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B B B B]
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+0 * 0 = 0
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>HF: Häufigkeit des Säckchentyps laut Fabrik.</p>
+</div>
+<div id="zählen-mit-großen-zahlen-nervt" class="section level3" number="5.3.12">
+<h3>
+<span class="header-section-number">5.3.12</span> Zählen mit großen Zahlen nervt<a class="anchor" aria-label="anchor" href="#z%C3%A4hlen-mit-gro%C3%9Fen-zahlen-nervt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Malen Sie mal den Pfadbaum für 10 Züge …</p></li>
+<li><p>Eine Umrechnung der Häufigkeiten in <em>Anteile</em> macht das Rechnen einfacher.</p></li>
+<li><p>Dazu definieren wir die <em>geupdatete Plausibilität einer Hypothese nach Kenntnis der Daten</em>:</p></li>
+</ul>
+<p><span class="math display">\[\text{Plausibilität von [BWWW] nach Kenntnis von BWB}\]</span>
+<span class="math display">\[\propto\]</span>
+<span class="math display">\[\text{Anzahl möglicher Pfade bei [BWWW] für BWB}\]</span>
+<span class="math display">\[\times\]</span>
+<span class="math display">\[\text{Priori-Plausibilität von [BWWW]}\]</span></p>
+<ul>
+<li>
+<span class="math inline">\(\propto\)</span>: proportional zu</li>
+</ul>
+</div>
+<div id="plausibilität-berechnen" class="section level3" number="5.3.13">
+<h3>
+<span class="header-section-number">5.3.13</span> Plausibilität berechnen<a class="anchor" aria-label="anchor" href="#plausibilit%C3%A4t-berechnen"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Sei <span class="math inline">\(p\)</span> der Anteil blauer Murmeln. Bei Hypothese [BWWW] gilt, dann ist <span class="math inline">\(p=1/4 = 0.25\)</span>. Sei <span class="math inline">\(D_{neu} =\)</span> BWB, die Daten:</li>
+</ul>
+<p><span class="math display">\[\text{Plausibilität von }p\text{ nach Kenntnis von }D_{neu}\]</span>
+<span class="math display">\[\propto\]</span>
+<span class="math display">\[\text{Anzahl Pfade von }p\text{ für }D_{neu}\]</span>
+<span class="math display">\[\times\]</span>
+<span class="math display">\[\text{Priori-Plausibilität von }p\]</span></p>
+<p>Für jeden Wert von <span class="math inline">\(p\)</span> beurteilen wir dessen Plausibilität als umso höher, je mehr Pfade durch den Pfadbaum führen und je höher die Plausibilität des Werts von <span class="math inline">\(p\)</span> von vornherein ist.</p>
+</div>
+<div id="von-plausibilität-zur-wahrscheinlichkeit" class="section level3" number="5.3.14">
+<h3>
+<span class="header-section-number">5.3.14</span> Von Plausibilität zur Wahrscheinlichkeit<a class="anchor" aria-label="anchor" href="#von-plausibilit%C3%A4t-zur-wahrscheinlichkeit"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Teilen wir die Anzahl Pfade einer Hypothese durch die Anzahl aller Pfade (aller Hypothesen), so bekommen wir einen Anteil. Damit haben wir eine Wahrscheinlichkeit:</li>
+</ul>
+<p><span class="math display">\[\text{Pl von }p\text{ mit Daten }D_{neu} =\]</span>
+<span class="math display">\[\frac{\text{Anzahl Pfade von }p\text{ für }D_{neu}\times \text{Prior-Pl von }p}{\text{Summe aller Pfade}}\]</span></p>
+<p>Pl: Plausibilität</p>
+<p>🏋 Was muss passieren, dass der Bruch gleich Null ist?</p>
+</div>
+<div id="plausibilität-pro-hypothese" class="section level3" number="5.3.15">
+<h3>
+<span class="header-section-number">5.3.15</span> Plausibilität pro Hypothese<a class="anchor" aria-label="anchor" href="#plausibilit%C3%A4t-pro-hypothese"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+Hyp
+</th>
+<th style="text-align:right;">
+p
+</th>
+<th style="text-align:right;">
+AP
+</th>
+<th style="text-align:right;">
+Pl
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+[W W W W]
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B W W W]
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B B W W]
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B B B W]
+</td>
+<td style="text-align:right;">
+0.75
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+0.45
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[B B B B]
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>p: Anteil blauer Murmeln (Priori-Wissen)</p>
+<p>AP: Anzahl von möglichen Pfaden; Pl: Plausibilität</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">AP</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">0</span><span class="op">)</span>
+<span class="va">Pl</span> <span class="op">&lt;-</span> <span class="va">AP</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">AP</span><span class="op">)</span>
+<span class="va">Pl</span></code></pre></div>
+<pre><code>## [1] 0.00 0.15 0.40 0.45 0.00</code></pre>
+</div>
+<div id="fachbegriffe" class="section level3" number="5.3.16">
+<h3>
+<span class="header-section-number">5.3.16</span> Fachbegriffe<a class="anchor" aria-label="anchor" href="#fachbegriffe"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Kennwerte laut einer Hypothese, wie den Anteil blauer Murmeln <span class="math inline">\(p\)</span> bezeichnet man als <em>Parameter</em>.</p></li>
+<li><p>Den Anteil gültiger Pfade pro Hypothese (bzw. pro Wert von <span class="math inline">\(p\)</span>) bezeichnet man als <em>Likelihood</em>.</p></li>
+<li><p>Die Priori-Plausibilität nennt man <em>Priori-Wahrscheinlichkeit</em>.</p></li>
+<li><p>Die neue, geupdatete Plausibilität für einen bestimmten Wert von <span class="math inline">\(p\)</span> nennt man <em>Posteriori-Wahrscheinlichkeit</em>.</p></li>
+</ul>
+<p>🏋 Erklären Sie die Begriffe dem nächsten Menschen, den Sie treffen!</p>
+</div>
+<div id="zusammenfassung" class="section level3" number="5.3.17">
+<h3>
+<span class="header-section-number">5.3.17</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li><p>Schritt: Unser Vorab-Wissen zur Wahrscheinlichkeit jeder Hypothese wird mit dem Begriff <em>Priori-Verteilung</em> gefasst.</p></li>
+<li><p>Schritt: Wir zählen den Anteil gültiger Pfade für jede Hypothese; d.h. wir berechnen den <em>Likelihood</em> jeder Hypothese.</p></li>
+<li><p>Schritt: Mit den Likelihoods <em>updaten</em> wir unsere Priori-Verteilung. Die Wahrscheinlichkeit jeder Hypothese verändert sich entsprechend der Daten. Es resultiert die <em>Posteriori-Verteilung</em>.</p></li>
+</ol>
+</div>
+</div>
+<div id="ein-erstes-modell" class="section level2" number="5.4">
+<h2>
+<span class="header-section-number">5.4</span> Ein erstes Modell<a class="anchor" aria-label="anchor" href="#ein-erstes-modell"><i class="fas fa-link"></i></a>
+</h2>
+<div id="welcher-anteil-der-erdoberfläche-ist-mit-wasser-bedeckt" class="section level3" number="5.4.1">
+<h3>
+<span class="header-section-number">5.4.1</span> Welcher Anteil der Erdoberfläche ist mit Wasser bedeckt?<a class="anchor" aria-label="anchor" href="#welcher-anteil-der-erdoberfl%C3%A4che-ist-mit-wasser-bedeckt"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="img/earth.png" width="20%" style="display: block; margin: auto;"></div>
+<p><a href="https://pngimg.com/image/25340">Quelle</a> CC 4.0 BY-NC</p>
+<p>Sie werden einen Globus-Ball in die Luft und fangen in wieder auf. Sie notieren dann, ob die Stelle unter Ihrem Zeigefinger Wasser zeigt (W) oder Land (L). Den Versuch wiederholen Sie 9 Mal.</p>
+<p><span class="math display">\[W \quad L \quad W \quad W \quad W \quad L \quad W \quad L \quad W\]</span></p>
+<p>🏋 Besorgen Sie sich einen Globus (zur Not eine Münze) und stellen Sie den Versuch nach!</p>
+</div>
+</div>
+<div id="der-datengenierende-prozess-wie-entstanden-die-daten" class="section level2" number="5.5">
+<h2>
+<span class="header-section-number">5.5</span> Der datengenierende Prozess: Wie entstanden die Daten?<a class="anchor" aria-label="anchor" href="#der-datengenierende-prozess-wie-entstanden-die-daten"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>Der wahre Anteil von Wasser der Erdoberfläche ist <span class="math inline">\(p\)</span>.</li>
+<li>Ein Wurf des Globusballes hat die Wahrscheinlichkeit <span class="math inline">\(p\)</span>, eine <span class="math inline">\(W\)</span>-Beobachtung zu erzeugen.</li>
+<li>Die Würfe des Globusballes sind unabhängig voneinander.</li>
+<li>Wir haben kein Vorwissen über <span class="math inline">\(p\)</span>; jeder Wert ist uns gleich wahrscheinlich.</li>
+</ol>
+<p>🏋 Welche Annahmen würden Sie ändern? Welche könnte man wegnehmen? Welche hinzufügen? Was wären die Konsequenzen?</p>
+<div id="wissen-updaten-wir-füttern-daten-in-das-modell" class="section level3" number="5.5.1">
+<h3>
+<span class="header-section-number">5.5.1</span> Wissen updaten: Wir füttern Daten in das Modell<a class="anchor" aria-label="anchor" href="#wissen-updaten-wir-f%C3%BCttern-daten-in-das-modell"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-19-1.png" width="100%" style="display: block; margin: auto;"></div>
+<!-- Das Modell lernt. Ob das Modell nützlich ist (präzise Vorhersagen liefert), steht auf einem anderen Blatt. -->
+</div>
+<div id="erinnern-wir-uns-an-das-urnen-beispiel" class="section level3" number="5.5.2">
+<h3>
+<span class="header-section-number">5.5.2</span> Erinnern wir uns an das Urnen-Beispiel<a class="anchor" aria-label="anchor" href="#erinnern-wir-uns-an-das-urnen-beispiel"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Für jede Hypothese haben wir ein Vorab-Wissen, das die jeweilige Plausibilität der Hypothese angibt: <em>Priori-Verteilung</em>.</p></li>
+<li><p>Für jede Hypothese (d.h. jeden <em>Parameterwert</em> <span class="math inline">\(p\)</span>) möchten wir den Anteil (die Wahrscheinlichkeit) gültiger Kombinationen wissen. Das gibt uns den <em>Likelihood</em>.</p></li>
+<li><p>Dann gewichten wir den Likelihood mit dem Vorabwissen, so dass wir die <em>Posteriori-Verteilung</em><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Anstatt von &lt;em&gt;Priori&lt;/em&gt; liest man auch &lt;em&gt;Prior&lt;/em&gt;; anstatt &lt;em&gt;Posteriori&lt;/em&gt; auch &lt;em&gt;Posterior&lt;/em&gt;&lt;/p&gt;"><sup>4</sup></a> bekommen.</p></li>
+</ul>
+<div class="inline-figure"><img src="img/bayesupdate.png" width="70%" style="display: block; margin: auto;"></div>
+</div>
+<div id="die-binomialverteilung" class="section level3" number="5.5.3">
+<h3>
+<span class="header-section-number">5.5.3</span> Die Binomialverteilung<a class="anchor" aria-label="anchor" href="#die-binomialverteilung"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir nehmen an, dass die Daten unabhängig voneinander entstehen und sich der Parameterwert nicht zwischenzeitlich ändert.</p>
+<p>Dann kann man die Wahrscheinlichkeit (<span class="math inline">\(Pr\)</span>), <span class="math inline">\(W\)</span> mal Wasser und <span class="math inline">\(L\)</span> mal Land zu beobachten, wenn die Wahrscheinlichkeit für Wasser <span class="math inline">\(p\)</span> beträgt, mit der <em>Binomialverteilung</em> berechnen.</p>
+<p>Die Binomialverteilung zeigt die Verteilung der Häufigkeit (Wahrscheinlichkeit) der Ereignisse (z.B. 2 Mal Kopf) beim wiederholten Münzwurf (und allen vergleichbaren Zufallsexperimenten)<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;“Münzwurfverteilung”&lt;/p&gt;"><sup>5</sup></a>.</p>
+<p><span class="math display">\[Pr(W,L|p) = \frac{(W+L)!}{W!L!}p^W(1-p)^L\]</span></p>
+</div>
+<div id="binomialverteilung-mit-r" class="section level3" number="5.5.4">
+<h3>
+<span class="header-section-number">5.5.4</span> Binomialverteilung mit R<a class="anchor" aria-label="anchor" href="#binomialverteilung-mit-r"><i class="fas fa-link"></i></a>
+</h3>
+<p>Was ist der Anteil der gültigen Pfade (Wahrscheinlichkeit), um 6 mal <span class="math inline">\(W\)</span> bei <span class="math inline">\(N=W+L=9\)</span> Würfen zu bekommen, wenn wir von <span class="math inline">\(p=1/2\)</span> ausgehen?</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">6</span>, size <span class="op">=</span> <span class="fl">9</span>, prob <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0.1640625</code></pre>
+<p>Was ist die Wahrscheinlichkeit für <span class="math inline">\(W=9\)</span> bei <span class="math inline">\(N=9\)</span> und <span class="math inline">\(p=1/2\)</span>?</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">9</span>, size <span class="op">=</span> <span class="fl">9</span>, prob <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0.001953125</code></pre>
+</div>
+<div id="beispiele-zur-berechnung-einer-binomial-verteilten-wahrscheinlichkeit" class="section level3" number="5.5.5">
+<h3>
+<span class="header-section-number">5.5.5</span> Beispiele zur Berechnung einer binomial verteilten Wahrscheinlichkeit<a class="anchor" aria-label="anchor" href="#beispiele-zur-berechnung-einer-binomial-verteilten-wahrscheinlichkeit"><i class="fas fa-link"></i></a>
+</h3>
+<p>Ei Professori stellt einen Klausur mit 20 Richtig-Falsch-Fragen. Wie groß ist die Wahrscheinlichkeit, durch bloßes Münze werfen genau 15 Fragen richtig zu raten?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Hey, endlich mal was für echte Leben!&lt;/p&gt;"><sup>6</sup></a></p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">15</span>, size <span class="op">=</span> <span class="fl">20</span>, prob <span class="op">=</span> <span class="fl">.5</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0.01478577</code></pre>
+<p>Was ist die Wahrscheinlichkeit bei 3 Münzwürfen (genau) 3 Treffer (Kopf) zu erzielen?</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">3</span>, <span class="fl">1</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0.125</code></pre>
+</div>
+<div id="unser-modell-ist-geboren" class="section level3" number="5.5.6">
+<h3>
+<span class="header-section-number">5.5.6</span> Unser Modell ist geboren<a class="anchor" aria-label="anchor" href="#unser-modell-ist-geboren"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir fassen das Globusmodell so zusammen:</p>
+<p><span class="math display">\[W \sim \text{Bin}(N,p),\]</span></p>
+<p>Lies: “W ist <em>bin</em>omial verteilt mit den Parametern <span class="math inline">\(N\)</span> und <span class="math inline">\(p\)</span>”. <span class="math inline">\(N\)</span> gibt die Anzahl der Globuswürfe an: <span class="math inline">\(N=W+L\)</span>.</p>
+<p>Unser Vorab-Wissen zu <span class="math inline">\(p\)</span> sei, dass uns alle Werte gleich plausibel erscheinen (“uniform”):</p>
+<p><span class="math display">\[p \sim \text{Unif}(0,1).\]</span></p>
+<p>Lies: “<span class="math inline">\(p\)</span> ist gleich (uniform) verteilt mit der Untergrenze 0 und der Obergrenze 1”.</p>
+</div>
+<div id="so-sehen-die-verteilungen-aus" class="section level3" number="5.5.7">
+<h3>
+<span class="header-section-number">5.5.7</span> So sehen die Verteilungen aus<a class="anchor" aria-label="anchor" href="#so-sehen-die-verteilungen-aus"><i class="fas fa-link"></i></a>
+</h3>
+<div id="binomialverteilung" class="section level4" number="5.5.7.1">
+<h4>
+<span class="header-section-number">5.5.7.1</span> Binomialverteilung<a class="anchor" aria-label="anchor" href="#binomialverteilung"><i class="fas fa-link"></i></a>
+</h4>
+<div class="inline-figure"><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-25-1.png" width="70%" style="display: block; margin: auto;"></div>
+<p><span class="math inline">\(N=9, p = 1/2\)</span></p>
+</div>
+<div id="gleichverteilung" class="section level4" number="5.5.7.2">
+<h4>
+<span class="header-section-number">5.5.7.2</span> Gleichverteilung<a class="anchor" aria-label="anchor" href="#gleichverteilung"><i class="fas fa-link"></i></a>
+</h4>
+<div class="inline-figure"><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-26-1.png" width="70%" style="display: block; margin: auto;"></div>
+<p><span class="math inline">\(Min = 0, Max = 1\)</span></p>
+<p>🏋 Was fällt Ihnen bei der Binomialverteilung auf? Ist sie symmetrisch? Verändert sich die Wahrscheinlichkeit linear? Was fällt Ihnen bei der Gleichverteilung auf?</p>
+</div>
+</div>
+<div id="herleitung-bayes-theorem-12-gemeinsame-wahrscheinlichkeit" class="section level3" number="5.5.8">
+<h3>
+<span class="header-section-number">5.5.8</span> Herleitung Bayes’ Theorem 1/2: Gemeinsame Wahrscheinlichkeit<a class="anchor" aria-label="anchor" href="#herleitung-bayes-theorem-12-gemeinsame-wahrscheinlichkeit"><i class="fas fa-link"></i></a>
+</h3>
+<p>Die Wahrscheinlichkeit für <em>Regen</em> und <em>kalt</em> ist gleich der Wahrscheinlihckeit von <em>Regen</em>, <em>gegeben kalt</em> mal der Wahrscheinlicht von <em>kalt</em>. Entsprechend gilt: Die Wahrscheinlichkeit von <span class="math inline">\(W\)</span>, <span class="math inline">\(L\)</span> und <span class="math inline">\(p\)</span> ist das Produkt von <span class="math inline">\(Pr(W,L|p)\)</span> und der Prior-Wahrscheinlichkeit <span class="math inline">\(Pr(p)\)</span>:</p>
+<p><span class="math display">\[Pr(W,L,p) = Pr(W,L|p) \cdot Pr(p)\]</span></p>
+<p>Genauso gilt: Die Wahrscheinlichkeit von <em>Regen</em> und <em>kalt</em> ist gleich der Wahrscheinlichkeit <em>kalt, wenn’s regnet</em> mal der Wahrscheinlichkeit von <em>Regen</em>:</p>
+<p><span class="math display">\[Pr(W,L,p) = Pr(p|W,L) \cdot Pr(W, L)\]</span></p>
+</div>
+<div id="herleitung-bayes-theorem-22-posteriori-wahrscheinlichkeit" class="section level3" number="5.5.9">
+<h3>
+<span class="header-section-number">5.5.9</span> Herleitung Bayes’ Theorem 2/2: Posteriori-Wahrscheinlichkeit<a class="anchor" aria-label="anchor" href="#herleitung-bayes-theorem-22-posteriori-wahrscheinlichkeit"><i class="fas fa-link"></i></a>
+</h3>
+<p>Wir setzen die letzten beiden Gleichungen gleich:</p>
+<p><span class="math display">\[Pr(W,L|p) \cdot Pr(p) = Pr(p|W,L) \cdot (W,L)\]</span></p>
+<p>Und lösen auf nach der Posteriori-Wahrscheinlichkeit, <span class="math inline">\(Pr(p|W,L)\)</span>:</p>
+<p><span class="math display">\[Pr(p|W,L) = \frac{Pr(W,L|p) Pr(p)}{Pr(W,L)}\]</span></p>
+<p><span class="math inline">\(Pr(W,L)\)</span> nennt man die <em>mittlere Wahrscheinlichkeit der Daten</em> oder <em>Evidenz</em>. Die Evidenz berechnet sich als Mittelwert der Likelihoods über alle Werte von <span class="math inline">\(p\)</span>. Die Aufgabe dieser Größe ist nur dafür zu sorgen, dass insgesamt Werte zwischen 0 und 1 herauskommen.</p>
+</div>
+<div id="bayes-theorem" class="section level3" number="5.5.10">
+<h3>
+<span class="header-section-number">5.5.10</span> Bayes’ Theorem<a class="anchor" aria-label="anchor" href="#bayes-theorem"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<p>Bestandteile:</p>
+<ul>
+<li><p>Posteriori-Wahrscheinlichkeit: <span class="math inline">\(Pr_{Post} := Pr(H|D)\)</span></p></li>
+<li><p>Likelihood: <span class="math inline">\(L := Pr(D|H)\)</span></p></li>
+<li><p>Priori-Wahrscheinlichkeit: <span class="math inline">\(Pr_{Priori} := Pr(H)\)</span></p></li>
+<li><p>Evidenz: <span class="math inline">\(E := Pr(D)\)</span></p></li>
+</ul>
+</li>
+<li><p>Bayes’ Theorem gibt die <span class="math inline">\(Pr_{Post}\)</span> an, wenn man die Gleichung mit der <span class="math inline">\(Pr_{Priori}\)</span> und dem <span class="math inline">\(L\)</span> füttert.</p></li>
+<li><p>Bayes’ Theorem wird häufig verwendet, um die <span class="math inline">\(Pr_{Post}\)</span> zu quantifizieren.</p></li>
+<li><p>Die <span class="math inline">\(Pr_{Post}\)</span> ist proportional zu <span class="math inline">\(L \times Pr_{Priori}\)</span>.</p></li>
+</ul>
+</div>
+<div id="posteriori-als-produkt-von-priori-und-likelihood" class="section level3" number="5.5.11">
+<h3>
+<span class="header-section-number">5.5.11</span> Posteriori als Produkt von Priori und Likelihood<a class="anchor" aria-label="anchor" href="#posteriori-als-produkt-von-priori-und-likelihood"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="math display">\[\text{Posteriori} = \frac{\text{Likelihood} \times \text{Priori}}{\text{Evidenz}}\]</span></p>
+<div class="inline-figure"><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-27-1.png" width="70%" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<div id="bayes-berechnen-mit-r" class="section level2" number="5.6">
+<h2>
+<span class="header-section-number">5.6</span> Bayes berechnen mit R<a class="anchor" aria-label="anchor" href="#bayes-berechnen-mit-r"><i class="fas fa-link"></i></a>
+</h2>
+<div id="die-methode-gitter-annäherung" class="section level3" number="5.6.1">
+<h3>
+<span class="header-section-number">5.6.1</span> Die Methode <em>Gitter-Annäherung</em><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Grid Approximation&lt;/p&gt;"><sup>7</sup></a><a class="anchor" aria-label="anchor" href="#die-methode-gitter-ann%C3%A4herung"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Teile den Wertebereich des Parameter in ein “Gitter” auf, z.B. <span class="math inline">\(0.1, 0.2, ..., 0.9, 1\)</span> (“Gitterwerte”).</li>
+<li>Bestimme den Priori-Wert des Parameters für jeden Gitterwert.</li>
+<li>Berechne den Likelihood für Gitterwert.</li>
+<li>Berechne den unstandardisierten Posteriori-Wert für jeden Gitterwert (Produkt von Priori und Likelihood).</li>
+<li>Standardisiere den Posteriori-Wert durch teilen anhand der Summe alle unstand. Posteriori-Werte.</li>
+</ol>
+</div>
+<div id="gitterwerte-in-r-berechnen" class="section level3" number="5.6.2">
+<h3>
+<span class="header-section-number">5.6.2</span> Gitterwerte in R berechnen<a class="anchor" aria-label="anchor" href="#gitterwerte-in-r-berechnen"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">d</span> <span class="op">&lt;-</span>
+  <span class="fu">tibble</span><span class="op">(</span>
+    <span class="co"># definiere das Gitter: </span>
+    p_Gitter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">1</span>, length.out <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,
+    <span class="co"># bestimme den Priori-Wert:       </span>
+    Priori  <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span>  
+    <span class="fu">mutate</span><span class="op">(</span>
+      <span class="co"># berechne Likelihood für jeden Gitterwert:</span>
+      Likelihood <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span><span class="fl">6</span>, size <span class="op">=</span> <span class="fl">9</span>, prob <span class="op">=</span> <span class="va">p_Gitter</span><span class="op">)</span>,
+      <span class="co"># berechen unstand. Posteriori-Werte:</span>
+      unstd_Post <span class="op">=</span> <span class="va">Likelihood</span> <span class="op">*</span> <span class="va">Priori</span>,
+      <span class="co"># berechne stand. Posteriori-Werte (summiert zu 1):</span>
+      Post <span class="op">=</span> <span class="va">unstd_Post</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">unstd_Post</span><span class="op">)</span><span class="op">)</span>  </code></pre></div>
+</div>
+<div id="unsere-gitter-daten" class="section level3" number="5.6.3">
+<h3>
+<span class="header-section-number">5.6.3</span> Unsere Gitter-Daten<a class="anchor" aria-label="anchor" href="#unsere-gitter-daten"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:right;">
+p_Gitter
+</th>
+<th style="text-align:right;">
+Priori
+</th>
+<th style="text-align:right;">
+Likelihood
+</th>
+<th style="text-align:right;">
+unstd_Post
+</th>
+<th style="text-align:right;">
+Post
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.33
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.56
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.67
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.27
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.78
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.89
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>🏋 Was wohl mit <em>Post</em> passiert, wenn wir <em>Priori</em> ändern?</p>
+</div>
+<div id="pr_post-zeigt-wie-plausibel-wir-jeden-wert-von-p-halten" class="section level3" number="5.6.4">
+<h3>
+<span class="header-section-number">5.6.4</span> <span class="math inline">\(Pr_{Post}\)</span> zeigt, wie plausibel wir jeden Wert von <span class="math inline">\(p\)</span> halten<a class="anchor" aria-label="anchor" href="#pr_post-zeigt-wie-plausibel-wir-jeden-wert-von-p-halten"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-30-1.png" width="100%" style="display: block; margin: auto;"></div>
+<p>Mehr Gitterwerte glätten die Annäherung.</p>
+<!-- ### Quadratische Anpassung^[Quadratic Approximation] -->
+<!-- - Komfortabler noch ist die *quadratische Anpassung*, die bestimmte statistische Eigenschaften von linearen Modellen ausnutzt. -->
+<!-- - Der R-Befehl `quap` gibt zentrale Statistiken zu den Parametern des Modells zurück. -->
+<!-- ```{r QM2-Thema2-kleineModelle-31, echo = TRUE} -->
+<!-- library(rethinking) -->
+<!-- globus_qa <- quap(  # "quadratic approximation" -->
+<!--   alist(  # definiere die Modellgleichungen -->
+<!--     W ~ dbinom(W + L, p),  # Likelihood ist binomial verteilt -->
+<!--     p ~ dunif(0, 1)        # Priori ist gleich (uniform) verteilt -->
+<!--   ),  -->
+<!--   data = list(W = 6, L = 3)  # Daten -->
+<!-- ) -->
+<!-- precis(globus_qa)  # Gibt uns die zentralen Ergebnisse -->
+<!-- ``` -->
+</div>
+<div id="je-größer-die-stichprobe-n-desto-zuverlässiger-wird-unsere-berechnung" class="section level3" number="5.6.5">
+<h3>
+<span class="header-section-number">5.6.5</span> Je größer die Stichprobe (<span class="math inline">\(N\)</span>), desto zuverlässiger wird unsere Berechnung<a class="anchor" aria-label="anchor" href="#je-gr%C3%B6%C3%9Fer-die-stichprobe-n-desto-zuverl%C3%A4ssiger-wird-unsere-berechnung"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="040-Bayes_files/figure-html/QM2-Thema2-kleineModelle-32-1.png" width="100%" style="display: block; margin: auto;"></div>
+<p>Grau: Quadratische Anpassung; schwarz: wahre Verteilung</p>
+</div>
+<div id="zusammenfassung-1" class="section level3" number="5.6.6">
+<h3>
+<span class="header-section-number">5.6.6</span> Zusammenfassung<a class="anchor" aria-label="anchor" href="#zusammenfassung-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>In unserem Modell haben wir Annahmen zu <span class="math inline">\(Pr_{Priori}\)</span> und <span class="math inline">\(L\)</span> getroffen.</p></li>
+<li><p>Auf dieser Basis hat der Golem sein Wissen geupdated zu <span class="math inline">\(Pr_{Post}\)</span>.</p></li>
+<li><p>Mit der Gitter-Methode haben wir viele Hypothesen (Parameterwerte) untersucht und jeweils die <span class="math inline">\(Pr_{Post}\)</span> berechnet.</p></li>
+<li><p>Unser Modell bildet die kleine Welt ab; ob es in der großen Welt nützlich ist, steht auf einem anderen Blatt.</p></li>
+</ul>
+<p>🏋 Wenn Sie auf einen Prozentwert für <span class="math inline">\(W\)</span> tippen müssten, welchen würden Sie nehmen, laut dem Modell (und gegeben der Daten)?</p>
+</div>
+</div>
+<div id="literatur-5" class="section level2" number="5.7">
+<h2>
+<span class="header-section-number">5.7</span> Literatur<a class="anchor" aria-label="anchor" href="#literatur-5"><i class="fas fa-link"></i></a>
+</h2>
+
+</div>
+</div>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="ungewissheit-quantifizieren.html"><span class="header-section-number">4</span> Ungewissheit quantifizieren</a></div>
+<div class="next"><a href="die-post-verteilung.html"><span class="header-section-number">6</span> Die Post-Verteilung</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#bayes"><span class="header-section-number">5</span> Bayes</a></li>
+<li>
+<a class="nav-link" href="#lernsteuerung-2"><span class="header-section-number">5.1</span> Lernsteuerung</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#lernziele-3"><span class="header-section-number">5.1.1</span> Lernziele</a></li>
+<li><a class="nav-link" href="#literatur-4"><span class="header-section-number">5.1.2</span> Literatur</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#kleine-welt-gro%C3%9Fe-welt"><span class="header-section-number">5.2</span> Kleine Welt, große Welt</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#behaims-globus-kolumbus-gl%C3%BCcklicher-fehler"><span class="header-section-number">5.2.1</span> Behaims Globus, Kolumbus glücklicher Fehler</a></li>
+<li><a class="nav-link" href="#kleine-welt-vs.-gro%C3%9Fe-welt"><span class="header-section-number">5.2.2</span> Kleine Welt vs. große Welt</a></li>
+<li><a class="nav-link" href="#so-denkt-unser-bayes-golem"><span class="header-section-number">5.2.3</span> So denkt unser Bayes-Golem</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#bayes-statistik-als-z%C3%A4hlen"><span class="header-section-number">5.3</span> Bayes-Statistik als Zählen</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#murmeln-im-s%C3%A4ckchen"><span class="header-section-number">5.3.1</span> Murmeln im Säckchen</a></li>
+<li><a class="nav-link" href="#unsere-daten"><span class="header-section-number">5.3.2</span> Unsere Daten</a></li>
+<li><a class="nav-link" href="#zugm%C3%B6glichkeiten-laut-hypothese-bwww-1.-zug"><span class="header-section-number">5.3.3</span> Zugmöglichkeiten laut Hypothese [BWWW], 1. Zug</a></li>
+<li><a class="nav-link" href="#zugm%C3%B6glichkeiten-laut-hypothese-bwww-1.-und-2.-zug"><span class="header-section-number">5.3.4</span> Zugmöglichkeiten laut Hypothese [BWWW], 1. und 2. Zug</a></li>
+<li><a class="nav-link" href="#zugm%C3%B6glichkeiten-laut-hypothese-bwww-1.-3.-zug"><span class="header-section-number">5.3.5</span> Zugmöglichkeiten laut Hypothese [BWWW], 1.-3. Zug</a></li>
+<li><a class="nav-link" href="#welche-z%C3%BCge-sind-logisch-m%C3%B6glich"><span class="header-section-number">5.3.6</span> Welche Züge sind logisch möglich?</a></li>
+<li><a class="nav-link" href="#kombinationen-f%C3%BCr-hypothesen"><span class="header-section-number">5.3.7</span> Kombinationen für Hypothesen</a></li>
+<li><a class="nav-link" href="#pfadbaum-f%C3%BCr-die-hypothesen-bwww-bbww-bbbw"><span class="header-section-number">5.3.8</span> Pfadbaum für die Hypothesen [BWWW], [BBWW], [BBBW]</a></li>
+<li><a class="nav-link" href="#wir-ziehen-einer-vierte-murmel-b"><span class="header-section-number">5.3.9</span> Wir ziehen einer vierte Murmel: B</a></li>
+<li><a class="nav-link" href="#priori-information-nutzen"><span class="header-section-number">5.3.10</span> Priori-Information nutzen</a></li>
+<li><a class="nav-link" href="#murmelfabrik-streikt-blaue-murmeln-jetzt-sehr-selten"><span class="header-section-number">5.3.11</span> Murmelfabrik streikt: Blaue Murmeln jetzt sehr selten!</a></li>
+<li><a class="nav-link" href="#z%C3%A4hlen-mit-gro%C3%9Fen-zahlen-nervt"><span class="header-section-number">5.3.12</span> Zählen mit großen Zahlen nervt</a></li>
+<li><a class="nav-link" href="#plausibilit%C3%A4t-berechnen"><span class="header-section-number">5.3.13</span> Plausibilität berechnen</a></li>
+<li><a class="nav-link" href="#von-plausibilit%C3%A4t-zur-wahrscheinlichkeit"><span class="header-section-number">5.3.14</span> Von Plausibilität zur Wahrscheinlichkeit</a></li>
+<li><a class="nav-link" href="#plausibilit%C3%A4t-pro-hypothese"><span class="header-section-number">5.3.15</span> Plausibilität pro Hypothese</a></li>
+<li><a class="nav-link" href="#fachbegriffe"><span class="header-section-number">5.3.16</span> Fachbegriffe</a></li>
+<li><a class="nav-link" href="#zusammenfassung"><span class="header-section-number">5.3.17</span> Zusammenfassung</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#ein-erstes-modell"><span class="header-section-number">5.4</span> Ein erstes Modell</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#welcher-anteil-der-erdoberfl%C3%A4che-ist-mit-wasser-bedeckt"><span class="header-section-number">5.4.1</span> Welcher Anteil der Erdoberfläche ist mit Wasser bedeckt?</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#der-datengenierende-prozess-wie-entstanden-die-daten"><span class="header-section-number">5.5</span> Der datengenierende Prozess: Wie entstanden die Daten?</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#wissen-updaten-wir-f%C3%BCttern-daten-in-das-modell"><span class="header-section-number">5.5.1</span> Wissen updaten: Wir füttern Daten in das Modell</a></li>
+<li><a class="nav-link" href="#erinnern-wir-uns-an-das-urnen-beispiel"><span class="header-section-number">5.5.2</span> Erinnern wir uns an das Urnen-Beispiel</a></li>
+<li><a class="nav-link" href="#die-binomialverteilung"><span class="header-section-number">5.5.3</span> Die Binomialverteilung</a></li>
+<li><a class="nav-link" href="#binomialverteilung-mit-r"><span class="header-section-number">5.5.4</span> Binomialverteilung mit R</a></li>
+<li><a class="nav-link" href="#beispiele-zur-berechnung-einer-binomial-verteilten-wahrscheinlichkeit"><span class="header-section-number">5.5.5</span> Beispiele zur Berechnung einer binomial verteilten Wahrscheinlichkeit</a></li>
+<li><a class="nav-link" href="#unser-modell-ist-geboren"><span class="header-section-number">5.5.6</span> Unser Modell ist geboren</a></li>
+<li><a class="nav-link" href="#so-sehen-die-verteilungen-aus"><span class="header-section-number">5.5.7</span> So sehen die Verteilungen aus</a></li>
+<li><a class="nav-link" href="#herleitung-bayes-theorem-12-gemeinsame-wahrscheinlichkeit"><span class="header-section-number">5.5.8</span> Herleitung Bayes’ Theorem 1/2: Gemeinsame Wahrscheinlichkeit</a></li>
+<li><a class="nav-link" href="#herleitung-bayes-theorem-22-posteriori-wahrscheinlichkeit"><span class="header-section-number">5.5.9</span> Herleitung Bayes’ Theorem 2/2: Posteriori-Wahrscheinlichkeit</a></li>
+<li><a class="nav-link" href="#bayes-theorem"><span class="header-section-number">5.5.10</span> Bayes’ Theorem</a></li>
+<li><a class="nav-link" href="#posteriori-als-produkt-von-priori-und-likelihood"><span class="header-section-number">5.5.11</span> Posteriori als Produkt von Priori und Likelihood</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#bayes-berechnen-mit-r"><span class="header-section-number">5.6</span> Bayes berechnen mit R</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#die-methode-gitter-ann%C3%A4herung"><span class="header-section-number">5.6.1</span> Die Methode Gitter-Annäherung7</a></li>
+<li><a class="nav-link" href="#gitterwerte-in-r-berechnen"><span class="header-section-number">5.6.2</span> Gitterwerte in R berechnen</a></li>
+<li><a class="nav-link" href="#unsere-gitter-daten"><span class="header-section-number">5.6.3</span> Unsere Gitter-Daten</a></li>
+<li><a class="nav-link" href="#pr_post-zeigt-wie-plausibel-wir-jeden-wert-von-p-halten"><span class="header-section-number">5.6.4</span> \(Pr_{Post}\) zeigt, wie plausibel wir jeden Wert von \(p\) halten</a></li>
+<li><a class="nav-link" href="#je-gr%C3%B6%C3%9Fer-die-stichprobe-n-desto-zuverl%C3%A4ssiger-wird-unsere-berechnung"><span class="header-section-number">5.6.5</span> Je größer die Stichprobe (\(N\)), desto zuverlässiger wird unsere Berechnung</a></li>
+<li><a class="nav-link" href="#zusammenfassung-1"><span class="header-section-number">5.6.6</span> Zusammenfassung</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#literatur-5"><span class="header-section-number">5.7</span> Literatur</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/sebastiansauer/bayes-start/blob/master/040-Bayes.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/sebastiansauer/bayes-start/edit/master/040-Bayes.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Bayes:Start</strong>: Eine Einführung in die Bayes-Statistik" was written by Sebastian Sauer. It was last built on Letzte Aktualisierung: 2022-07-07 22:26:06.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

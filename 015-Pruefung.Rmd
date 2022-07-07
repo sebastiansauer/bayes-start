@@ -1,0 +1,15 @@
+# Prüfung
+
+
+## Prüfungleistung
+
+Die Prüfungsleistung besteht aus einer *Klausur*.
+
+```{r hinweise, results='asis', echo = FALSE}
+url <- "https://raw.githubusercontent.com/sebastiansauer/Lehre/main/Hinweise/Hinweise-Pruefung-Open-Book-Child.Rmd"
+childtext <- readLines(url)
+cat(childtext, sep="\n")
+```
+
+
+

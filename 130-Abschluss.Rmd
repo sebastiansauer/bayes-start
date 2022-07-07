@@ -1,0 +1,38 @@
+# Abschluss
+
+
+## Lernsteuerung
+
+```{r chapter-start-sections, echo = FALSE, results = "asis"}
+source("funs/chapter-start-sections.R")
+chapter_start_sections(title = "Abschluss")
+```
+
+
+
+<!-- # Folien, Videos -->
+  
+  
+```{r render-outline-Folien, results = "asis", eval = TRUE, echo = FALSE, message = FALSE}
+#source("https://raw.githubusercontent.com/sebastiansauer/Lehre/main/R-Code/render-course-sections.R")
+source("funs/define-constants.R")
+
+render_section(course_dates_file,
+               content_file,
+               i = NULL,
+               title = "Abschluss",
+               name = "Skript",
+               header_level = header_level)
+
+render_section(course_dates_file,
+               content_file,
+               i = NULL,
+               title = "Abschluss",
+               name = "Videos",
+               header_level = header_level)
+
+```
+
+
+
+## Literatur

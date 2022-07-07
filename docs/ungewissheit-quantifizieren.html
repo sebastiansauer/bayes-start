@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Kapitel 4 Ungewissheit quantifizieren | Bayes:Start</title>
+<meta name="author" content="Sebastian Sauer">
+<meta name="description" content="4.1 Lernsteuerung  4.1.1 Lernziele Wahrscheinlichkeit definieren und relevante Begriffe anführen und in Grundzügen erklären einfache Fragen aus der Wahrscheinlichkeitstheorie berechnen  4.1.2...">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="Kapitel 4 Ungewissheit quantifizieren | Bayes:Start">
+<meta property="og:type" content="book">
+<meta property="og:description" content="4.1 Lernsteuerung  4.1.1 Lernziele Wahrscheinlichkeit definieren und relevante Begriffe anführen und in Grundzügen erklären einfache Fragen aus der Wahrscheinlichkeitstheorie berechnen  4.1.2...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kapitel 4 Ungewissheit quantifizieren | Bayes:Start">
+<meta name="twitter:description" content="4.1 Lernsteuerung  4.1.1 Lernziele Wahrscheinlichkeit definieren und relevante Begriffe anführen und in Grundzügen erklären einfache Fragen aus der Wahrscheinlichkeitstheorie berechnen  4.1.2...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style-bs4.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Eine Einführung in die Bayes-Statistik">Bayes:Start</a>:
+        <small class="text-muted">Eine Einführung in die Bayes-Statistik</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Zu diesem Buch</a></li>
+<li><a class="" href="hinweise-1.html"><span class="header-section-number">1</span> Hinweise</a></li>
+<li><a class="" href="pr%C3%BCfung.html"><span class="header-section-number">2</span> Prüfung</a></li>
+<li><a class="" href="inferenz.html"><span class="header-section-number">3</span> Inferenz</a></li>
+<li><a class="active" href="ungewissheit-quantifizieren.html"><span class="header-section-number">4</span> Ungewissheit quantifizieren</a></li>
+<li><a class="" href="bayes.html"><span class="header-section-number">5</span> Bayes</a></li>
+<li><a class="" href="die-post-verteilung.html"><span class="header-section-number">6</span> Die Post-Verteilung</a></li>
+<li><a class="" href="gauss-modelle.html"><span class="header-section-number">7</span> Gauss-Modelle</a></li>
+<li><a class="" href="lineare-modelle.html"><span class="header-section-number">8</span> Lineare Modelle</a></li>
+<li><a class="" href="metrische-av.html"><span class="header-section-number">9</span> Metrische AV</a></li>
+<li><a class="" href="fallstudien.html"><span class="header-section-number">10</span> Fallstudien</a></li>
+<li><a class="" href="kausalanalyse.html"><span class="header-section-number">11</span> Kausalanalyse</a></li>
+<li><a class="" href="bin%C3%A4re-av.html"><span class="header-section-number">12</span> Binäre AV</a></li>
+<li><a class="" href="abschluss.html"><span class="header-section-number">13</span> Abschluss</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/sebastiansauer/bayes-start">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="ungewissheit-quantifizieren" class="section level1" number="4">
+<h1>
+<span class="header-section-number">Kapitel 4</span> Ungewissheit quantifizieren<a class="anchor" aria-label="anchor" href="#ungewissheit-quantifizieren"><i class="fas fa-link"></i></a>
+</h1>
+<div id="lernsteuerung-1" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> Lernsteuerung<a class="anchor" aria-label="anchor" href="#lernsteuerung-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="lernziele-2" class="section level3" number="4.1.1">
+<h3>
+<span class="header-section-number">4.1.1</span> Lernziele<a class="anchor" aria-label="anchor" href="#lernziele-2"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Wahrscheinlichkeit definieren und relevante Begriffe anführen und in Grundzügen erklären</li>
+<li>einfache Fragen aus der Wahrscheinlichkeitstheorie berechnen</li>
+</ul>
+</div>
+<div id="literatur-3" class="section level3" number="4.1.2">
+<h3>
+<span class="header-section-number">4.1.2</span> Literatur<a class="anchor" aria-label="anchor" href="#literatur-3"><i class="fas fa-link"></i></a>
+</h3>
+<p>NA</p>
+</div>
+</div>
+<div id="was-ist-wahrscheinlichkeit" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> Was ist Wahrscheinlichkeit?<a class="anchor" aria-label="anchor" href="#was-ist-wahrscheinlichkeit"><i class="fas fa-link"></i></a>
+</h2>
+<p>Die Wahrscheinlichkeit <span class="math inline">\(p\)</span> quantifiziert <em>Ungewissheit</em> im Hinblick auf eine Aussage bzw. ein Ereignis <span class="math inline">\(A\)</span>, gegeben eines Hintergrundwissen <span class="math inline">\(H\)</span>. <span class="math inline">\(p=0\)</span> heißt, wir halten die Aussage (das Ereignis) für falsch (unmöglich); <span class="math inline">\(p=1\)</span> heißt, wir halten die Aussage (das Ereignis) für wahr (sicher). <span class="math inline">\(0&lt;p&lt;1\)</span> heißt, wir sind (mehr oder weniger) unsicher bzgl. der Aussage bzw. ob das Ereignis zutrifft.</p>
+<ul>
+<li><p><span class="math inline">\(p(\text{Kopf werfen mit einer fairen Münze}) = 1/2\)</span>.</p></li>
+<li><p><span class="math inline">\(p(\text{eine 6 würfeln mit einer fairen Würfel}) = 1/6\)</span>.</p></li>
+<li><p><span class="math inline">\(p(\text{Entweder ist heute Montag oder nicht}) = 1\)</span>.</p></li>
+<li><p><span class="math inline">\(p(\text{Berlin ist die Hauptstadt von Frankreich}) = 0\)</span>.</p></li>
+</ul>
+<p>🏋 Weitere Beispiele?</p>
+</div>
+<div id="zufallsexperiment" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> Zufallsexperiment<a class="anchor" aria-label="anchor" href="#zufallsexperiment"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Als <em>Zufallsexperiment</em> bezeichnen wir einen Vorgang, bei dem wir wissen, was alles passieren könnte, aber nicht sicher sind, was genau passiert.</p></li>
+<li><p>Die Menge der möglichen Ergebnisse nennt man <em>Grundraum</em> (<em>Ergebnisraum</em>) <span class="math inline">\(\Omega\)</span>. Beim Würfelwurf: <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span></p></li>
+<li><p>Jede Teilmenge <span class="math inline">\(A \subseteq \Omega\)</span> nennt man ein <em>Ereignis</em>. Beim Würfelwurf: z.B. <span class="math inline">\(A = \{2, 4, 6\}\)</span>, eine gerade Zahl werfen.</p></li>
+<li><p>Ein Ereignis, das genau <em>ein</em> Element enthält, heißt <em>Elementarereignis.</em></p></li>
+<li><p>Ein Ereignis, das alle Elementarereignisse aus <span class="math inline">\(\Omega\)</span> enthält, die nicht zum Ereignis <span class="math inline">\(A\)</span> gehören, nennt man das Komplementärereignis (Komplement) <span class="math inline">\(A^C\)</span> (auch: <span class="math inline">\(\overline{A}, \neg A\)</span>). Beim Würfelwurf: Das Komplement von <span class="math inline">\(A=\{2,4,6\}\)</span> ist <span class="math inline">\(A^C=\{1,3,5\}\)</span>, die ungeraden Zahlen.</p></li>
+</ul>
+<p>🏋 Beschreiben Sie ein weiteres Zufallsexperiment!</p>
+</div>
+<div id="additionsregel" class="section level2" number="4.4">
+<h2>
+<span class="header-section-number">4.4</span> Additionsregel<a class="anchor" aria-label="anchor" href="#additionsregel"><i class="fas fa-link"></i></a>
+</h2>
+<p>Die Wahrscheinlichkeit, dass mindestens eines der beiden sich ausschließenden Ereignissen <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> der Fall ist, ist durch die Additionsregel gegeben:</p>
+<p><span class="math inline">\(Pr(\text{A oder B}) = Pr(A \cup B) = Pr(A) + Pr(B)\)</span></p>
+<p>Beispiel: Wahrscheinlichkeit mit einem “fairen” Würfelwurf <span class="math inline">\(X\)</span> eine 1 oder 2 zu werfen:</p>
+<p><span class="math inline">\(Pr(X=1 \cup X=2) = Pr(X=1) + Pr(X=2) = 1/6 + 1/6 = 1/3\)</span></p>
+<p>🏋 Was ist <span class="math inline">\(Pr(X &lt; 4)\)</span>, <span class="math inline">\(Pr(1 \le X \le 6)\)</span>?</p>
+</div>
+<div id="unabhängigkeit-zweier-ereignisse" class="section level2" number="4.5">
+<h2>
+<span class="header-section-number">4.5</span> Unabhängigkeit zweier Ereignisse<a class="anchor" aria-label="anchor" href="#unabh%C3%A4ngigkeit-zweier-ereignisse"><i class="fas fa-link"></i></a>
+</h2>
+<p>Zwei Ereignisse sind <em>(stochastisch) unabhängig</em>, wenn Kenntnis des einen uns keine Information gibt, ob das andere der Fall ist. Ansonsten nennt man die beiden Ereignisse (stochastisch) <em>abhängig</em> oder <em>zusammenhängend.</em></p>
+<p>Angenommen wir werfen zwei faire Münzen. Wir wissen, die erste Münze zeigt <em>Kopf</em>. Dieses Wissen gibt uns keine weitere Information, welche Seite bei der zweiten Münze oben liegt.</p>
+<p>Auf der anderen Seite sind Aktienkurs häufig voneinander abhängig. Weiß man, dass eine Aktie gestiegen ist, so ist es (häufig) wahrscheinlich, dass die andere auch gestiegen ist.</p>
+<p><em>Achtung:</em> Stochastische (Un)abhängigkeit impliziert nicht kausale (Un)abhängigkeit.</p>
+<div id="beispiele-für-abhängige-und-unabhängige-ereignisse-a-und-b" class="section level3" number="4.5.1">
+<h3>
+<span class="header-section-number">4.5.1</span> Beispiele für abhängige und unabhängige Ereignisse <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span><a class="anchor" aria-label="anchor" href="#beispiele-f%C3%BCr-abh%C3%A4ngige-und-unabh%C3%A4ngige-ereignisse-a-und-b"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="unabhängig" class="section level3" number="4.5.2">
+<h3>
+<span class="header-section-number">4.5.2</span> Unabhängig<a class="anchor" aria-label="anchor" href="#unabh%C3%A4ngig"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Münzwurf 1 (A) und Münzwurf 2 (B), jeweils fair</li>
+<li>Meine Stimmung (A) und ob das heutige Datum eine Primzahl ist (B)</li>
+<li>Zwei Passanten getrennt zu ihrer Meinung zu einem politischen Thema befragen</li>
+<li>Die Körpergröße zweier zufällig gezogener Personen (A und B)</li>
+</ul>
+</div>
+<div id="abhängig" class="section level3" number="4.5.3">
+<h3>
+<span class="header-section-number">4.5.3</span> Abhängig<a class="anchor" aria-label="anchor" href="#abh%C3%A4ngig"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Körpergröße zweier Geschwister (A und B)</li>
+<li>Lernleistung zwier Schüleris A und B der gleichen Klasse</li>
+<li>PS-Zahl (A) und Spritverbrauch (B)</li>
+<li>Augenzahl beim zweimaligen Wurf (A und B) eines gezinkten Würfels</li>
+<li>Geschlecht (A) und ob die Person Papst ist (B)</li>
+</ul>
+</div>
+</div>
+<div id="multiplikationsregel-für-unabhängige-ereignisse" class="section level2" number="4.6">
+<h2>
+<span class="header-section-number">4.6</span> Multiplikationsregel für unabhängige Ereignisse<a class="anchor" aria-label="anchor" href="#multiplikationsregel-f%C3%BCr-unabh%C3%A4ngige-ereignisse"><i class="fas fa-link"></i></a>
+</h2>
+<p>Seien <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> zwei unabhängige Ereignisse, dann nennt man die <em>gemeinsame Wahrscheinlichkeit</em> <span class="math inline">\(Pr(AB)\)</span>, die Wahrscheinlichkeit, dass beide Ereignisse eintreten. Sie berechnet sich als Produkt der jeweiligen Wahrscheinlichkeiten von <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span>:</p>
+<p><span class="math display">\[Pr(A \text{ und } B ) = Pr(AB) = Pr(A \cap B) = Pr(A) \cdot Pr(B)\]</span></p>
+<p>Wirft man zwei faire Münzen<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Im Folgenden immer als fair angenommen&lt;/p&gt;"><sup>2</sup></a>, so ist die Wahrscheinlichkeit, dass beide Kopf zeigen: <span class="math inline">\(Pr(KK) = Pr(K) \cdot Pr(K) = 1/2 \cdot 1/2 = 1/4\)</span>.</p>
+<p>🏋 Was ist <span class="math inline">\(Pr(ZZ)\)</span>? Ist <span class="math inline">\(Pr(ZK) = Pr(KZ)\)</span>?</p>
+<div id="beispiele-für-die-multiplikationsregel-unabhängiger-ereignisse" class="section level3" number="4.6.1">
+<h3>
+<span class="header-section-number">4.6.1</span> Beispiele für die Multiplikationsregel unabhängiger Ereignisse<a class="anchor" aria-label="anchor" href="#beispiele-f%C3%BCr-die-multiplikationsregel-unabh%C3%A4ngiger-ereignisse"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Zwei Mal hintereinander eine 6 werfen (fairer Würfel): <span class="math inline">\(Pr(6, 6) = Pr(6) \cdot Pr(6) = 1/6 \cdot 1/6 = 1/36\)</span>.</p></li>
+<li><p>Beim Lotto wird erst die Zahl <span class="math inline">\(42\)</span> und dann die Zahl <span class="math inline">\(1\)</span> gezogen: <span class="math inline">\(Pr(42,1)=1/49 \cdot 1/48 \approx 4.3\times 10^{-4}\)</span>.</p></li>
+<li><p>Bei der Klausur alle 10 Richtig-Falsch-Fragen <em>r</em>ichtig zu raten: <span class="math inline">\(Pr(10r) = 1/2^{10} \approx 0.001\approx 1/1000\)</span> .</p></li>
+<li><p>Wenn man in der Disko 10 Personen anspricht, Korb-Wahrscheinlichkeit <span class="math inline">\(p(K)=9/10\)</span> beträgt, wie hoch ist die Wahrscheinlichkeit nicht alleine nach hause zugehen? <span class="math inline">\(Pr(\neg0) = 1-0.9^{10} \approx 0.65132\)</span>.</p></li>
+<li><p>Ei Forschi führt 10 statistische Tests durch, jeweils mit 10% Gefahr, dass ein falsch-positives Ergebnis zustande kommt. Wie hoch ist die Wahrscheinlichkeit für mindestens 1 falsch-positives Ergebnis? <span class="math inline">\(Pr(\neg 0 FP) = 1 - 0.9^{10} \approx 0.65\)</span></p></li>
+</ul>
+</div>
+<div id="münzen-werfen-als-baum-anzahl-kopf-nach-2-würfen" class="section level3" number="4.6.2">
+<h3>
+<span class="header-section-number">4.6.2</span> Münzen werfen als Baum: Anzahl <em>Kopf</em> nach 2 Würfen<a class="anchor" aria-label="anchor" href="#m%C3%BCnzen-werfen-als-baum-anzahl-kopf-nach-2-w%C3%BCrfen"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="img/muenz1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+Ereignis
+</th>
+<th style="text-align:left;">
+Pr
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+0K
+</td>
+<td style="text-align:left;">
+1/2 * 1/2 = 1/4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1K
+</td>
+<td style="text-align:left;">
+1/4 + 1/4 = 1/2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2K
+</td>
+<td style="text-align:left;">
+1/2 * 1/2 = 1/4
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>🏋 Zeichnen Sie den Baum und berechnen Sie die Wahrscheinlichkeiten für eine gezinkte Münze mit <span class="math inline">\(P(K) = 2/3\)</span>.</p>
+</div>
+<div id="münzen-werfen-als-baum-anzahl-kopf-nach-3-würfen" class="section level3" number="4.6.3">
+<h3>
+<span class="header-section-number">4.6.3</span> Münzen werfen als Baum: Anzahl <em>Kopf</em> nach 3 Würfen<a class="anchor" aria-label="anchor" href="#m%C3%BCnzen-werfen-als-baum-anzahl-kopf-nach-3-w%C3%BCrfen"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="img/muenz2.png" width="70%" style="display: block; margin: auto;"></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+Ereignis
+</th>
+<th style="text-align:left;">
+Pr
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+0K
+</td>
+<td style="text-align:left;">
+1/2 * 1/2 * 1/2 = 1/8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1K
+</td>
+<td style="text-align:left;">
+1/8 + 1/8 + 1/8 = 3/8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2K
+</td>
+<td style="text-align:left;">
+3 * 1/8 = 3/8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3K
+</td>
+<td style="text-align:left;">
+1/2 * 1/2 * 1/2 = 1/8
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="hintergrundwissen" class="section level2" number="4.7">
+<h2>
+<span class="header-section-number">4.7</span> Hintergrundwissen<a class="anchor" aria-label="anchor" href="#hintergrundwissen"><i class="fas fa-link"></i></a>
+</h2>
+<div id="wahrscheinlichkeit-ist-abhängig-vom-hintergrundwissen-h" class="section level3" number="4.7.1">
+<h3>
+<span class="header-section-number">4.7.1</span> Wahrscheinlichkeit ist abhängig vom Hintergrundwissen (<span class="math inline">\(H\)</span>)<a class="anchor" aria-label="anchor" href="#wahrscheinlichkeit-ist-abh%C3%A4ngig-vom-hintergrundwissen-h"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="math inline">\(Pr(A|H)\)</span>: Die Wahrscheinlichkeit von <span class="math inline">\(A\)</span>, <em>gegeben</em> <span class="math inline">\(H\)</span>.</p>
+<ul>
+<li><p>A: “Sokrates ist sterblich.”; H: “Alle Menschen sind sterblich und Sokrates ist ein Mensch.” <span class="math inline">\(\implies Pr(A|H) = 1\)</span>.</p></li>
+<li><p>A: “Die Münze zeigt Kopf”; H: “Wir haben keinen Grund anzunehmen, dass eine der beiden Seiten häufiger oben liegt oder das sonst etwas passiert.” <span class="math inline">\(\implies Pr(A|H)=1/2\)</span>.</p></li>
+<li><p>A: “Schorsch, das rosa Einhort, mag Bier.”; H: “50% der rosa Einhörner mögen Bier.” <span class="math inline">\(\implies Pr(A|H) = 1/2\)</span>.</p></li>
+<li><p>Die Wahrscheinlichkeit eine 6 zu würfeln (A), gegeben dem Hintergrundwissen (H), dass der Würfel “fair” ist, d.h. wir kein Wissen haben, dass eine Augenzahl häufiger auftritt, ist <span class="math inline">\(1/6\)</span>.</p></li>
+</ul>
+</div>
+<div id="hintergrundwissen-ist-subjektiv" class="section level3" number="4.7.2">
+<h3>
+<span class="header-section-number">4.7.2</span> Hintergrundwissen ist subjektiv<a class="anchor" aria-label="anchor" href="#hintergrundwissen-ist-subjektiv"><i class="fas fa-link"></i></a>
+</h3>
+<p>Ich habe gerade einen Stift in meiner Hosentasche (links oder rechts). Wie groß ist die Wahrscheinlichkeit, dass der Stift in meiner linken Tasche ist (und nicht in der rechten)?</p>
+<p>Bezogen auf <em>Ihr</em> Hintergrundwissen gilt: <span class="math inline">\(Pr(\text{A="Stift links"|H="kein besonderes Wissen zu der Frage"}) = 1/2\)</span>.</p>
+<p>Bezogen auf <em>mein</em> Hintergrundwissen gilt: <span class="math inline">\(Pr(\text{A="Stift links"|H="Der Stift ist links"}) = 1\)</span>.</p>
+<p><span class="citation">Briggs (<a href="abschluss.html#ref-briggs_uncertainty_2016" role="doc-biblioref">2016</a>)</span></p>
+<p>🏋 Geben Sie ein weiteres Beispiel für die Subjektivität von Hintergrundwissen an! Formalisieren Sie es wie oben gezeigt.</p>
+</div>
+</div>
+<div id="bedingte-wahrscheinlichkeit" class="section level2" number="4.8">
+<h2>
+<span class="header-section-number">4.8</span> Bedingte Wahrscheinlichkeit<a class="anchor" aria-label="anchor" href="#bedingte-wahrscheinlichkeit"><i class="fas fa-link"></i></a>
+</h2>
+<p>Wie groß ist die Wahrscheinlichkeit:</p>
+<ul>
+<li>die Klausur zu bestehen, <em>wenn</em> man gelernt hat?</li>
+<li>von schlechter Laune, <em>gegeben</em> es ist Montag?</li>
+<li>schwer an Corona zu erkranken, <em>unter der Bedingung</em>, man ist geimpft?</li>
+</ul>
+<p><span class="math inline">\(Pr(A|H)\)</span> ist die Wahrscheinlichkeit, dass <span class="math inline">\(A\)</span> eintritt, <em>gegeben</em> bzw. <em>unter der Bedingung</em>, dass <span class="math inline">\(H\)</span> eingetreten ist.</p>
+<p>Formel der bedingten Wahrscheinlichkeit:</p>
+<p><span class="math display">\[Pr(B|l) = \frac{Pr(B \cap l)}{Pr(l)}\]</span></p>
+<div id="kontingenztabelle-zur-berechnung-von-wahrscheinlichkeiten" class="section level3" number="4.8.1">
+<h3>
+<span class="header-section-number">4.8.1</span> Kontingenztabelle zur Berechnung von Wahrscheinlichkeiten<a class="anchor" aria-label="anchor" href="#kontingenztabelle-zur-berechnung-von-wahrscheinlichkeiten"><i class="fas fa-link"></i></a>
+</h3>
+<p>Beispiel aus den Klausurergebnissen bei Prof. Süß:</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+.
+</th>
+<th style="text-align:right;">
+bestanden (B)
+</th>
+<th style="text-align:right;">
+nicht (¬B)
+</th>
+<th style="text-align:right;">
+SUMME
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+hat gelernt (l)
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+42
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nicht (¬l)
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+36
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SUMME
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+78
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Randwahrscheinlichkeit: <span class="math inline">\(Pr(B) = 48/78 \approx 0.61 \quad Pr(l) = 42/78 \approx 0.54\)</span></p>
+<p>Bedingte Wahrscheinlichkeit: <span class="math inline">\(Pr(B|l) = 36/42 \approx \frac{0.46}{0.54} \approx 0.86 \quad Pr(l|B) = 36/48 = 0.75\)</span></p>
+<p>Gemeinsame Wahrscheinlichkeit: <span class="math inline">\(Pr(B \cap l) = Pr(l \cap B) = Pr(Bl) = Pr(lB) = 36/78 \approx 0.46\)</span></p>
+</div>
+<div id="visualierung-von-gemeinsamer-und-bedingter-wahrscheinlichkeit" class="section level3" number="4.8.2">
+<h3>
+<span class="header-section-number">4.8.2</span> Visualierung von gemeinsamer und bedingter Wahrscheinlichkeit<a class="anchor" aria-label="anchor" href="#visualierung-von-gemeinsamer-und-bedingter-wahrscheinlichkeit"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="030-Wahrscheinlichkeit_files/figure-html/QM2-Thema1-WasistInferenz-29-1.png" width="70%" style="display: block; margin: auto;"></div>
+<p><span class="math inline">\(Pr(AB) = Pr(A) \cdot Pr(B) = 50\% \cdot 50\% = 25\%\)</span></p>
+<p><span class="math inline">\(Pr(A|B) = Pr(A,B) / Pr(B) = 25\% / 50\% = 50\%\)</span></p>
+</div>
+<div id="visualierung-von-unabhängigen-ereignissen" class="section level3" number="4.8.3">
+<h3>
+<span class="header-section-number">4.8.3</span> Visualierung von (un)abhängigen Ereignissen<a class="anchor" aria-label="anchor" href="#visualierung-von-unabh%C3%A4ngigen-ereignissen"><i class="fas fa-link"></i></a>
+</h3>
+<p>Ändert sich die Wahrscheinlichkeit eines Ereignisses, wenn man es auf ein anderes bedingt, so sind beide Ereignisse abhängig, ansonsten unabhängig.</p>
+<div id="abhängig-1" class="section level4" number="4.8.3.1">
+<h4>
+<span class="header-section-number">4.8.3.1</span> Abhängig<a class="anchor" aria-label="anchor" href="#abh%C3%A4ngig-1"><i class="fas fa-link"></i></a>
+</h4>
+<p><span class="math inline">\(P(A|B) \ne Pr(A) \ne Pr(A|\neg B)\)</span></p>
+<div class="inline-figure"><img src="030-Wahrscheinlichkeit_files/figure-html/QM2-Thema1-WasistInferenz-31-1.png" width="50%" style="display: block; margin: auto;"></div>
+<p>Überleben auf der Titanic ist abhängig von der Passagierklasse.</p>
+</div>
+<div id="unabhängig-1" class="section level4" number="4.8.3.2">
+<h4>
+<span class="header-section-number">4.8.3.2</span> Unabhängig<a class="anchor" aria-label="anchor" href="#unabh%C3%A4ngig-1"><i class="fas fa-link"></i></a>
+</h4>
+<p><span class="math inline">\(P(A|B) = Pr(A) = Pr(A|\neg B)\)</span>
+<img src="030-Wahrscheinlichkeit_files/figure-html/QM2-Thema1-WasistInferenz-32-1.png" width="50%" style="display: block; margin: auto;"></p>
+<p>Überleben auf der Titanic ist <em>un</em>abhängig vom Ereignis <em>Alter ist eine Primzahl</em>.</p>
+</div>
+</div>
+<div id="beispiel-zur-visualisierung-zweier-abhängiger-ereignisse" class="section level3" number="4.8.4">
+<h3>
+<span class="header-section-number">4.8.4</span> Beispiel zur Visualisierung zweier abhängiger Ereignisse<a class="anchor" aria-label="anchor" href="#beispiel-zur-visualisierung-zweier-abh%C3%A4ngiger-ereignisse"><i class="fas fa-link"></i></a>
+</h3>
+<p>Sind die Ereignisse <em>Tod durch Covid</em> bzw. <em>Impfquote</em> (<span class="math inline">\(A\)</span>) und <em>Land</em><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;hier mit den zwei Ausprägungen &lt;em&gt;DEU&lt;/em&gt; und &lt;em&gt;USA&lt;/em&gt;&lt;/p&gt;"><sup>3</sup></a> (<span class="math inline">\(B\)</span>) voneinander abhängig?</p>
+<p>Ja, da in beiden Diagrammen gilt: <span class="math inline">\(P(A|B) \ne Pr(A) \ne Pr(A|\neg B)\)</span>.</p>
+<p><img src="030-Wahrscheinlichkeit_files/figure-html/plotcovid1-1.png" width="70%" style="display: block; margin: auto;"><img src="030-Wahrscheinlichkeit_files/figure-html/plotcovid1-2.png" width="70%" style="display: block; margin: auto;"></p>
+<p>Daten von <a href="https://ourworldindata.org/covid-deaths">Our World in Data</a></p>
+<p><span class="citation">Hannah Ritchie and Roser (<a href="abschluss.html#ref-owidcoronavirus" role="doc-biblioref">2020</a>)</span></p>
+
+</div>
+</div>
+</div>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="inferenz.html"><span class="header-section-number">3</span> Inferenz</a></div>
+<div class="next"><a href="bayes.html"><span class="header-section-number">5</span> Bayes</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ungewissheit-quantifizieren"><span class="header-section-number">4</span> Ungewissheit quantifizieren</a></li>
+<li>
+<a class="nav-link" href="#lernsteuerung-1"><span class="header-section-number">4.1</span> Lernsteuerung</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#lernziele-2"><span class="header-section-number">4.1.1</span> Lernziele</a></li>
+<li><a class="nav-link" href="#literatur-3"><span class="header-section-number">4.1.2</span> Literatur</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#was-ist-wahrscheinlichkeit"><span class="header-section-number">4.2</span> Was ist Wahrscheinlichkeit?</a></li>
+<li><a class="nav-link" href="#zufallsexperiment"><span class="header-section-number">4.3</span> Zufallsexperiment</a></li>
+<li><a class="nav-link" href="#additionsregel"><span class="header-section-number">4.4</span> Additionsregel</a></li>
+<li>
+<a class="nav-link" href="#unabh%C3%A4ngigkeit-zweier-ereignisse"><span class="header-section-number">4.5</span> Unabhängigkeit zweier Ereignisse</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#beispiele-f%C3%BCr-abh%C3%A4ngige-und-unabh%C3%A4ngige-ereignisse-a-und-b"><span class="header-section-number">4.5.1</span> Beispiele für abhängige und unabhängige Ereignisse \(A\) und \(B\)</a></li>
+<li><a class="nav-link" href="#unabh%C3%A4ngig"><span class="header-section-number">4.5.2</span> Unabhängig</a></li>
+<li><a class="nav-link" href="#abh%C3%A4ngig"><span class="header-section-number">4.5.3</span> Abhängig</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#multiplikationsregel-f%C3%BCr-unabh%C3%A4ngige-ereignisse"><span class="header-section-number">4.6</span> Multiplikationsregel für unabhängige Ereignisse</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#beispiele-f%C3%BCr-die-multiplikationsregel-unabh%C3%A4ngiger-ereignisse"><span class="header-section-number">4.6.1</span> Beispiele für die Multiplikationsregel unabhängiger Ereignisse</a></li>
+<li><a class="nav-link" href="#m%C3%BCnzen-werfen-als-baum-anzahl-kopf-nach-2-w%C3%BCrfen"><span class="header-section-number">4.6.2</span> Münzen werfen als Baum: Anzahl Kopf nach 2 Würfen</a></li>
+<li><a class="nav-link" href="#m%C3%BCnzen-werfen-als-baum-anzahl-kopf-nach-3-w%C3%BCrfen"><span class="header-section-number">4.6.3</span> Münzen werfen als Baum: Anzahl Kopf nach 3 Würfen</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#hintergrundwissen"><span class="header-section-number">4.7</span> Hintergrundwissen</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#wahrscheinlichkeit-ist-abh%C3%A4ngig-vom-hintergrundwissen-h"><span class="header-section-number">4.7.1</span> Wahrscheinlichkeit ist abhängig vom Hintergrundwissen (\(H\))</a></li>
+<li><a class="nav-link" href="#hintergrundwissen-ist-subjektiv"><span class="header-section-number">4.7.2</span> Hintergrundwissen ist subjektiv</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#bedingte-wahrscheinlichkeit"><span class="header-section-number">4.8</span> Bedingte Wahrscheinlichkeit</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#kontingenztabelle-zur-berechnung-von-wahrscheinlichkeiten"><span class="header-section-number">4.8.1</span> Kontingenztabelle zur Berechnung von Wahrscheinlichkeiten</a></li>
+<li><a class="nav-link" href="#visualierung-von-gemeinsamer-und-bedingter-wahrscheinlichkeit"><span class="header-section-number">4.8.2</span> Visualierung von gemeinsamer und bedingter Wahrscheinlichkeit</a></li>
+<li><a class="nav-link" href="#visualierung-von-unabh%C3%A4ngigen-ereignissen"><span class="header-section-number">4.8.3</span> Visualierung von (un)abhängigen Ereignissen</a></li>
+<li><a class="nav-link" href="#beispiel-zur-visualisierung-zweier-abh%C3%A4ngiger-ereignisse"><span class="header-section-number">4.8.4</span> Beispiel zur Visualisierung zweier abhängiger Ereignisse</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/sebastiansauer/bayes-start/blob/master/030-Wahrscheinlichkeit.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/sebastiansauer/bayes-start/edit/master/030-Wahrscheinlichkeit.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Bayes:Start</strong>: Eine Einführung in die Bayes-Statistik" was written by Sebastian Sauer. It was last built on Letzte Aktualisierung: 2022-07-07 22:26:06.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

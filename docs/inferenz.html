@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Kapitel 3 Inferenz | Bayes:Start</title>
+<meta name="author" content="Sebastian Sauer">
+<meta name="description" content="3.1 Lernsteuerung  3.1.1 Vorbereitung Lesen Sie die Hinweise zum Modul. Installieren (oder Updaten) Sie die für dieses Modul angegeben Software. Lesen Sie die angegebene Literatur.  3.1.2...">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="Kapitel 3 Inferenz | Bayes:Start">
+<meta property="og:type" content="book">
+<meta property="og:description" content="3.1 Lernsteuerung  3.1.1 Vorbereitung Lesen Sie die Hinweise zum Modul. Installieren (oder Updaten) Sie die für dieses Modul angegeben Software. Lesen Sie die angegebene Literatur.  3.1.2...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kapitel 3 Inferenz | Bayes:Start">
+<meta name="twitter:description" content="3.1 Lernsteuerung  3.1.1 Vorbereitung Lesen Sie die Hinweise zum Modul. Installieren (oder Updaten) Sie die für dieses Modul angegeben Software. Lesen Sie die angegebene Literatur.  3.1.2...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style-bs4.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Eine Einführung in die Bayes-Statistik">Bayes:Start</a>:
+        <small class="text-muted">Eine Einführung in die Bayes-Statistik</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Zu diesem Buch</a></li>
+<li><a class="" href="hinweise-1.html"><span class="header-section-number">1</span> Hinweise</a></li>
+<li><a class="" href="pr%C3%BCfung.html"><span class="header-section-number">2</span> Prüfung</a></li>
+<li><a class="active" href="inferenz.html"><span class="header-section-number">3</span> Inferenz</a></li>
+<li><a class="" href="ungewissheit-quantifizieren.html"><span class="header-section-number">4</span> Ungewissheit quantifizieren</a></li>
+<li><a class="" href="bayes.html"><span class="header-section-number">5</span> Bayes</a></li>
+<li><a class="" href="die-post-verteilung.html"><span class="header-section-number">6</span> Die Post-Verteilung</a></li>
+<li><a class="" href="gauss-modelle.html"><span class="header-section-number">7</span> Gauss-Modelle</a></li>
+<li><a class="" href="lineare-modelle.html"><span class="header-section-number">8</span> Lineare Modelle</a></li>
+<li><a class="" href="metrische-av.html"><span class="header-section-number">9</span> Metrische AV</a></li>
+<li><a class="" href="fallstudien.html"><span class="header-section-number">10</span> Fallstudien</a></li>
+<li><a class="" href="kausalanalyse.html"><span class="header-section-number">11</span> Kausalanalyse</a></li>
+<li><a class="" href="bin%C3%A4re-av.html"><span class="header-section-number">12</span> Binäre AV</a></li>
+<li><a class="" href="abschluss.html"><span class="header-section-number">13</span> Abschluss</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/sebastiansauer/bayes-start">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="inferenz" class="section level1" number="3">
+<h1>
+<span class="header-section-number">Kapitel 3</span> Inferenz<a class="anchor" aria-label="anchor" href="#inferenz"><i class="fas fa-link"></i></a>
+</h1>
+<div id="lernsteuerung" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> Lernsteuerung<a class="anchor" aria-label="anchor" href="#lernsteuerung"><i class="fas fa-link"></i></a>
+</h2>
+<div id="vorbereitung" class="section level3" number="3.1.1">
+<h3>
+<span class="header-section-number">3.1.1</span> Vorbereitung<a class="anchor" aria-label="anchor" href="#vorbereitung"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Lesen Sie die Hinweise zum Modul.</li>
+<li>Installieren (oder Updaten) Sie die für dieses Modul angegeben Software.</li>
+<li>Lesen Sie die angegebene Literatur.</li>
+</ul>
+</div>
+<div id="lernziele-1" class="section level3" number="3.1.2">
+<h3>
+<span class="header-section-number">3.1.2</span> Lernziele<a class="anchor" aria-label="anchor" href="#lernziele-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>die Definition von Inferenzstatistik sowie Beispiele für inferenzstatistische Fragestellungen nennen</li>
+<li>zentrale Begriffe der Inferenzstatistik nennen und in Grundzügen erklären</li>
+<li>den Nutzen von Inferenzstatistik nennen</li>
+<li>erläutern, in welchem Zusammenhang Ungewissheit zur Inferenzstatistik steht</li>
+<li>Unterschiede zwischen klassischer und Bayes-Inferenz benennen</li>
+<li>Vor- und Nachteile der klassischen vs. Bayes-Inferenz diskutieren</li>
+<li>Die grundlegende Herangehensweise zur Berechnung des p-Werts informell erklären können</li>
+</ul>
+</div>
+<div id="literatur-1" class="section level3" number="3.1.3">
+<h3>
+<span class="header-section-number">3.1.3</span> Literatur<a class="anchor" aria-label="anchor" href="#literatur-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>ROS, Kap. 1</p>
+</div>
+<div id="hinweise-2" class="section level3" number="3.1.4">
+<h3>
+<span class="header-section-number">3.1.4</span> Hinweise<a class="anchor" aria-label="anchor" href="#hinweise-2"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Bitte beachten Sie die Hinweise zum Präsenzunterricht und der Streamingoption.</li>
+<li>Bitte stellen Sie sicher, dass Sie einen einsatzbereiten Computer haben und dass die angegebene Software (in aktueller Version) läuft.</li>
+</ul>
+</div>
+</div>
+<div id="was-ist-inferenz" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> Was ist Inferenz?<a class="anchor" aria-label="anchor" href="#was-ist-inferenz"><i class="fas fa-link"></i></a>
+</h2>
+<div id="deskriptiv--vs.-inferenzstatistik" class="section level3" number="3.2.1">
+<h3>
+<span class="header-section-number">3.2.1</span> Deskriptiv- vs. Inferenzstatistik<a class="anchor" aria-label="anchor" href="#deskriptiv--vs.-inferenzstatistik"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="img/desk_vs_inf-crop.png" width="70%" style="display: block; margin: auto;"></div>
+<p><em>Deskriptivstastistik</em> fasst Stichprobenmerkmale zu Kennzahlen (Statistiken) zusammen.</p>
+<p><em>Inferenzstatistik</em> schließt von Statistiken auf Parameter (Kennzahlen von Grundgesamtheiten).</p>
+<p>🏋 Schließen Sie die Augen und zeichnen Sie obiges Diagramm!</p>
+</div>
+<div id="wozu-ist-die-inferenstatistik-gut" class="section level3" number="3.2.2">
+<h3>
+<span class="header-section-number">3.2.2</span> Wozu ist die Inferenstatistik gut?<a class="anchor" aria-label="anchor" href="#wozu-ist-die-inferenstatistik-gut"><i class="fas fa-link"></i></a>
+</h3>
+<div class="infobox quote">
+<p>Inferenz bedeutet logisches Schließen; auf Basis von vorliegenden Wissen wird neues Wissen generiert.</p>
+</div>
+<div class="infobox quote">
+<p>Inferenzstatistik ist ein Verfahren, das mathematische Modelle (oft aus der Stochastik) verwendet, um von einer bestimmten Datenlage, die eine Stichprobe einer Grundgesamtheit darstellt, allgemeine Schlüsse zu ziehen.</p>
+</div>
+<p>🏋️️ Heute Nacht vor dem Schlafen wiederholen Sie die Definition. Üben Sie jetzt schon mal.</p>
+<!-- ## Die drei Aufgaben der Inferenzstatistik -->
+<!-- 1. Von der Stichprobe auf die Grundgesamtheit schließen  -->
+<!-- 2. Von der Experimental- auf die Kontrollgruppe zu schließen -->
+<!-- 3. Vom beobachteten Messwert auf das zugrundeliegende Konstrukt zu schließen -->
+</div>
+<div id="deskriptiv--und-inferenzstatistik-gehen-hand-in-hand" class="section level3" number="3.2.3">
+<h3>
+<span class="header-section-number">3.2.3</span> Deskriptiv- und Inferenzstatistik gehen Hand in Hand<a class="anchor" aria-label="anchor" href="#deskriptiv--und-inferenzstatistik-gehen-hand-in-hand"><i class="fas fa-link"></i></a>
+</h3>
+<p>🏋️ Für jede Statistik (Kennzahl von Stichprobendaten) kann man die Methoden der Inferenzstatistik verwenden, z.B.:</p>
+<p>Für Statistiken (Stichprobe) verwendet man lateinische Buchstaben; für Parameter (Population) verwendet man griechische Buchstaben.</p>
+<p>🏋️ Geben Sie die griechischen Buchstaben für typische Statistiken an!</p>
+</div>
+<div id="schätzen-von-parametern-einer-grundgesamtheit" class="section level3" number="3.2.4">
+<h3>
+<span class="header-section-number">3.2.4</span> Schätzen von Parametern einer Grundgesamtheit<a class="anchor" aria-label="anchor" href="#sch%C3%A4tzen-von-parametern-einer-grundgesamtheit"><i class="fas fa-link"></i></a>
+</h3>
+<p>Meist begnügt man sich nicht mit Aussagen für eine Stichprobe, sondern will auf eine Grundgesamtheit verallgemeinern.</p>
+<p>Leider sind die Parameter einer Grundgesamtheit zumeist unbekannt, daher muss man sich mit <em>Schätzungen</em> begnügen.</p>
+<p>Schätzwerte werden mit einem “Dach” über dem Kennwert gekennzeichnet, z.B.</p>
+</div>
+<div id="beispiele-für-inferenzstatistische-fragestellungen" class="section level3" number="3.2.5">
+<h3>
+<span class="header-section-number">3.2.5</span> Beispiele für inferenzstatistische Fragestellungen<a class="anchor" aria-label="anchor" href="#beispiele-f%C3%BCr-inferenzstatistische-fragestellungen"><i class="fas fa-link"></i></a>
+</h3>
+<p>Sie testen zwei Varianten Ihres Webshops (V1 und V2), die sich im Farbschema unterscheiden und ansonsten identisch sind: Hat das Farbschema einen Einfluss auf den Umsatz?</p>
+<ul>
+<li><p>Dazu vergleichen Sie den mittleren Umsatz pro Tag von V1 vs. V2, <span class="math inline">\(\bar{X}_{V1}\)</span> und <span class="math inline">\(\bar{X}_{V2}\)</span>.</p></li>
+<li><p>Die Mittelwerte unterscheiden sich etwas, <span class="math inline">\(\bar{X}_{V1} &gt; \bar{X}_{V2}\)</span></p></li>
+<li><p>Sind diese Unterschiede “zufällig” oder “substanziell”? Gilt also <span class="math inline">\(\mu_{V1} &gt; \mu_{V2}\)</span> oder gilt <span class="math inline">\(\mu_{V1} \le \mu_{V2}\)</span>?</p></li>
+<li><p>Wie groß ist die Wahrscheinlichkeit<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;oft mit &lt;em&gt;Pr&lt;/em&gt; oder &lt;em&gt;p&lt;/em&gt; abgekürzt, für &lt;em&gt;probability&lt;/em&gt;&lt;/p&gt;"><sup>1</sup></a> <span class="math inline">\(Pr(\mu_{V1} &gt; \mu_{V2})\)</span>?</p></li>
+</ul>
+<p>🏋️ <em>Predictive Maintenance</em> ist ein Anwendungsfeld inferenzstatistischer Modellierung. Lesen Sie dazu S. 3 <a href="https://www.rolandberger.com/publications/publication_pdf/roland_berger_vdma_predictive_maintenance_d_1.pdf">dieses Berichts</a>!</p>
+</div>
+</div>
+<div id="unsicherheit" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> Unsicherheit<a class="anchor" aria-label="anchor" href="#unsicherheit"><i class="fas fa-link"></i></a>
+</h2>
+<div id="inferenz-beinhaltet-unsicherheit" class="section level3" number="3.3.1">
+<h3>
+<span class="header-section-number">3.3.1</span> Inferenz beinhaltet Unsicherheit<a class="anchor" aria-label="anchor" href="#inferenz-beinhaltet-unsicherheit"><i class="fas fa-link"></i></a>
+</h3>
+<p>Inferenzstatistische Schlüsse sind mit Unsicherheit behaftet:
+Schließlich kennt man nur einen Teil (die Stichprobe) eines Ganzen (die Population),
+möchte aber vom Teil auf das Ganze schließen.</p>
+<p>Zur Bemessung der Unsicherheit bedient man sich der Wahrscheinlichkeitsrechnung (wo immer möglich).</p>
+<p>Die Wahrscheinlichkeitstheorie bzw. -rechnung wird auch als die Mathematik des Zufalls bezeichnet.</p>
+<div class="infobox quote">
+<p>Unter einem zufälligen Ereignis (random) verstehen wir ein Ereignis, das nicht (komplett) vorherzusehen ist, wie etwa die Augenzahl Ihres nächsten Würfelwurfs. Zufällig bedeutet nicht (zwangsläufig), dass das Ereignisse keine Ursachen besitzt. So gehorchen die Bewegungen eines Würfels den Gesetzen der Physik, nur sind uns diese oder die genauen Randbedingungen nicht (ausreichend) bekannt.</p>
+</div>
+<p>🏋 Welche physikalischen Randbedingungen wirken wohl auf einen Münzwurf ein?</p>
+</div>
+<div id="beispiele-zur-quantifizierung-von-ungewissheit" class="section level3" number="3.3.2">
+<h3>
+<span class="header-section-number">3.3.2</span> Beispiele zur Quantifizierung von Ungewissheit<a class="anchor" aria-label="anchor" href="#beispiele-zur-quantifizierung-von-ungewissheit"><i class="fas fa-link"></i></a>
+</h3>
+<p>Aussagen mit Unsicherheit können unterschiedlich präzise formuliert sein.</p>
+<ul>
+<li><p>Morgen regnet’s <span class="math inline">\(\Leftrightarrow\)</span> Morgen wird es hier mehr als 0 mm Niederschlag geben (<span class="math inline">\(p=97\%\)</span>).</p></li>
+<li><p>Methode <span class="math inline">\(A\)</span> ist besser als Methode <span class="math inline">\(B\)</span> <span class="math inline">\(\Leftrightarrow\)</span> Mit einer Wahrscheinlichkeit von 57% ist der Mittelwert für Methode <span class="math inline">\(A\)</span> höher als für Methode <span class="math inline">\(B\)</span>.</p></li>
+<li><p>Die Maschine fällt demnächst aus <span class="math inline">\(\Leftrightarrow\)</span> Mit einer Wahrscheinlichkeit von 97% wird die Maschine in den nächsten 1-3 Tagen ausfallen, laut unserem Modell.</p></li>
+<li><p>Die Investition lohnt sich <span class="math inline">\(\Leftrightarrow\)</span> Die Investition hat einen Erwartungswert von 42 Euro; mit 90% Wahrscheinlichkeit wird der Gewinn zwischen -10000 und 100 Euro.</p></li>
+</ul>
+<p>🏋 Geben Sie weitere Beispiele an!</p>
+</div>
+<div id="visualisierung-von-punktschätzungen" class="section level3" number="3.3.3">
+<h3>
+<span class="header-section-number">3.3.3</span> Visualisierung von Punktschätzungen<a class="anchor" aria-label="anchor" href="#visualisierung-von-punktsch%C3%A4tzungen"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="020-Inferenz_files/figure-html/plot1-1.png" width="70%" style="display: block; margin: auto;"></div>
+<p>Rot markiert: Die Punktschätzung von <code>mpg</code> für <code>hp=200</code>.</p>
+<p>🏋 Geben Sie ein vergleichbares Beispiel an!</p>
+</div>
+<div id="die-punktschätzung-berücksichtigt-nicht-die-ungewissheit-des-models" class="section level3" number="3.3.4">
+<h3>
+<span class="header-section-number">3.3.4</span> Die Punktschätzung berücksichtigt nicht die Ungewissheit des Models<a class="anchor" aria-label="anchor" href="#die-punktsch%C3%A4tzung-ber%C3%BCcksichtigt-nicht-die-ungewissheit-des-models"><i class="fas fa-link"></i></a>
+</h3>
+<p>Zwei Arten von Ungewissheit müssen wir (mindestens) in unseren Vorhersagen berücksichtigen:</p>
+<ol style="list-style-type: decimal">
+<li>zur Lage der Regressionsgeraden (<span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>)</li>
+<li>zu Einflüssen, die unser Modell nicht kennt (<span class="math inline">\(\epsilon, \sigma\)</span>)</li>
+</ol>
+<div id="unsicherheit-in-beta_0-beta1" class="section level4" number="3.3.4.1">
+<h4>
+<span class="header-section-number">3.3.4.1</span> Unsicherheit in <span class="math inline">\(\beta_0, \beta1\)</span><a class="anchor" aria-label="anchor" href="#unsicherheit-in-beta_0-beta1"><i class="fas fa-link"></i></a>
+</h4>
+<div class="inline-figure"><img src="020-Inferenz_files/figure-html/plt-uncert-beta0beta1-1.png" width="70%" style="display: block; margin: auto;"></div>
+</div>
+<div id="unsicherheit-durch-epsilon-sigma" class="section level4" number="3.3.4.2">
+<h4>
+<span class="header-section-number">3.3.4.2</span> Unsicherheit durch <span class="math inline">\(\epsilon\)</span> (<span class="math inline">\(\sigma\)</span>)<a class="anchor" aria-label="anchor" href="#unsicherheit-durch-epsilon-sigma"><i class="fas fa-link"></i></a>
+</h4>
+<div class="inline-figure"><img src="020-Inferenz_files/figure-html/plot-uncertainty-eps-1.png" width="70%" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<div id="vorhersage-intervall-berücksichtigt-ungewissheit-in-beta_0-beta_1-epsilon" class="section level3" number="3.3.5">
+<h3>
+<span class="header-section-number">3.3.5</span> Vorhersage-Intervall: berücksichtigt Ungewissheit in <span class="math inline">\(\beta_0, \beta_1, \epsilon\)</span><a class="anchor" aria-label="anchor" href="#vorhersage-intervall-ber%C3%BCcksichtigt-ungewissheit-in-beta_0-beta_1-epsilon"><i class="fas fa-link"></i></a>
+</h3>
+<p>Das Vorhersage-Intervall berücksichtigt Ungewissheit in <span class="math inline">\(\beta_0, \beta_1, \epsilon\)</span> bei der Vorhersage von <span class="math inline">\(\hat{y_i}\)</span>.</p>
+<div class="inline-figure"><img src="020-Inferenz_files/figure-html/plot-pred-interval-1.png" width="70%" style="display: block; margin: auto;"></div>
+<p>🏋 Interpretieren Sie den Ungewissheitskorridor!</p>
+</div>
+</div>
+<div id="klassische-vs.-bayes-inferenz" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> Klassische vs. Bayes-Inferenz<a class="anchor" aria-label="anchor" href="#klassische-vs.-bayes-inferenz"><i class="fas fa-link"></i></a>
+</h2>
+<div id="klassische-inferenz-frequentismus" class="section level3" number="3.4.1">
+<h3>
+<span class="header-section-number">3.4.1</span> Klassische Inferenz: Frequentismus<a class="anchor" aria-label="anchor" href="#klassische-inferenz-frequentismus"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Die Berücksichtigung von Vorwissen zum Sachgegenstand wird vom Frequentismus als subjektiv zurückgewiesen.</li>
+<li>Nur die Daten selber fliesen in die Ergebnisse ein</li>
+<li>Wahrscheinlichkeit wird über relative Häufigkeiten definiert.</li>
+<li>Es ist nicht möglich, die Wahrscheinlichkeit einer Hypothese anzugeben.</li>
+<li>Stattdessen wird angegeben, wie häufig eine vergleichbare Datenlage zu erwarten ist, wenn die Hypothese gilt und der Versuch sehr häufig wiederholt ist.</li>
+<li>Ein Großteil der Forschung (in den Sozialwissenschaften) verwendet diesen Ansatz.</li>
+</ul>
+</div>
+<div id="bayesianische-inferenz" class="section level3" number="3.4.2">
+<h3>
+<span class="header-section-number">3.4.2</span> Bayesianische Inferenz<a class="anchor" aria-label="anchor" href="#bayesianische-inferenz"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Vorwissen (Priori-Wissen) fließt explizit in die Analyse ein (zusammen mit den Daten).</li>
+<li>
+<em>Wenn</em> das Vorwissen gut ist, wird die Vorhersage genauer, ansonsten ungenauer.</li>
+<li>Die Wahl des Vorwissens muss explizit (kritisierbar) sein.</li>
+<li>In der Bayes-Inferenz sind Wahrscheinlichkeitsaussagen für Hypothesen möglich.</li>
+<li>Die Bayes-Inferenz erfordert mitunter viel Rechenzeit und ist daher erst in den letzten Jahren (für gängige Computer) komfortabel geworden.</li>
+</ul>
+</div>
+<div id="vergleich-von-wahrscheinlichkeitsaussagen" class="section level3" number="3.4.3">
+<h3>
+<span class="header-section-number">3.4.3</span> Vergleich von Wahrscheinlichkeitsaussagen<a class="anchor" aria-label="anchor" href="#vergleich-von-wahrscheinlichkeitsaussagen"><i class="fas fa-link"></i></a>
+</h3>
+<div id="frequentismus" class="section level4" number="3.4.3.1">
+<h4>
+<span class="header-section-number">3.4.3.1</span> Frequentismus<a class="anchor" aria-label="anchor" href="#frequentismus"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li><p>zentrale Statistik: <em>p-Wert</em></p></li>
+<li><p>“Wie wahrscheinlich ist der Wert der Teststatistik (oder noch extremere Werte), vorausgesetzt die Nullhypothese gilt und man wiederholt den Versuch unendlich oft (mit gleichen Bedingungen, aber zufällig verschieden und auf Basis unseres Modells)?”</p></li>
+</ul>
+</div>
+<div id="bayes-statistik" class="section level4" number="3.4.3.2">
+<h4>
+<span class="header-section-number">3.4.3.2</span> Bayes-Statistik<a class="anchor" aria-label="anchor" href="#bayes-statistik"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li><p>zentrale Statistik: <em>Posteriori-Verteilung</em></p></li>
+<li><p>“Wie wahrscheinlich ist die Forschungshypothese, jetzt, nachdem wir die Daten kennen, auf Baiss unseres Modells?”</p></li>
+</ul>
+<p>🏋 Recherchieren Sie eine Definition des p-Werts und lesen Sie sie genau.</p>
+</div>
+</div>
+<div id="frequentist-und-bayesianer" class="section level3" number="3.4.4">
+<h3>
+<span class="header-section-number">3.4.4</span> Frequentist und Bayesianer<a class="anchor" aria-label="anchor" href="#frequentist-und-bayesianer"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="https://imgs.xkcd.com/comics/frequentists_vs_bayesians_2x.png" width="50%" style="display: block; margin: auto;"></div>
+<p><a href="https://xkcd.com/1132/">Quelle</a></p>
+</div>
+<div id="der-p-wert-ist-wenig-intuitiv" class="section level3" number="3.4.5">
+<h3>
+<span class="header-section-number">3.4.5</span> Der p-Wert ist wenig intuitiv<a class="anchor" aria-label="anchor" href="#der-p-wert-ist-wenig-intuitiv"><i class="fas fa-link"></i></a>
+</h3>
+<a href="https://imgflip.com/i/6m29tz"><img src="https://i.imgflip.com/6m29tz.jpg" width="400" title="made at imgflip.com"></a>
+<div>
+<a href="https://imgflip.com/memegenerator">from Imgflip Meme Generator</a>
+</div>
+</div>
+<div id="beispiel-zum-nutzen-von-apriori-wissen-1" class="section level3" number="3.4.6">
+<h3>
+<span class="header-section-number">3.4.6</span> Beispiel zum Nutzen von Apriori-Wissen 1<a class="anchor" aria-label="anchor" href="#beispiel-zum-nutzen-von-apriori-wissen-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Ein Betrunkener behauptet, er könne hellsehen.</p></li>
+<li><p>Er wirft eine Münze 10 Mal und sagt jedes Mal korrekt vorher, welche Seite oben landen wird.</p></li>
+<li><p>Die Wahrscheinlichkeit dieses Ergebnisses ist sehr gering (<span class="math inline">\(2^{-10}\)</span>) unter der Hypothese, dass die Münze fair ist, dass Ergebnis also “zufällig” ist.</p></li>
+<li><p>Unser Vorwissen lässt uns allerdings trotzdem an der Hellsichtigkeit des Betrunkenen zweifeln, so dass die meisten von uns die Hypothese von der Zufälligkeit des Ergebnisses wohl nicht verwerfen.</p></li>
+</ul>
+</div>
+<div id="beispiel-zum-nutzen-von-apriori-wissen-2" class="section level3" number="3.4.7">
+<h3>
+<span class="header-section-number">3.4.7</span> Beispiel zum Nutzen von Apriori-Wissen 2<a class="anchor" aria-label="anchor" href="#beispiel-zum-nutzen-von-apriori-wissen-2"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Eine Studie fand einen “großen Effekt” auf das Einkommen von Babies, eine Stunde pro Woche während zwei Jahren an einem psychosozialen Entwicklungsprogramm teilnahmen (im Vergleich zu einer Kontrollgruppe), <span class="math inline">\(n=127\)</span>.</p></li>
+<li><p>Nach 20 Jahren war das mittlere Einkommen der Experimentalgruppe um 42% höher (als in der Kontrollgruppe) mit einem Konfidenzintervall von
+[+2%,+98%].</p></li>
+<li><p>Allerdings lässt uns unser Vorwissen vermuten, dass so ein Treatment das Einkommen nach 20 Jahren kaum verdoppeln lässt. Wir würden den Effekt lieber in einem konservativeren Intervall schätzen (enger um Null).</p></li>
+</ul>
+<!-- # Wachstum --><!-- ## Seerose --><!-- - Eine Seerose wächst auf einem Teich. [Schön.](https://www.flickr.com/photos/182338742@N07/49286585198/in/faves-193287163@N02/) --><!-- - Tag 1: 1 Seerose. Tag 2: 2 Seerosen. Tag 3: 4 Seerosen, etc. --><!-- - Am Tag 100 ist der See komplett mit Seerosen bedeckt. --><!-- **An welchem Tag ist der See zu 50% mit Seerosen bedeckt?** --><!-- ## Wachstumsschritte der Seerose --><!-- $$\text{Menge} = 2^{\text{Tage}}$$ --><!-- :::::: {.columns} --><!-- ::: {.column width="50%"} --><!-- ```{r tab11noeval, results = "hide", eval = TRUE, echo = TRUE} --><!-- d <- tibble( --><!--   Tag = 0:10, --><!--   Menge = 2^Tag)  --><!-- ``` --><!-- :::  --><!-- ::: {.column width="50%"} --><!-- ```{r tab11, results = "asis"} --><!-- tab11 <- --><!--   tibble(Tag = 0:10, --><!--          Menge = 2^Tag) %>%  --><!--   kable() --><!-- print(tab11) --><!-- ``` --><!-- ::: --><!-- :::::: --><!-- ## Der Logarithmus gibt die Anzahl der (Wachstums-)Tage --><!-- ```{r echo = TRUE, size = "tiny"} --><!-- log(d$Menge, base = 2) --><!-- ``` --><!-- *Logarithmieren* liefert von einer Zahl (hier `Menge`) den Exponenten zu einer Basis (hier `2`) zurück. --><!-- Umgekehrt liefert *Potenzieren* zu einer Basis (hier `2`) die `Menge` zurück. --><!-- ```{r echo = TRUE, size = "tiny"} --><!-- 2^d$Tag --><!-- ``` --><!-- Wachstumsprozesse sind oft multiplikativ, z.B. eine Seerose, die sich in einem Zeitabschnitt $t$ verdoppelt. --><!-- ## Rechenregeln für Potenzen --><!-- - $a^n = a \cdot a \cdot a \ldots a$ ($n$ Faktoren, $n \in \mathbb{N}$) --><!-- - $a^1 = a$ --><!-- - $a^0 = 1$ --><!-- - $a^{-n} = \frac{1}{a^n}$ --><!-- - $a^{\frac{1}{n}} = \sqrt[n]{a}$ --><!-- - $a^n \cdot a^m = a^{n+m}$ --><!-- - $\frac{a^n}{a^m} = a^{n-m}$ --><!-- - $a^n \cdot a^m = (a\cdot b)^n$ --><!-- - $\frac{a^n}{b^n} = \left(\frac{a}{b}\right)^n$ --><!-- - $(a^n)^m = a^{(n\cdot m)}$ --><!-- ## Logarithmus --><!-- Die Zahl $x \in \mathbb{R}$ mit $b^x=a$ heißt Logarithmus von $a$ zur Basis $b$. Sie wird mit $x = log_b(a)$ bezeichnet [@cramer_vorkurs_2015]. Dabei seien $a,b > 0$ mit $b \ne1$. --><!-- ```{r echo = TRUE} --><!-- log(c(2, 4, 8), base = 2) --><!-- log(c(10, 100, 1000), base = 10) --><!-- log(c(2.71, 2.71^2)) %>% round() --><!-- ``` --><!-- Gängige Basen sind 2, 10 und $e$ (Eulersche Zahl: $2.7178...$). --><!-- ## Rechenregeln zum Logarithmus --><!-- - $\text{log}_b(1)=0$ --><!-- - $\text{log}_b(b)=1$ --><!-- - $b^{\text{log}_b(a)}=a$ --><!-- - $\text{log}_b(b^a)=a$ --><!-- - $\text{log}_c(a\cdot b) = \text{log}_c(a) + \text{log}_c(b)$ --><!-- - $\text{log}_c(\frac{a}{b}) = \text{log}_c(a) - \text{log}_c(b)$ --><!-- - $\text{log}_c(b^a) = a \cdot \text{log}_c(b)$ -->
+</div>
+</div>
+<div id="literatur-2" class="section level2" number="3.5">
+<h2>
+<span class="header-section-number">3.5</span> Literatur<a class="anchor" aria-label="anchor" href="#literatur-2"><i class="fas fa-link"></i></a>
+</h2>
+
+</div>
+</div>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="pr%C3%BCfung.html"><span class="header-section-number">2</span> Prüfung</a></div>
+<div class="next"><a href="ungewissheit-quantifizieren.html"><span class="header-section-number">4</span> Ungewissheit quantifizieren</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#inferenz"><span class="header-section-number">3</span> Inferenz</a></li>
+<li>
+<a class="nav-link" href="#lernsteuerung"><span class="header-section-number">3.1</span> Lernsteuerung</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#vorbereitung"><span class="header-section-number">3.1.1</span> Vorbereitung</a></li>
+<li><a class="nav-link" href="#lernziele-1"><span class="header-section-number">3.1.2</span> Lernziele</a></li>
+<li><a class="nav-link" href="#literatur-1"><span class="header-section-number">3.1.3</span> Literatur</a></li>
+<li><a class="nav-link" href="#hinweise-2"><span class="header-section-number">3.1.4</span> Hinweise</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#was-ist-inferenz"><span class="header-section-number">3.2</span> Was ist Inferenz?</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#deskriptiv--vs.-inferenzstatistik"><span class="header-section-number">3.2.1</span> Deskriptiv- vs. Inferenzstatistik</a></li>
+<li><a class="nav-link" href="#wozu-ist-die-inferenstatistik-gut"><span class="header-section-number">3.2.2</span> Wozu ist die Inferenstatistik gut?</a></li>
+<li><a class="nav-link" href="#deskriptiv--und-inferenzstatistik-gehen-hand-in-hand"><span class="header-section-number">3.2.3</span> Deskriptiv- und Inferenzstatistik gehen Hand in Hand</a></li>
+<li><a class="nav-link" href="#sch%C3%A4tzen-von-parametern-einer-grundgesamtheit"><span class="header-section-number">3.2.4</span> Schätzen von Parametern einer Grundgesamtheit</a></li>
+<li><a class="nav-link" href="#beispiele-f%C3%BCr-inferenzstatistische-fragestellungen"><span class="header-section-number">3.2.5</span> Beispiele für inferenzstatistische Fragestellungen</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#unsicherheit"><span class="header-section-number">3.3</span> Unsicherheit</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#inferenz-beinhaltet-unsicherheit"><span class="header-section-number">3.3.1</span> Inferenz beinhaltet Unsicherheit</a></li>
+<li><a class="nav-link" href="#beispiele-zur-quantifizierung-von-ungewissheit"><span class="header-section-number">3.3.2</span> Beispiele zur Quantifizierung von Ungewissheit</a></li>
+<li><a class="nav-link" href="#visualisierung-von-punktsch%C3%A4tzungen"><span class="header-section-number">3.3.3</span> Visualisierung von Punktschätzungen</a></li>
+<li><a class="nav-link" href="#die-punktsch%C3%A4tzung-ber%C3%BCcksichtigt-nicht-die-ungewissheit-des-models"><span class="header-section-number">3.3.4</span> Die Punktschätzung berücksichtigt nicht die Ungewissheit des Models</a></li>
+<li><a class="nav-link" href="#vorhersage-intervall-ber%C3%BCcksichtigt-ungewissheit-in-beta_0-beta_1-epsilon"><span class="header-section-number">3.3.5</span> Vorhersage-Intervall: berücksichtigt Ungewissheit in \(\beta_0, \beta_1, \epsilon\)</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#klassische-vs.-bayes-inferenz"><span class="header-section-number">3.4</span> Klassische vs. Bayes-Inferenz</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#klassische-inferenz-frequentismus"><span class="header-section-number">3.4.1</span> Klassische Inferenz: Frequentismus</a></li>
+<li><a class="nav-link" href="#bayesianische-inferenz"><span class="header-section-number">3.4.2</span> Bayesianische Inferenz</a></li>
+<li><a class="nav-link" href="#vergleich-von-wahrscheinlichkeitsaussagen"><span class="header-section-number">3.4.3</span> Vergleich von Wahrscheinlichkeitsaussagen</a></li>
+<li><a class="nav-link" href="#frequentist-und-bayesianer"><span class="header-section-number">3.4.4</span> Frequentist und Bayesianer</a></li>
+<li><a class="nav-link" href="#der-p-wert-ist-wenig-intuitiv"><span class="header-section-number">3.4.5</span> Der p-Wert ist wenig intuitiv</a></li>
+<li><a class="nav-link" href="#beispiel-zum-nutzen-von-apriori-wissen-1"><span class="header-section-number">3.4.6</span> Beispiel zum Nutzen von Apriori-Wissen 1</a></li>
+<li><a class="nav-link" href="#beispiel-zum-nutzen-von-apriori-wissen-2"><span class="header-section-number">3.4.7</span> Beispiel zum Nutzen von Apriori-Wissen 2</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#literatur-2"><span class="header-section-number">3.5</span> Literatur</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/sebastiansauer/bayes-start/blob/master/020-Inferenz.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/sebastiansauer/bayes-start/edit/master/020-Inferenz.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Bayes:Start</strong>: Eine Einführung in die Bayes-Statistik" was written by Sebastian Sauer. It was last built on Letzte Aktualisierung: 2022-07-07 22:26:06.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

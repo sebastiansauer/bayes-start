@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Zu diesem Buch | Bayes:Start</title>
+<meta name="author" content="Sebastian Sauer">
+<meta name="description" content="Ein Kurs zu den Grundlagen der Inferenzstatistik auf Basis der Bayes-Methode">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="Zu diesem Buch | Bayes:Start">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Ein Kurs zu den Grundlagen der Inferenzstatistik auf Basis der Bayes-Methode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zu diesem Buch | Bayes:Start">
+<meta name="twitter:description" content="Ein Kurs zu den Grundlagen der Inferenzstatistik auf Basis der Bayes-Methode">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style-bs4.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Eine Einführung in die Bayes-Statistik">Bayes:Start</a>:
+        <small class="text-muted">Eine Einführung in die Bayes-Statistik</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="active" href="index.html">Zu diesem Buch</a></li>
+<li><a class="" href="hinweise-1.html"><span class="header-section-number">1</span> Hinweise</a></li>
+<li><a class="" href="pr%C3%BCfung.html"><span class="header-section-number">2</span> Prüfung</a></li>
+<li><a class="" href="inferenz.html"><span class="header-section-number">3</span> Inferenz</a></li>
+<li><a class="" href="ungewissheit-quantifizieren.html"><span class="header-section-number">4</span> Ungewissheit quantifizieren</a></li>
+<li><a class="" href="bayes.html"><span class="header-section-number">5</span> Bayes</a></li>
+<li><a class="" href="die-post-verteilung.html"><span class="header-section-number">6</span> Die Post-Verteilung</a></li>
+<li><a class="" href="gauss-modelle.html"><span class="header-section-number">7</span> Gauss-Modelle</a></li>
+<li><a class="" href="lineare-modelle.html"><span class="header-section-number">8</span> Lineare Modelle</a></li>
+<li><a class="" href="metrische-av.html"><span class="header-section-number">9</span> Metrische AV</a></li>
+<li><a class="" href="fallstudien.html"><span class="header-section-number">10</span> Fallstudien</a></li>
+<li><a class="" href="kausalanalyse.html"><span class="header-section-number">11</span> Kausalanalyse</a></li>
+<li><a class="" href="bin%C3%A4re-av.html"><span class="header-section-number">12</span> Binäre AV</a></li>
+<li><a class="" href="abschluss.html"><span class="header-section-number">13</span> Abschluss</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/sebastiansauer/bayes-start">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="zu-diesem-buch" class="section level1 unnumbered">
+<h1>Zu diesem Buch<a class="anchor" aria-label="anchor" href="#zu-diesem-buch"><i class="fas fa-link"></i></a>
+</h1>
+<div class="inline-figure"><img src="img/Golem_hex.png" width="30%" style="display: block; margin: auto;"></div>
+<p style="font-size:9pt; text-align:center">
+Bildquelle: Klara Schaumann, Lizenz: CC-BY
+</p>
+<div id="tldr" class="section level2" number="0.1">
+<h2>
+<span class="header-section-number">0.1</span> tl;dr<a class="anchor" aria-label="anchor" href="#tldr"><i class="fas fa-link"></i></a>
+</h2>
+<p><em>Bayes-Start</em> ist ein frei verfügbarer Einführungskurs in die Bayes-Statistik.
+Ziel ist, die grundlegende Logik von Bayes-Inferenz zu vermitteln und zu zeigen,
+wie man mit linearen Modellen viele typische Forschungsfragen beantworten kann.
+Ein wichtiger Baustein betrifft kausale Überlegungen,
+also die Frage, wie man kausale Forschungsfragen statistisch umsetzt und beurteilt.
+Als Software wird R verwendet <span class="citation">R Core Team (<a href="abschluss.html#ref-RCoreTeam2015" role="doc-biblioref">2019</a>)</span>
+; für Bayes-Modellierung wird das R-Paket <code>rstanarm</code> verwendet <span class="citation">Goodrich et al. (<a href="abschluss.html#ref-goodrich_rstanarm_2020" role="doc-biblioref">2020</a>)</span>
+Inhaltlich wird zum Teil auf Richard McElreath’s hervorragenden Lehrbuch,
+<em>Statistical Rethinking</em> aufgebaut <span class="citation">McElreath (<a href="abschluss.html#ref-mcelreath_statistical_2020" role="doc-biblioref">2020</a>)</span>.
+Außerdem stellt Gelman’s et al. neues,
+ebenfalls sehr gutes Lehrbuch <em>Regression and other Stories</em> <span class="citation">Gelman, Hill, and Vehtari (<a href="abschluss.html#ref-gelman_regression_2021" role="doc-biblioref">2021</a>)</span>
+eine Grundlage für die Inhalte dieses Kurses dar.
+Beide Bücher sind als Lektüre zu empfehlen.</p>
+</div>
+<div id="hinweise" class="section level2" number="0.2">
+<h2>
+<span class="header-section-number">0.2</span> Hinweise<a class="anchor" aria-label="anchor" href="#hinweise"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Dieser Kurs ist lizensiert unter der <a href="https://github.com/sebastiansauer/bayes-start/blob/main/LICENSE">MIT Lizenz</a>. Das ist eine permissive Lizenz, die erlaubt, dass Sie diesen Kurs frei verwenden können. Sie haben (nur) die Verpflichtung, zu zitieren und auf die Lizenzart hinzuweisen.</p></li>
+<li><p><a href="https://data-se.netlify.app/2021/11/30/installation-von-r-und-seiner-freunde/">Installation von R und seinen Freunden</a></p></li>
+<li><p><a href="https://data-se.netlify.app/2022/01/28/bayes-software-installieren-f%C3%BCr-r/">Installation der Software für Bayes-Analysen</a></p></li>
+<li><p><a href="https://sebastiansauer.github.io/bayes-start/Lernziele.html#%C3%BCbergreifende-lernziele">Übergreifende Lernziele</a></p></li>
+<li><p>Mitarbeit oder Verbesserungsvorschläge: am besten als <a href="https://github.com/sebastiansauer/bayes-start/issues">Github Issue</a> einstellen.</p></li>
+<li><p>Der Quellcode zu den Folien findet sich <a href="https://github.com/sebastiansauer/QM2-Folien">hier</a>.</p></li>
+</ul>
+</div>
+<div id="kudos" class="section level2" number="0.3">
+<h2>
+<span class="header-section-number">0.3</span> Kudos<a class="anchor" aria-label="anchor" href="#kudos"><i class="fas fa-link"></i></a>
+</h2>
+<p>Beim Schreiben dieses Kurses habe ich auf der Vorarbeit vieler Menschen aufgebaut.
+Viele Menschen haben mich unterstützt, großzügig und auf verschiedene Weise.</p>
+<p>Einige möchte ich herausgreifen, um Danke zu sagen:</p>
+<ul>
+<li>Kollegis wie Karsten Lübke, von denen ich viel gelernt habe.</li>
+<li>Richard McElreath für sein inspirierendes Lehrbuch.</li>
+<li>Alle Open-Source-Entwickler, die Projekte wie dieses überhaupt erst möglichen machen. 💌</li>
+</ul>
+<!-- # (PART) Organisatorisches {-} -->
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="empty"></div>
+<div class="next"><a href="hinweise-1.html"><span class="header-section-number">1</span> Hinweise</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#zu-diesem-buch">Zu diesem Buch</a></li>
+<li><a class="nav-link" href="#tldr"><span class="header-section-number">0.1</span> tl;dr</a></li>
+<li><a class="nav-link" href="#hinweise"><span class="header-section-number">0.2</span> Hinweise</a></li>
+<li><a class="nav-link" href="#kudos"><span class="header-section-number">0.3</span> Kudos</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/sebastiansauer/bayes-start/blob/master/index.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/sebastiansauer/bayes-start/edit/master/index.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Bayes:Start</strong>: Eine Einführung in die Bayes-Statistik" was written by Sebastian Sauer. It was last built on Letzte Aktualisierung: 2022-07-07 22:26:06.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

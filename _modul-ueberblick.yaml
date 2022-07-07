@@ -1,0 +1,257 @@
+thema1:
+  Titel: "Inferenz"
+  UnterTitel: "Was ist Inferenzstatistik und wozu ist sie gut?"
+  Vorbereitung:
+    - Lesen Sie die Hinweise zum Modul.
+    - Installieren (oder Updaten) Sie die für dieses Modul angegeben Software.
+    - Lesen Sie die angegebene Literatur.
+  Lernziele:
+    - die Definition von Inferenzstatistik sowie Beispiele für inferenzstatistische Fragestellungen nennen
+    - zentrale Begriffe der Inferenzstatistik nennen und in Grundzügen erklären
+    - den Nutzen von Inferenzstatistik nennen
+    - erläutern, in welchem Zusammenhang Ungewissheit zur Inferenzstatistik steht
+    - Unterschiede zwischen klassischer und Bayes-Inferenz benennen
+    - Vor- und Nachteile der klassischen vs. Bayes-Inferenz diskutieren
+    - Die grundlegende Herangehensweise zur Berechnung des p-Werts informell erklären können
+
+
+  Literatur:
+    - ROS, Kap. 1
+
+  Hinweise:
+    - "Bitte beachten Sie die Hinweise zum Präsenzunterricht und der Streamingoption."
+    - "Bitte stellen Sie sicher, dass Sie einen einsatzbereiten Computer haben und dass die angegebene Software (in aktueller Version) läuft."
+  Vertiefung:
+  Aufgaben:
+  Videos:
+
+
+thema2:
+  Titel: Wahrscheinlichkeit
+  Lernziele:
+    - Wahrscheinlichkeit definieren und relevante Begriffe anführen und in Grundzügen erklären
+    - einfache Fragen aus der Wahrscheinlichkeitstheorie berechnen
+
+
+
+
+
+
+thema3:
+  Titel: "Bayes"
+
+  Literatur:
+    - "Statistical Rethinking, Kap. 2"
+
+
+  Lernziele:
+    - die Unterschiede zwischen einem Modell und der Realität erkären und anhand eines Beispiels verdeutlichen
+    - das rechnerische Prinzip des Wissen updaten, d.h. Bayes, an einem konkreten Beispiel erläutern und nachrechnen
+    - Die Posteriori-Wahrscheinlichkeit eines einfaches Bayes-Modells berechnen, in R programmieren und die wesentlichen Schritte erläutern
+  Vorbereitung:
+    - Lesen Sie die Literatur.
+  Aufgaben:
+
+  Vertiefung:
+
+
+
+
+
+
+
+
+
+thema4:
+  Titel: "Die Postverteilung"
+  Lernziele:
+    - erläutern und mit R berechnen, wie man eine Posteriori-Verteilung erstellt
+    - erläutern und mit R berechnen, wie man Stichproben aus der Posteriori-Verteilung zieht
+    - wesentliche Forschungsfragen, wie nach Intervallen und Punktschätzwerten, anhand der Stichproben aus der Posteriori-Verteilung beantworten
+    - erläutern, was eine Posteriori-Prädiktiv-Verteilung ist, und inwiefern Sie vor Übergewissheit schützt
+    - eine Modellprüfung für das Beispiel aus dem Unterricht anhand der Posteriori-Prädiktiv-Verteilung durchführen
+
+  Vorbereitung:
+  Literatur:
+    - "Statistical Rethinking, Kap. 3"
+  Aufgaben:
+  Skript:
+    - "[HTML-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.html#1)"
+    - "[PDF-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema3-Post-befragen.pdf)"
+  Videos:
+    - "[Playlist 'Thema 3'](https://www.youtube.com/playlist?list=PLRR4REmBgpIE5-LMlRzSCkXVc2_4pZD2u)"
+
+
+
+
+
+
+thema5:
+  Titel: "Gaussmodelle"
+  Lernziele:
+     - erklären, was eine Verteilung ist und welche Varianten es gibt
+     - wissen um den ontologischen Bedingungszusammenhang einer Normalverteilung; sie können erklären, wie eine Normalverteilung entsteht
+     - ein Gaussmodell spezifizieren und R berechnen
+     - an Beispielen verdeutlichen, wie sich eine vage bzw. eine informationsreiche Priori-Verteilung auf die Posteriori-Verteilung auswirkt
+  Literatur: "Statistical Rethinking, Kap. 4.1-4.3"
+  Aufgaben:
+  Skript:
+    - "[HTML-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema4-Gaussmodelle.html#1)"
+    - "[PDF-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema4-Gaussmodelle.pdf)"
+
+
+
+thema6:
+  Titel: "Lineare Modelle"
+  Literatur: "Statistical Rethinking, Kap. 4.4, ROS, Kap. 9.2"
+
+
+  Hinweise:
+  Lernziele:
+    - die Post-Verteilung für einfache lineare Modelle in R berechnen
+    - zentrale Informationen zu Modellparametern - wie Lage- oder Streuungsmaße und auch Schätzintervalle - aus der Post-Verteilung herauslesen
+    - künftige, laut Modell zu erwartende Beobachtungen mit der PPV simulieren
+  Aufgaben:
+  Skript:
+    - "[HTML-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.html#1)"
+    - "[PDF-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema5-Lineare-Modelle.pdf)"
+  Videos:
+    - "[Playlist 'Kapitel 5'](https://youtube.com/playlist?list=PLRR4REmBgpIFbtKyjfJG8Nr2htQo0mP1)"
+
+
+
+
+thema7:
+  Titel: "Metrische AV"
+  Lernziele:
+     - typische, deskriptive Forschungsfragen spezifizieren als Regression
+     - Forschungsfragen in Regressionsterme übersetzen
+     - typische Forschungsfragen auswerten
+  Vorbereitung:
+    - Lesen Sie die Literatur.
+
+  Literatur: "ROS, 10.1-10.4, 11.1-11.4, 11.6, 11.7"
+
+  Vertiefung:
+    - "[Fields arranged by purity, xkcd 435](https://xkcd.com/435/)"
+  Skript:
+    - "[HTML-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.html#1)"
+    - "[PDF-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema6-Deskriptive-Forschungsfragen.pdf)"
+  Videos:
+    - "[Playlist 'Thema 6'](https://youtube.com/playlist?list=PLRR4REmBgpIFctMPlE1jqV9MaGaLGoVG3)"
+
+
+
+
+thema8:
+  Titel: "Projektwoche"
+  Hinweise: "Kein regulärer Unterricht"
+
+
+
+
+
+thema9:
+  Titel: "Fallstudien"
+  Vorbereitung:
+
+  Lernziele:
+    - Bayes-Modellierung in einen angewandten Kontext anwenden können und die Grenzen aufzeigen können
+    - aktuelle Themen - am Beispiel hier der Corona-Pandemie - aufgreifen können und zentrale Statistiken nachprüfen können
+
+  Literatur:
+    - "kein wesentlicher neuer Stoff"
+  Skript:
+    - "[Fallstudie Filmbewertungen](https://sebastiansauer.github.io/QM2-Folien/Themen/Fallstudien/Thema5-Fallstudie.html)"
+    - "[Fallstudie Coronazahlen des RKI](https://data-se.netlify.app/2021/11/27/analyse-der-rki-coronadaten/)"
+  Videos:
+    - "[Playlist Fallstudie 1](https://youtube.com/playlist?list=PLRR4REmBgpIFR226XcTUpot2yC6U0gycd)"
+
+
+
+thema10:
+  Titel: "Kausalanalyse 1"
+  Lernziele:
+    - erklären, wann eine Kausalaussage gegeben eines DAGs berechtigt ist
+    - die Atome der Kausalität eines DAGs benennen
+  Skript:
+    - "[HTML-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema8-Kausalanalyse.html#1)"
+    - "[PDF-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema8-Kausalanalyse.pdf)"
+  Videos:
+    - "[Playlist 'Thema 8'](https://youtube.com/playlist?list=PLRR4REmBgpIHF5z7Z6IZO0mRi2Xjemz-T)"
+
+
+
+thema11:
+  Titel: "Kausalanalyse 2"
+  Lernziele:
+    - kausale Hintertüren schließen
+
+
+
+
+thema12:
+  Titel: "Binäre AV"
+  Lernziele:
+    - Regressionsmodelle für binäre AV berechnen
+    - einen Logit in Wahrscheinlichkeit umrechnen
+    - logistische Regressionsmodelle interpretieren und kritisieren
+  Skript:
+    - "[HTML-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema9-Binaere-AV.html#1)"
+    - "[PDF-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema9-Binaere-AV.pdf)"
+
+
+  Aufgaben:
+
+  Hinweise:
+
+  Literatur:
+  Vertiefung:
+
+
+thema13:
+  Titel: "Weihnachten"
+  Hinweise: "Weihnachten. Kein Unterricht"
+
+
+thema14:
+  Titel: "Neujahr"
+  Hinweise: "Kein Unterricht"
+
+
+
+
+
+
+
+
+
+
+thema15:
+  Titel: "Abschluss"
+  Lernziele:
+    - erläutern, wie Sie eine typische, sozialwissenschaftliche Forschungsfrage (quantitativ) untersuchen
+    - typische "Lieblingsfehler" benennen und Wege aufzeigen, um die Fehler zu umgehen
+    - zwischen den Grundkonzepten der Frequentististischen Statistik und der Bayes-Statistik übersetzen
+    - die Grundideen der Bayes-Statistik in eine Gesamtzusammenhang einordnen
+
+  Skript:
+    - "[HTML-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema10-Abschluss.html#1)"
+    - "[PDF-Skript](https://sebastiansauer.github.io/QM2-Folien/Themen/QM2-Thema10-Abschluss.pdf)"
+
+  Videos:
+    - "[Playlist 'Abschluss'](https://youtube.com/playlist?list=PLRR4REmBgpIGuVrNJzF17PLlaLYQo-Nx-)"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
